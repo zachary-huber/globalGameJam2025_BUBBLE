@@ -5,6 +5,8 @@ var score # This might hold some kind of score value
 var seedString:String # This is a value players can enter at the menu to set the random seed manually
 var rng = RandomNumberGenerator.new() # This generates random numbers
 
+func _init() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _ready() -> void:
 	rng.seed = hash(seedString)

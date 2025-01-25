@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=5 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
+
+[sub_resource type="Environment" id="Environment_yl6x8"]
 
 [node name="main3D" type="Node3D"]
 
@@ -15,3 +17,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36448, -9.13072)
 [node name="oceanFloorEnvironment" parent="." instance=ExtResource("4_aguwm")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yl6x8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.622624, -0.379469, -0.684356, 0, -0.874552, 0.484932, -0.782521, -0.30193, -0.544517, 0, 0, 0)
+shadow_enabled = true
