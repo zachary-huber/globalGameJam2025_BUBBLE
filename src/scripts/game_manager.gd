@@ -34,3 +34,10 @@ func _on_timer_timeout() -> void:
 	
 	print("rotation: ", currrentRotation)
 	print("velocity: ", currentVelocity)
+	
+	get_tree().root.get_node("main3D/mainUI/VBoxContainer/debugInfo").text  = \
+	"Rotation: " + str(currrentRotation).pad_decimals(2) + '\n' + \
+	"Velocity: " + str(currentVelocity).pad_decimals(2) + '\n' + \
+	"Ship Health: " + str(shipHealth) + '\n' + \
+	"O2: " + str(o2) + '\n' + \
+	"Time: " + str(timePlayed) + '\n'
