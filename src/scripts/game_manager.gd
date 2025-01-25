@@ -9,9 +9,12 @@ var currrentRotation:float
 var currentVelocity:float
 var o2:float
 var shipHealth:float
+var bubbleCollected:int = 0
 
 var theWheel = null
 var theLever = null
+var interactHint = null
+var subInteractTarget = null
 
 var isAtHelm = false
 
@@ -45,7 +48,8 @@ func _on_timer_timeout() -> void:
 	"Velocity: " + str(currentVelocity).pad_decimals(2) + '\n' + \
 	"Ship Health: " + str(shipHealth) + '\n' + \
 	"O2: " + str(o2) + '\n' + \
-	"Time: " + str(timePlayed) + '\n'
+	"Time: " + str(timePlayed) + '\n' + \
+	"Bubbles Found: " + str(bubbleCollected) + "\n"
 	
 	updateSubCam()
 

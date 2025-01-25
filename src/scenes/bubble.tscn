@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ojt4bbo5638d"]
+
+[ext_resource type="Script" path="res://src/scripts/bubble.gd" id="1_xiyri"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f23ta"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekbnv"]
+transparency = 4
+albedo_color = Color(0.2, 0.521569, 1, 0.494118)
+
+[sub_resource type="SphereMesh" id="SphereMesh_58mk1"]
+
+[node name="bubble" type="Node3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_xiyri")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D"]
+shape = SubResource("SphereShape3D_f23ta")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+material_override = SubResource("StandardMaterial3D_ekbnv")
+mesh = SubResource("SphereMesh_58mk1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 5.606

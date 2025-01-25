@@ -8,3 +8,16 @@ func _physics_process(delta: float) -> void:
 	
 	
 	$radarScanner.rotation.y += deg_to_rad(radarRotationSpeed) * delta
+
+
+func _on_collect_area_area_entered(area: Area3D) -> void:
+	print("area entered: ", area.owner.name)
+	if area.owner.has_method("bubble"):
+		# show collect bubble interact hint
+		print("found a bubble.")
+		GameManager.interactHint.text = "[center]Press [E] to collect the oxygen bubble.[/center]"
+		GameManager.subInteractTarget = area.owner
+
+
+func _on_collect_area_area_exited(area: Area3D) -> void:
+	GameManager.interactHint.text = ""

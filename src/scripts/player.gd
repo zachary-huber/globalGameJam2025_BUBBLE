@@ -67,6 +67,7 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	# add input here to exit chair camera view at the helm and handle the helm input
 	if GameManager.isAtHelm:
+		setInteractionHint("[center]Move mouse up and down to go forward. [WASD] to Steer.[/center]", "")
 		if event.is_action_pressed("escape"):
 			# exit the helm mode
 			GameManager.isAtHelm = false
@@ -125,19 +126,23 @@ func updateCameraMotion(event) -> void:
 # if the player is looking at something interactable and they press "interact" then they activate the interactable
 # interaction behavior is handled by the object itself
 func handleObjectInteractions(event):
-	if interactingWithObj: # don't bother processing if there is no interactable
-		if interactingWithObj.get_parent().has_method("interact"):
-			setInteractionHint(interactingWithObj.get_parent().interactHintText, interactingWithObj.get_parent().name) 
-			if event.is_action_pressed("interact"):
-				if interactingWithObj:
-					interactingWithObj.get_parent().interact()
-			elif event.is_action_pressed("alt_interact"):
-				if interactingWithObj:
-					interactingWithObj.get_parent().alt_interact()
+	if GameManager.isAtHelm:
+		GameManager.interactHint = "[center]Move mouse up and down to go forward. [WASD] to Steer.[/center]"
+		setInteractionHint("[center]Move mouse up and down to go forward. [WASD] to Steer.[/center]", "")
+	else:
+		if interactingWithObj: # don't bother processing if there is no interactable
+			if interactingWithObj.get_parent().has_method("interact"):
+				setInteractionHint(interactingWithObj.get_parent().interactHintText, interactingWithObj.get_parent().name) 
+				if event.is_action_pressed("interact"):
+					if interactingWithObj:
+						interactingWithObj.get_parent().interact()
+				elif event.is_action_pressed("alt_interact"):
+					if interactingWithObj:
+						interactingWithObj.get_parent().alt_interact()
+			else:
+				setInteractionHint("", "")
 		else:
 			setInteractionHint("", "")
-	else:
-		setInteractionHint("", "")
 
 func setInteractionHint(hintText, nameText):
 	get_tree().root.get_node("main3D/mainUI/interactHint").text = hintText
