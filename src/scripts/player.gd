@@ -113,11 +113,14 @@ func _input(event: InputEvent) -> void:
 			GameManager.isPeeping = false
 			GameManager.subCamViewport.visible = false
 			GameManager.peepholeTexture.visible = false
+		elif event.is_action_pressed("interact"):
+			if GameManager.subInteractTarget and GameManager.subInteractTarget.has_method("bubble"):
+				GameManager.subInteractTarget.collectBubble()
 	else:  # we are not at the helm or peephole
 		if event is InputEventMouseMotion:
 			updateCameraMotion(event)
 			checkInteractRay()
-		
+	
 		handleObjectInteractions(event)
 		handlePlayerMovement()
 

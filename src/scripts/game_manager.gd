@@ -14,6 +14,7 @@ var bubbleCollected:int = 0
 var theWheel = null
 var theLever = null
 var interactHint = null
+var interactNameHint = null
 var subInteractTarget = null
 var xCoord = null
 var yCoord = null

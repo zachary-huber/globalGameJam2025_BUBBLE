@@ -16,6 +16,7 @@ func _on_collect_area_area_entered(area: Area3D) -> void:
 		# show collect bubble interact hint
 		print("found a bubble.")
 		GameManager.interactHint.text = "[center]Press [E] to collect the oxygen bubble.[/center]"
+		GameManager.interactNameHint.text = "[center]Bubble [E] to collect.[/center]"
 		GameManager.subInteractTarget = area.owner
 
 

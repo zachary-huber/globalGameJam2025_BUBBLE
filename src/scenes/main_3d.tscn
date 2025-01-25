@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=19 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
@@ -19,6 +19,8 @@
 background_mode = 1
 fog_enabled = true
 fog_light_color = Color(0, 0.243029, 0.403477, 1)
+
+[sub_resource type="Theme" id="Theme_nlvil"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vjm15"]
 radius = 2.0
@@ -88,6 +90,8 @@ grow_vertical = 2
 script = ExtResource("8_ttdf3")
 
 [node name="interactHint" type="RichTextLabel" parent="mainUI"]
+z_index = 1
+y_sort_enabled = true
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -96,9 +100,12 @@ anchor_bottom = 1.0
 offset_top = -33.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_nlvil")
 bbcode_enabled = true
 
 [node name="interactNameHint" type="RichTextLabel" parent="mainUI"]
+z_index = 1
+y_sort_enabled = true
 custom_minimum_size = Vector2(0, 32.76)
 layout_mode = 1
 anchors_preset = 14
