@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var radarRotationSpeed:float = 15.0
+var radarRotationSpeed:float = 180.0
 
 
 func _physics_process(delta: float) -> void:
