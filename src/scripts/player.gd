@@ -18,6 +18,42 @@ var direction
 
 var interactingWithObj
 
+
+enum Direction {
+	FORWARD,
+	LEFT,
+	RIGHT,
+	BACKWARD
+	}
+
+var last_direction : Direction = Direction.FORWARD
+var currentDir : Direction = Direction.FORWARD
+var rotationDirection = 0 # positive for clockwise and negative for counterclockwise
+
+var direction_map : Dictionary = {
+	Direction.FORWARD: {
+		Direction.RIGHT: 1,
+		Direction.LEFT: -1,
+		Direction.BACKWARD: 0
+	},
+	Direction.LEFT: {
+		Direction.FORWARD: 1,
+		Direction.BACKWARD: -1,
+		Direction.RIGHT: 0
+	},
+	Direction.RIGHT: {
+		Direction.FORWARD: -1,
+		Direction.BACKWARD: 1,
+		Direction.LEFT: 0
+	},
+	Direction.BACKWARD: {
+		Direction.FORWARD: 0,
+		Direction.RIGHT: -1,
+		Direction.LEFT: 1
+	}
+}
+
+
 func _ready() -> void:
 	GameManager.playerCamera = $cameraPivot/Camera3D
 
@@ -37,6 +73,28 @@ func _input(event: InputEvent) -> void:
 			GameManager.playerCamera.current = true
 		else: # handle wheel and lever controls
 			# handle wheel movement
+			currentDir
+			# update currentDir with WASD
+			if Input.is_action_just_pressed("left"):
+				currentDir = Direction.LEFT
+				rotationDirection = get_rotation_direction(currentDir)
+				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
+				print(rotationDirection)
+			elif Input.is_action_just_pressed("forward"):
+				currentDir = Direction.FORWARD
+				rotationDirection = get_rotation_direction(currentDir)
+				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
+				print(rotationDirection)
+			elif Input.is_action_just_pressed("right"):
+				currentDir = Direction.RIGHT
+				rotationDirection = get_rotation_direction(currentDir)
+				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
+				print(rotationDirection)
+			elif Input.is_action_just_pressed("backward"):
+				currentDir = Direction.BACKWARD
+				rotationDirection = get_rotation_direction(currentDir)
+				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
+				print(rotationDirection)
 			
 			# handle lever movement
 			if event is InputEventMouseMotion:
@@ -107,3 +165,11 @@ func checkInteractRay():
 		# do some updating here to allow interaction and UI updating
 	else:
 		interactingWithObj = null
+
+
+# Function to determine the rotation direction
+func get_rotation_direction(current_direction: Direction) -> int:
+	# Safely access the direction_map, with default value of 0 if not found
+	var direction = direction_map.get(last_direction, {}).get(current_direction, 0)
+	last_direction = current_direction
+	return direction
