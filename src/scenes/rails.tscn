@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dudqj4x8x22wh"]
+[gd_scene load_steps=3 format=3 uid="uid://dytu10m1xuolf"]
 
-[ext_resource type="PackedScene" uid="uid://ds0pdeiqokgyq" path="res://data/models/rails.fbx" id="1_jq85y"]
+[ext_resource type="PackedScene" uid="uid://ds0pdeiqokgyq" path="res://data/models/rails.fbx" id="1_8lulj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf1kp"]
 size = Vector3(107.187, 123.042, 85.8113)
 
-[node name="rails" instance=ExtResource("1_jq85y")]
+[node name="rails" instance=ExtResource("1_8lulj")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="pCylinder31" index="0"]
 
