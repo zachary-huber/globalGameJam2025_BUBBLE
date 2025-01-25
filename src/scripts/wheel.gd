@@ -6,7 +6,7 @@ func _init() -> void:
 	interactHintText = "[center]Sit at chair to steer.[/center]"
 
 func _ready() -> void:
-	GameManager.theWheel = $StaticBody3D/wheelSpinPart # create a reference to this wheel so the game manager can manage it
+	GameManager.theWheel = self # create a reference to this wheel so the game manager can manage it
 	print(GameManager.theWheel)
 
 func _process(delta: float) -> void:

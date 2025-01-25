@@ -33,8 +33,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if theWheel and theLever:
-		currrentRotation = theWheel.rotation.y
-		currentVelocity = theLever.position.x
+		currrentRotation = theWheel.rotation.x
+		currentVelocity = remap(-theLever.position.x, 1.34, 1.72, 0,1) +8.05
 
 
 func _on_timer_timeout() -> void:

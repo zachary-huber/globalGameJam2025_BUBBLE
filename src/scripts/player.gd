@@ -79,22 +79,22 @@ func _input(event: InputEvent) -> void:
 			if Input.is_action_just_pressed("left"):
 				currentDir = Direction.LEFT
 				rotationDirection = get_rotation_direction(currentDir)
-				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
+				GameManager.theWheel.rotation.x -= (rotationDirection * deg_to_rad(10.0))
 				print(rotationDirection)
 			elif Input.is_action_just_pressed("forward"):
 				currentDir = Direction.FORWARD
 				rotationDirection = get_rotation_direction(currentDir)
-				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
+				GameManager.theWheel.rotation.x -= (rotationDirection * deg_to_rad(10.0))
 				print(rotationDirection)
 			elif Input.is_action_just_pressed("right"):
 				currentDir = Direction.RIGHT
 				rotationDirection = get_rotation_direction(currentDir)
-				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
+				GameManager.theWheel.rotation.x -= (rotationDirection * deg_to_rad(10.0))
 				print(rotationDirection)
 			elif Input.is_action_just_pressed("backward"):
 				currentDir = Direction.BACKWARD
 				rotationDirection = get_rotation_direction(currentDir)
-				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
+				GameManager.theWheel.rotation.x -= (rotationDirection * deg_to_rad(10.0))
 				print(rotationDirection)
 			GameManager.subCam.rotation.y = GameManager.currrentRotation
 			
@@ -102,10 +102,11 @@ func _input(event: InputEvent) -> void:
 			if event is InputEventMouseMotion:
 				# get mouse vertical movement
 				mouse_motion = event.relative
-				var mouseY = mouse_motion.y * GameManager.theLever.get_parent().leverSensitivity
+				var mouseY = mouse_motion.y * -GameManager.theLever.leverSensitivity
 				
 				# apply that to the leverPart
 				GameManager.theLever.position.x += mouseY
+				GameManager.theLever.position.x = clamp(GameManager.theLever.position.x, 1.34, 1.72)
 			
 	else: # we are not at the helm
 		if event is InputEventMouseMotion:
