@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx26cybmhbeix"]
+[gd_scene load_steps=8 format=3 uid="uid://cx26cybmhbeix"]
 
 [ext_resource type="PackedScene" uid="uid://ww2phd1vwk7t" path="res://data/models/WaddleBit.fbx" id="1_tn5sr"]
 [ext_resource type="Texture2D" uid="uid://bmjq5b4lj8m84" path="res://data/textures/New folder/lambert1_Base_color.png" id="2_0oufv"]
+[ext_resource type="Texture2D" uid="uid://co0icguks48jp" path="res://data/textures/New folder/lambert1_Mixed_AO.png" id="3_8vj42"]
+[ext_resource type="Texture2D" uid="uid://ckaydvmwxkj0i" path="res://data/textures/New folder/lambert1_Metallic.png" id="4_ygacm"]
+[ext_resource type="Texture2D" uid="uid://devy3rstnp3jj" path="res://data/textures/New folder/lambert1_Normal_OpenGL.png" id="5_24oec"]
+[ext_resource type="Texture2D" uid="uid://clk20idoafjij" path="res://data/textures/New folder/lambert1_Roughness.png" id="6_l12wo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rsga"]
 albedo_texture = ExtResource("2_0oufv")
+metallic = 1.0
+metallic_texture = ExtResource("4_ygacm")
+roughness_texture = ExtResource("6_l12wo")
+normal_enabled = true
+normal_texture = ExtResource("5_24oec")
+ao_enabled = true
+ao_texture = ExtResource("3_8vj42")
 
 [node name="WaddleBit" instance=ExtResource("1_tn5sr")]
 
