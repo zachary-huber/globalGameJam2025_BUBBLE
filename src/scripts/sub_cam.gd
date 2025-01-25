@@ -3,6 +3,8 @@ extends Control
 
 func _ready() -> void:
 	GameManager.subCam = $SubViewportContainer/SubViewport/subCamBody
+	GameManager.subCamViewport = self
+	GameManager.peepholeTexture = $"../peephole"
 
 
 func _process(delta: float) -> void:

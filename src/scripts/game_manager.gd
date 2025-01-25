@@ -17,10 +17,15 @@ var interactHint = null
 var subInteractTarget = null
 
 var isAtHelm = false
+var isPeeping = false
 
 var playerCamera = null
 var chairCamera = null
 var subCam = null
+
+var peepholeTexture = null
+var subCamViewport = null
+
 
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

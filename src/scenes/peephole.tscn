@@ -1,5 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://h4sroor8hl43"]
+[gd_scene load_steps=2 format=3 uid="uid://cpf7bfn13h5rj"]
 
 [ext_resource type="PackedScene" uid="uid://dpob82pndcliq" path="res://data/models/peephole.fbx" id="1_7ilie"]
 
-[node name="peephole" instance=ExtResource("1_7ilie")]
+[node name="peephole_model" instance=ExtResource("1_7ilie")]

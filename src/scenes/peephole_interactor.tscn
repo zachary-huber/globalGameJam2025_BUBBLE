@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtb24r831gvtd"]
+
+[ext_resource type="Script" path="res://src/scripts/peephole.gd" id="1_ym6gk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_idefy"]
+
+[node name="peephole" type="Node3D"]
+script = ExtResource("1_ym6gk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_idefy")
