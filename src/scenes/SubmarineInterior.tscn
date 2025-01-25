@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg8vbv2e3tbra"]
+[gd_scene load_steps=9 format=3 uid="uid://bg8vbv2e3tbra"]
 
-[ext_resource type="PackedScene" path="res://src/scenes/sub_base.tscn" id="1_t0sao"]
+[ext_resource type="PackedScene" uid="uid://b73qqrg1udjwf" path="res://src/scenes/sub_base.tscn" id="1_t0sao"]
 [ext_resource type="PackedScene" path="res://src/scenes/steps.tscn" id="2_vpjjt"]
-[ext_resource type="PackedScene" path="res://src/scenes/rails.tscn" id="3_j2447"]
+[ext_resource type="PackedScene" uid="uid://dytu10m1xuolf" path="res://src/scenes/rails.tscn" id="3_j2447"]
+[ext_resource type="PackedScene" uid="uid://p3y7wr3sw21j" path="res://src/scenes/control_panel.tscn" id="4_3wxdj"]
+[ext_resource type="PackedScene" uid="uid://rfl1nsg61e3g" path="res://src/scenes/chair.tscn" id="5_u1lfx"]
+[ext_resource type="PackedScene" uid="uid://h4sroor8hl43" path="res://src/scenes/peephole.tscn" id="6_3bo6m"]
+[ext_resource type="PackedScene" uid="uid://1n84tdkiwd45" path="res://src/scenes/frame.tscn" id="7_ru2lq"]
+[ext_resource type="PackedScene" uid="uid://jo0w3dhuqalt" path="res://data/models/O2tank.fbx" id="8_3tysw"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -11,3 +16,13 @@
 [node name="steps" parent="." instance=ExtResource("2_vpjjt")]
 
 [node name="rails" parent="." instance=ExtResource("3_j2447")]
+
+[node name="ControlPanel" parent="." instance=ExtResource("4_3wxdj")]
+
+[node name="chair" parent="." instance=ExtResource("5_u1lfx")]
+
+[node name="peephole" parent="." instance=ExtResource("6_3bo6m")]
+
+[node name="frame" parent="." instance=ExtResource("7_ru2lq")]
+
+[node name="O2tank" parent="." instance=ExtResource("8_3tysw")]

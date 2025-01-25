@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyokhj73xmjfm"]
+
+[ext_resource type="PackedScene" uid="uid://jo0w3dhuqalt" path="res://data/models/O2tank.fbx" id="1_4kahg"]
+
+[node name="O2tank" instance=ExtResource("1_4kahg")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b17iipjv763gl"]
+
+[ext_resource type="PackedScene" uid="uid://m07ouis07s1q" path="res://data/models/needle.fbx" id="1_l4npm"]
+
+[node name="needle" instance=ExtResource("1_l4npm")]

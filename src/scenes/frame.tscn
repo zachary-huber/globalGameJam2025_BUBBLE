@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://1n84tdkiwd45"]
+
+[ext_resource type="PackedScene" uid="uid://bu11wgmf17mci" path="res://data/models/frame.fbx" id="1_ut10w"]
+
+[node name="frame" instance=ExtResource("1_ut10w")]
