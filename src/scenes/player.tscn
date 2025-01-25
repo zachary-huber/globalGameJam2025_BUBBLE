@@ -24,3 +24,4 @@ current = true
 transform = Transform3D(1, 0, 0, 0, -2.18557e-07, -1, 0, 5, -4.37114e-08, 0, 0, -0.579727)
 visible = false
 collide_with_areas = true
+collide_with_bodies = false
