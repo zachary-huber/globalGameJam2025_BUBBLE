@@ -1,0 +1,62 @@
+SUB CONTROLS:
+	[forward/back] LEVER
+		foward -> mouse up
+		back   -> mouse down
+
+	[Turning] WHEEL
+		RIGHT -> WDSA
+		LEFT  -> WASD
+
+RADAR: uses spinning raycast
+
+
+MAP: Static PNG image for navigation
+	Has points of interest and whole area that we are exploring
+
+
+	We might just tell the player the next location of interest
+	Actually they will explore the area without guidance other than the RADAR
+
+
+CONTROL PANEL:
+	- Above the STEERING WHEEL -> X coordinate
+	- Above the LEVER -> Y coordinate
+
+
+PROXIMITY DETECTOR:
+	Use 8 raycasts on ship
+
+
+BUBBLES:
+Bubbles refill oxygen tank
+	--> UI or diagetic feature to see oxygen
+
+Bubbles glow blue and if we get close we can hit collect and replenish oxygen
+
+
+GOAL:
+Main goal is looking for a GOLDEN BUBBLE
+
+
+SHIP DAMAGE:
+preset areas on the ship that have particle emitters and we can go close and see prompt to "fix"
+	- hold E for five seconds to fix
+
+	For now: Start with limited amount of patches (10) to apply to fixes.
+
+MONSTERS:
+	area3D, have a couple different areas
+	If entered monster area -> ship takes damage
+
+
+PORTHOLE / PEEPHOLE:
+	- See things outside ship
+	- Random event?
+		- fish swimming around
+		- see bubbles hanging out
+		- coral
+		- broken ship parts
+		- darkness
+		- gets spookier as we get closer to the end GOLDEN BUBBLE
+		- as we get closer to the GOLDEN BUBBLE we get caught by the creature
+	- Interactions
