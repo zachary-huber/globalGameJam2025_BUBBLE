@@ -6,7 +6,8 @@ func _init() -> void:
 	interactHintText = "[center]Turn wheel with [E] and [Q][/center]"
 
 func _ready() -> void:
-	pass
+	GameManager.theWheel = self # create a reference to this wheel so the game manager can manage it
+	print(GameManager.theWheel)
 
 func _process(delta: float) -> void:
 	pass

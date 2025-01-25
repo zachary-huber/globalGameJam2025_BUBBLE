@@ -85,7 +85,8 @@ size_flags_vertical = 3
 text = "Rotation:
 Velocity:
 Ship Health:
-O2:"
+O2:
+Time: "
 
 [node name="captainChair" parent="." instance=ExtResource("6_ntipw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.65682, 8.51935, -1.15756)
