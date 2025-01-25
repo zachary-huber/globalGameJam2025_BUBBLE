@@ -107,8 +107,13 @@ func _input(event: InputEvent) -> void:
 				# apply that to the leverPart
 				GameManager.theLever.position.x += mouseY
 				GameManager.theLever.position.x = clamp(GameManager.theLever.position.x, 1.34, 1.72)
-			
-	else: # we are not at the helm
+	elif GameManager.isPeeping:
+		# handle the peephole controls
+		if event.is_action_pressed("escape"):
+			GameManager.isPeeping = false
+			GameManager.subCamViewport.visible = false
+			GameManager.peepholeTexture.visible = false
+	else:  # we are not at the helm or peephole
 		if event is InputEventMouseMotion:
 			updateCameraMotion(event)
 			checkInteractRay()
