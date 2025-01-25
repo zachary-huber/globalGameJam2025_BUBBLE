@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dudqj4x8x22wh"]
+
+[ext_resource type="PackedScene" uid="uid://ds0pdeiqokgyq" path="res://data/models/rails.fbx" id="1_jq85y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf1kp"]
+size = Vector3(107.187, 123.042, 85.8113)
+
+[node name="rails" instance=ExtResource("1_jq85y")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pCylinder31" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pCylinder31/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.003, 36.0405, -61.7348)
+shape = SubResource("BoxShape3D_yf1kp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="pCylinder31/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.003, 36.0405, 61.6009)
+shape = SubResource("BoxShape3D_yf1kp")

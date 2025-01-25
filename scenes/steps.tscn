@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtv2x1n60xgwo"]
+
+[ext_resource type="PackedScene" uid="uid://8id5mwdqd5lb" path="res://data/models/steps.fbx" id="1_eek3q"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s14kb"]
+points = PackedVector3Array(76.305, -16.3197, -24.6288, 76.305, -16.3197, 24.6288, 76.305, -13.2554, -24.6288, 92.5008, -16.3197, -24.6288, 76.305, -13.2554, 24.6288, 92.5008, -16.3197, 24.6288, 92.6452, -9.85356, -24.6288, 158.255, -9.64184, -24.6288, 92.6452, -9.85356, 24.6288, 158.255, -9.64184, 24.6288, 108.993, -6.57662, -24.6288, 158.255, -6.57662, -24.6288, 108.993, -6.57662, 24.6288, 158.255, -6.57662, 24.6288)
+
+[node name="steps" instance=ExtResource("1_eek3q")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pCube14" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pCube14/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_s14kb")
