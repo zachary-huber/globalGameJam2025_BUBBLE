@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://p3y7wr3sw21j"]
+[gd_scene load_steps=2 format=3 uid="uid://jw3uoivuv0jw"]
 
 [ext_resource type="PackedScene" uid="uid://cyfy3gf7c1ewk" path="res://data/models/ControlPanel.fbx" id="1_4h5xo"]
 
 [node name="ControlPanel" instance=ExtResource("1_4h5xo")]
+
+[node name="pCube7" parent="." index="3"]
+transform = Transform3D(0.0255148, 0.000885423, 0, -0.014731, 0.0015336, 0, 0, 0, 0.0155957, -0.947981, -0.0905467, 0.123934)
+visible = false

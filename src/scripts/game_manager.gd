@@ -15,6 +15,8 @@ var theWheel = null
 var theLever = null
 var interactHint = null
 var subInteractTarget = null
+var xCoord = null
+var yCoord = null
 
 var isAtHelm = false
 var isPeeping = false
@@ -57,6 +59,9 @@ func _on_timer_timeout() -> void:
 	"Bubbles Found: " + str(bubbleCollected) + "\n"
 	
 	updateSubCam()
+	
+	xCoord.text = "X:" + str(subCam.position.x).pad_decimals(2)
+	yCoord.text = "Y:" + str(subCam.position.z).pad_decimals(2)
 
 func updateSubCam():
 	subCam.velocity = subCam.basis * Vector3.RIGHT * -currentVelocity
