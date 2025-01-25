@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ephsf1kd5v08"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ohyut"]
+size = Vector3(40, 1, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_23fkr"]
+size = Vector3(40, 1, 40)
+
+[node name="oceanFloorEnvironment" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_ohyut")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_23fkr")

@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=5 format=3 uid="uid://cvw72ka1vhtnm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_56pse"]
+size = Vector3(20, 10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pc186"]
+size = Vector3(20, 10, 10)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_odua2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6yt7k"]
 
 [node name="main3D" type="Node3D"]
+
+[node name="submarine" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="submarine"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="submarine/StaticBody3D"]
+mesh = SubResource("BoxMesh_56pse")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="submarine/StaticBody3D"]
+shape = SubResource("BoxShape3D_pc186")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="submarine"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="submarine/CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_odua2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="submarine/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_6yt7k")
