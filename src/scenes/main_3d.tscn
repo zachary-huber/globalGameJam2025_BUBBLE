@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=13 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
@@ -14,6 +14,9 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vjm15"]
 radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ghlak"]
+radius = 4.0
 
 [node name="main3D" type="Node3D"]
 
@@ -133,3 +136,11 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
 shape = SubResource("SphereShape3D_vjm15")
+
+[node name="collectArea" type="Area3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea"]
+shape = SubResource("SphereShape3D_ghlak")
+
+[node name="radarScanner" type="RayCast3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+transform = Transform3D(-4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 0, 0, 1, 0, 0, 0)

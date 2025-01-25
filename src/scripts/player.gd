@@ -95,6 +95,7 @@ func _input(event: InputEvent) -> void:
 				rotationDirection = get_rotation_direction(currentDir)
 				GameManager.theWheel.rotation.y -= (rotationDirection * deg_to_rad(10.0))
 				print(rotationDirection)
+			GameManager.subCam.rotation.y = GameManager.currrentRotation
 			
 			# handle lever movement
 			if event is InputEventMouseMotion:
