@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://8se60n4d7mf5"]
+
+[ext_resource type="Script" path="res://src/scripts/wheel.gd" id="1_gbc7v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uol0q"]
+size = Vector3(2, 0.2, 0.5)
+
+[node name="wheel" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_uol0q")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+script = ExtResource("1_gbc7v")
