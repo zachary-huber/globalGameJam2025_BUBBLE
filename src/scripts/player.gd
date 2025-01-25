@@ -16,10 +16,20 @@ var direction
 
 @onready var playerCameraPivot = $cameraPivot
 
+var interactingWithObj
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	# check if player raycast is colliding with stuff
+	if $cameraPivot/interactCast.is_colliding():
+		interactingWithObj = $cameraPivot/interactCast.get_collider()
+		print("Can interact with: ", interactingWithObj.name)
+		# do some updating here to allow interaction and UI updating
+	else:
+		interactingWithObj = null
 	
 	move_and_slide()
 
@@ -38,6 +48,8 @@ func _input(event: InputEvent) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	handleObjectInteractions(event)
 
 
 func updateCameraMotion(event) -> void:
@@ -45,3 +57,15 @@ func updateCameraMotion(event) -> void:
 	playerCameraPivot.rotation.y -= mouse_motion.x * camera_sensitivity
 	playerCameraPivot.rotation.x -= mouse_motion.y * camera_sensitivity
 	playerCameraPivot.rotation.x = clamp(playerCameraPivot.rotation.x, deg_to_rad(-camera_look_angle_max), deg_to_rad(camera_look_angle_max))
+
+
+# if the player is looking at something interactable and they press "interact" then they activate the interactable
+# interaction behavior is handled by the object itself
+func handleObjectInteractions(event):
+	if interactingWithObj: # don't bother processing if there is no interactable
+		if event.is_action_pressed("interact"):
+			if interactingWithObj:
+				interactingWithObj.get_parent().interact()
+		elif event.is_action_pressed("alt_interact"):
+			if interactingWithObj:
+				interactingWithObj.get_parent().alt_interact()
