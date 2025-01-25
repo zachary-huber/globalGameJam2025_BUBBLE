@@ -35,6 +35,18 @@ func _input(event: InputEvent) -> void:
 			# exit the helm mode
 			GameManager.isAtHelm = false
 			GameManager.playerCamera.current = true
+		else: # handle wheel and lever controls
+			# handle wheel movement
+			
+			# handle lever movement
+			if event is InputEventMouseMotion:
+				# get mouse vertical movement
+				mouse_motion = event.relative
+				var mouseY = mouse_motion.y * GameManager.theLever.get_parent().leverSensitivity
+				
+				# apply that to the leverPart
+				GameManager.theLever.position.x += mouseY
+			
 	else: # we are not at the helm
 		if event is InputEventMouseMotion:
 			updateCameraMotion(event)
