@@ -50,5 +50,5 @@ func _on_timer_timeout() -> void:
 	updateSubCam()
 
 func updateSubCam():
-	subCam.velocity = subCam.basis * Vector3 * currentVelocity
+	subCam.velocity = subCam.basis * Vector3.FORWARD * currentVelocity
 	subCam.rotation.y = currrentRotation
