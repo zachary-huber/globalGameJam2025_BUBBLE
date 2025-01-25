@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=13 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
@@ -7,8 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 [ext_resource type="Script" path="res://src/scripts/chair_cam.gd" id="5_pvmt8"]
 [ext_resource type="PackedScene" uid="uid://d1levm7wo2lhf" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
+[ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
+[ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vjm15"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ghlak"]
+radius = 4.0
 
 [node name="main3D" type="Node3D"]
 
@@ -95,3 +103,44 @@ Velocity:
 Ship Health:
 O2:
 Time: "
+
+[node name="SubCam" type="Control" parent="mainUI"]
+anchors_preset = 0
+offset_left = 679.0
+offset_top = 1.0
+offset_right = 768.0
+offset_bottom = 83.0
+script = ExtResource("8_y5vig")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="mainUI/SubCam"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="mainUI/SubCam/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(89, 82)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.71171, 13.4352)
+script = ExtResource("9_sq83h")
+
+[node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+shape = SubResource("SphereShape3D_vjm15")
+
+[node name="collectArea" type="Area3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea"]
+shape = SubResource("SphereShape3D_ghlak")
+
+[node name="radarScanner" type="RayCast3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+transform = Transform3D(-4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 0, 0, 1, 0, 0, 0)

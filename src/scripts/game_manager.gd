@@ -17,7 +17,7 @@ var isAtHelm = false
 
 var playerCamera = null
 var chairCamera = null
-
+var subCam = null
 
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -46,3 +46,11 @@ func _on_timer_timeout() -> void:
 	"Ship Health: " + str(shipHealth) + '\n' + \
 	"O2: " + str(o2) + '\n' + \
 	"Time: " + str(timePlayed) + '\n'
+	
+	updateSubCam()
+
+func updateSubCam():
+	subCam.velocity = subCam.basis * Vector3.RIGHT * -currentVelocity
+	subCam.rotation.y = currrentRotation
+	
+	print(subCam.velocity)
