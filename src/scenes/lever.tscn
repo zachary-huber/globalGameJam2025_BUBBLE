@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://1ygys75xohd7"]
+[gd_scene load_steps=8 format=3 uid="uid://1ygys75xohd7"]
+
+[ext_resource type="Script" path="res://src/scripts/lever.gd" id="1_v22ur"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5ji1"]
 albedo_color = Color(0.62137, 0.338731, 0.0280959, 1)
@@ -15,7 +17,11 @@ albedo_color = Color(0.644507, 0.0772335, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flu8x"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_urdnu"]
+size = Vector3(1.85699, 0.80542, 0.669067)
+
 [node name="lever" type="Node3D"]
+script = ExtResource("1_v22ur")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -46,3 +52,9 @@ transform = Transform3D(0.0997646, 0, 0, 0, -1.8064e-08, 1, 0, -0.413256, -4.371
 transform = Transform3D(0.558397, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_flu8x")
 mesh = SubResource("BoxMesh_7l8mj")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0989685, 0.209999, -0.0189819)
+shape = SubResource("BoxShape3D_urdnu")

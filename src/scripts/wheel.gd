@@ -1,11 +1,12 @@
-extends Node3D
+extends Interactable
 
 @export var rotationSpeed:float = 15.0
-var interactHintText:String = "[center]Turn wheel with [E] and [Q][/center]"
+
+func _init() -> void:
+	interactHintText = "[center]Turn wheel with [E] and [Q][/center]"
 
 func _ready() -> void:
 	pass
-
 
 func _process(delta: float) -> void:
 	pass
@@ -18,7 +19,9 @@ func rotateWheel(direction:String):
 
 
 func interact():
+	super()
 	rotateWheel("right")
 
 func alt_interact():
+	super()
 	rotateWheel("left")
