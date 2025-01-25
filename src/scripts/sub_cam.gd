@@ -6,4 +6,4 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	pass
+	$topDownView/SubViewport/Camera3D.global_position = $SubViewportContainer/SubViewport/subCamBody.global_position + Vector3(4.2, 10.6, 13.3)

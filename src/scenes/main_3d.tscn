@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=14 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d1levm7wo2lhf" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
+[ext_resource type="PackedScene" uid="uid://bg8vbv2e3tbra" path="res://src/scenes/SubmarineInterior.tscn" id="10_65vc4"]
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
 
@@ -43,7 +44,7 @@ transform = Transform3D(-4.2222e-08, -0.258819, 0.965926, -1.13133e-08, 0.965926
 script = ExtResource("5_pvmt8")
 
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.90841, 0.0235605)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00957, 5.50172, -22.4398)
 
 [node name="oceanFloorEnvironment" parent="." instance=ExtResource("4_aguwm")]
 
@@ -117,13 +118,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = 4.0
+offset_right = -1.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="mainUI/SubCam/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(89, 82)
+size = Vector2i(127, 117)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
@@ -144,3 +149,28 @@ shape = SubResource("SphereShape3D_ghlak")
 
 [node name="radarScanner" type="RayCast3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
 transform = Transform3D(-4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 0, 0, 1, 0, 0, 0)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5
+
+[node name="topDownView" type="SubViewportContainer" parent="mainUI/SubCam"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -133.0
+offset_top = 114.0
+offset_right = 2.0
+offset_bottom = 249.0
+grow_horizontal = 0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="mainUI/SubCam/topDownView"]
+handle_input_locally = false
+size = Vector2i(135, 135)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/topDownView/SubViewport"]
+transform = Transform3D(-2.30255e-08, -0.850012, 0.526763, -3.71552e-08, 0.526763, 0.850012, -1, 3.07906e-15, -4.37114e-08, 4.1827, 10.6639, 13.3605)
+
+[node name="submarine2" parent="." instance=ExtResource("10_65vc4")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0.369848, 4.29777, -21.6802)
