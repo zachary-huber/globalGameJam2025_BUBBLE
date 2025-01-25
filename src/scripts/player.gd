@@ -63,9 +63,18 @@ func updateCameraMotion(event) -> void:
 # interaction behavior is handled by the object itself
 func handleObjectInteractions(event):
 	if interactingWithObj: # don't bother processing if there is no interactable
-		if event.is_action_pressed("interact"):
-			if interactingWithObj:
-				interactingWithObj.get_parent().interact()
-		elif event.is_action_pressed("alt_interact"):
-			if interactingWithObj:
-				interactingWithObj.get_parent().alt_interact()
+		if interactingWithObj.get_parent().has_method("interact"):
+			setInteractionHint(interactingWithObj.get_parent().interactHintText) 
+			if event.is_action_pressed("interact"):
+				if interactingWithObj:
+					interactingWithObj.get_parent().interact()
+			elif event.is_action_pressed("alt_interact"):
+				if interactingWithObj:
+					interactingWithObj.get_parent().alt_interact()
+		else:
+			setInteractionHint("")
+	else:
+		setInteractionHint("")
+
+func setInteractionHint(hintText):
+	get_tree().root.get_node("main3D/mainUI/interactHint").text = hintText
