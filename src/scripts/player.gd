@@ -18,38 +18,25 @@ var direction
 
 var interactingWithObj
 
+func _ready() -> void:
+	GameManager.playerCamera = self
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	# check if player raycast is colliding with stuff
-	if $cameraPivot/interactCast.is_colliding():
-		interactingWithObj = $cameraPivot/interactCast.get_collider()
-		print("Can interact with: ", interactingWithObj.name)
-		# do some updating here to allow interaction and UI updating
-	else:
-		interactingWithObj = null
 	
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		updateCameraMotion(event)
-	
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	input_dir = Input.get_vector("left", "right", "forward", "backward")
-	direction = (playerCameraPivot.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		checkInteractRay()
 	
 	handleObjectInteractions(event)
+	handlePlayerMovement()
+	
+	# add input here to exit chair camera view at the helm and handle the helm input
 
 
 func updateCameraMotion(event) -> void:
@@ -79,3 +66,27 @@ func handleObjectInteractions(event):
 func setInteractionHint(hintText, nameText):
 	get_tree().root.get_node("main3D/mainUI/interactHint").text = hintText
 	get_tree().root.get_node("main3D/mainUI/interactNameHint").text = "[center]" + nameText + "[/center]"
+
+func handlePlayerMovement():
+	# Player jumping
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	
+	# Player movement
+	input_dir = Input.get_vector("left", "right", "forward", "backward")
+	direction = (playerCameraPivot.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+func checkInteractRay():
+	# check if player raycast is colliding with stuff
+	if $cameraPivot/interactCast.is_colliding():
+		interactingWithObj = $cameraPivot/interactCast.get_collider()
+		print("Can interact with: ", interactingWithObj.name)
+		# do some updating here to allow interaction and UI updating
+	else:
+		interactingWithObj = null

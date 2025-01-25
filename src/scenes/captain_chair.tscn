@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1levm7wo2lhf"]
 
-[ext_resource type="Script" path="res://captain_chair.gd" id="1_8ycp7"]
+[ext_resource type="Script" path="res://src/scripts/captain_chair.gd" id="1_qkyqg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_14jfg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q6jkm"]
 
 [node name="captainChair" type="Node3D"]
-script = ExtResource("1_8ycp7")
+script = ExtResource("1_qkyqg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

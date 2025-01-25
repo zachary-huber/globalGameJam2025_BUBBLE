@@ -13,6 +13,11 @@ var shipHealth:float
 var theWheel = null
 var theLever = null
 
+var isAtHelm = false
+
+var playerCamera = null
+var chairCamera = null
+
 
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
