@@ -1,7 +1,6 @@
 extends Node3D
 
 @export var rotationSpeed:float = 15.0
-
 var interactHintText:String = "[center]Turn wheel with [E] and [Q][/center]"
 
 func _ready() -> void:
