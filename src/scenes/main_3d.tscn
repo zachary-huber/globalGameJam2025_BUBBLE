@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=6 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
+[ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 
@@ -16,6 +17,9 @@ transform = Transform3D(0.727246, -3.00025e-08, 0.686377, -0.686377, -3.17889e-0
 light_energy = 2.297
 spot_range = 19.0737
 spot_angle = 20.9804
+
+[node name="wheel" parent="submarine" instance=ExtResource("2_70dgk")]
+transform = Transform3D(3.13316e-17, 1, 2.98023e-08, 4.37114e-08, 2.98023e-08, -1, -1, 2.69587e-15, -4.37114e-08, -9.08567, 1.75676, -0.326861)
 
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.90841, 0.0235605)
