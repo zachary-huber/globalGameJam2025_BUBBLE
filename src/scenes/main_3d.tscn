@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=8 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
@@ -8,12 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://d1levm7wo2lhf" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by567"]
-bg_color = Color(0.129412, 0.129412, 0.129412, 0.6)
-
-[sub_resource type="Theme" id="Theme_uy58j"]
-Panel/styles/panel = SubResource("StyleBoxFlat_by567")
 
 [node name="main3D" type="Node3D"]
 
@@ -63,14 +57,16 @@ grow_horizontal = 2
 grow_vertical = 0
 bbcode_enabled = true
 
-[node name="Panel" type="Panel" parent="mainUI/interactHint"]
+[node name="interactNameHint" type="RichTextLabel" parent="mainUI"]
+custom_minimum_size = Vector2(0, 32.76)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_uy58j")
+bbcode_enabled = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainUI"]
 layout_mode = 0
