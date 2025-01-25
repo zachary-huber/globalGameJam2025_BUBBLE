@@ -19,7 +19,7 @@ var direction
 var interactingWithObj
 
 func _ready() -> void:
-	GameManager.playerCamera = self
+	GameManager.playerCamera = $cameraPivot/Camera3D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -29,14 +29,19 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		updateCameraMotion(event)
-		checkInteractRay()
-	
-	handleObjectInteractions(event)
-	handlePlayerMovement()
-	
 	# add input here to exit chair camera view at the helm and handle the helm input
+	if GameManager.isAtHelm:
+		if event.is_action_pressed("escape"):
+			# exit the helm mode
+			GameManager.isAtHelm = false
+			GameManager.playerCamera.current = true
+	else: # we are not at the helm
+		if event is InputEventMouseMotion:
+			updateCameraMotion(event)
+			checkInteractRay()
+		
+		handleObjectInteractions(event)
+		handlePlayerMovement()
 
 
 func updateCameraMotion(event) -> void:
