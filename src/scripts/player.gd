@@ -139,6 +139,7 @@ func _input(event: InputEvent) -> void:
 	handlePlayerMovement()
 	
 	if event.is_action_pressed("scaryTest"):
+		print("Testing Scary things...")
 		GameManager.doScaryThing()
 
 

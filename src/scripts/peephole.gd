@@ -1,7 +1,6 @@
 extends Interactable
 
 
-var timeLookStart = 0
 
 func _ready() -> void:
 	interactHintText = "[center]Press [E] to look outside...[/center]"
@@ -9,11 +8,15 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if GameManager.isPeeping:
-		if GameManager.timePlayed - timeLookStart > 10:
+		print("Peep time: ", GameManager.timePlayed - GameManager.timeLookStart)
+		print("timeLookStart: ", GameManager.timeLookStart)
+		print("timePlayed: ", GameManager.timePlayed)
+		if GameManager.timePlayed - GameManager.timeLookStart > 10:
+			print("You looked TOO LONG!")
 			GameManager.doScaryThing()
 
 func interact():
-	timeLookStart = GameManager.timePlayed
+	GameManager.timeLookStart = GameManager.timePlayed
 	print("Looking out the peephole.")
 	
 	GameManager.isPeeping = true

@@ -8,8 +8,9 @@ var rng = RandomNumberGenerator.new() # This generates random numbers
 var currrentRotation:float
 var currentVelocity:float
 var o2:float = 85
-var shipHealth:float
+var shipHealth:float = 20
 var bubbleCollected:int = 0
+var timeLookStart = null
 
 var theWheel = null
 var theLever = null
@@ -33,6 +34,7 @@ var subCamViewport = null
 
 var isPaused:bool = false
 var pauseMenu = null
+var isScaryHappening = false
 
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
@@ -67,9 +69,9 @@ func _on_timer_timeout() -> void:
 	get_tree().root.get_node("main3D/mainUI/VBoxContainer/debugInfo").text  = \
 	"Rotation: " + str(currrentRotation).pad_decimals(2) + '\n' + \
 	"Velocity: " + str(currentVelocity).pad_decimals(2) + '\n' + \
-	"Ship Health: " + str(shipHealth) + '\n' + \
-	"O2: " + str(o2) + '\n' + \
-	"Time: " + str(timePlayed) + '\n' + \
+	"Ship Health: " + str(shipHealth).pad_decimals(0) + '\n' + \
+	"O2: " + str(o2).pad_decimals(2) + '\n' + \
+	"Time: " + str(timePlayed).pad_decimals(0) + '\n' + \
 	"Bubbles Found: " + str(bubbleCollected) + "\n" + \
 	"isPeeping: " + str(isPeeping) + "\n"
 	
@@ -96,25 +98,27 @@ func extractBubble():
 			GameManager.subInteractTarget = null
 
 func doScaryThing():
-	randomize()
-	var r = GameManager.rng.randi_range(0,10)
-	
-	match r:
-		0: pass # hull damage
-		1: pass # monster jump scare 1
-		2: pass # monster jump scare 2
-		3: pass # monster jump scare 3
-		4: pass # monster jump scare 4
-		5: GameManager.playSound("")
-		6: pass # maybe we just need the above cases
-		7: pass
-		8: pass
-		9: pass
-		10: pass
-		_: 
-			print("This should not happen... but we will re-roll the scary thing")
-			doScaryThing()
-	print("Rolled [r] as: ", r)
+	if !GameManager.isScaryHappening:
+		GameManager.isScaryHappening = true
+		randomize()
+		var r = GameManager.rng.randi_range(0,10)
+		
+		match r:
+			0: pass # hull damage
+			1: pass # monster jump scare 1
+			2: pass # monster jump scare 2
+			3: pass # monster jump scare 3
+			4: pass # monster jump scare 4
+			5: pass # play scary sound
+			6: pass # maybe we just need the above cases
+			7: pass
+			8: pass
+			9: pass
+			10: pass
+			_: 
+				print("This should not happen... but we will re-roll the scary thing")
+				doScaryThing()
+		print("Rolled [r] as: ", r)
 
 func startLore():
 	#$Timer.start()
