@@ -12,5 +12,9 @@ func _process(delta: float) -> void:
 	pass
 
 func interact():
-	GameManager.chairCamera.current = true
-	GameManager.isAtHelm = true
+	if GameManager.isAtHelm == true:
+		GameManager.isAtHelm = false
+		GameManager.playerCamera.current = true
+	else:
+		GameManager.chairCamera.current = true
+		GameManager.isAtHelm = true

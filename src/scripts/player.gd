@@ -120,8 +120,9 @@ func _input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
 		elif event.is_action_pressed("interact"):
-			if GameManager.subInteractTarget and GameManager.subInteractTarget.has_method("bubble"):
-				GameManager.subInteractTarget.collectBubble()
+			if GameManager.subInteractTarget:
+				if GameManager.subInteractTarget.has_method("bubble"):
+					GameManager.subInteractTarget.collectBubble()
 	else:  # we are not at the helm or peephole
 		if event is InputEventMouseMotion:
 			updateCameraMotion(event)

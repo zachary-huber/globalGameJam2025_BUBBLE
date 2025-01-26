@@ -1,22 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3wa1t4prpd0l"]
+[gd_scene load_steps=10 format=3 uid="uid://1ygys75xohd7"]
 
 [ext_resource type="PackedScene" uid="uid://5sriinl02lir" path="res://data/models/lever.fbx" id="1_48yh6"]
 [ext_resource type="Script" path="res://src/scripts/lever.gd" id="1_v22ur"]
-[ext_resource type="Texture2D" uid="uid://dqhojkp2h5udg" path="res://data/textures/lever/standardSurface1_Base_color.png" id="3_ea7d8"]
-[ext_resource type="Texture2D" uid="uid://cm580crp4vuhy" path="res://data/textures/lever/standardSurface1_Mixed_AO.png" id="4_b47uw"]
-[ext_resource type="Texture2D" uid="uid://tygft0n3ou37" path="res://data/textures/lever/standardSurface1_Metallic.png" id="5_yfx85"]
-[ext_resource type="Texture2D" uid="uid://cjcvxruiyaa8n" path="res://data/textures/lever/standardSurface1_Normal_OpenGL.png" id="6_0n2d5"]
-[ext_resource type="Texture2D" uid="uid://dqaxelkicduai" path="res://data/textures/lever/standardSurface1_Roughness.png" id="7_qxvde"]
+[ext_resource type="Texture2D" uid="uid://dqhojkp2h5udg" path="res://data/textures/lever/standardSurface1_Base_color.png" id="3_b1xmg"]
+[ext_resource type="Texture2D" uid="uid://cm580crp4vuhy" path="res://data/textures/lever/standardSurface1_Mixed_AO.png" id="4_5nokf"]
+[ext_resource type="Texture2D" uid="uid://tygft0n3ou37" path="res://data/textures/lever/standardSurface1_Metallic.png" id="5_260x3"]
+[ext_resource type="Texture2D" uid="uid://cjcvxruiyaa8n" path="res://data/textures/lever/standardSurface1_Normal_OpenGL.png" id="6_gas7y"]
+[ext_resource type="Texture2D" uid="uid://dqaxelkicduai" path="res://data/textures/lever/standardSurface1_Roughness.png" id="7_e5b2s"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4oh11"]
-albedo_texture = ExtResource("3_ea7d8")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rd44a"]
+albedo_texture = ExtResource("3_b1xmg")
 metallic = 1.0
-metallic_texture = ExtResource("5_yfx85")
-roughness_texture = ExtResource("7_qxvde")
+metallic_texture = ExtResource("5_260x3")
+roughness_texture = ExtResource("7_e5b2s")
 normal_enabled = true
-normal_texture = ExtResource("6_0n2d5")
+normal_texture = ExtResource("6_gas7y")
 ao_enabled = true
-ao_texture = ExtResource("4_b47uw")
+ao_texture = ExtResource("4_5nokf")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tmaxn"]
 
@@ -24,7 +24,7 @@ ao_texture = ExtResource("4_b47uw")
 script = ExtResource("1_v22ur")
 
 [node name="pCylinder28" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_4oh11")
+surface_material_override/0 = SubResource("StandardMaterial3D_rd44a")
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 
