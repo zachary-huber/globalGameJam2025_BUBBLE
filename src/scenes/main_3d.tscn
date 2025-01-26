@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=49 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
@@ -31,6 +31,7 @@
 [ext_resource type="QuadMesh" uid="uid://bjeotk6opbknb" path="res://src/fish/blob.tres" id="29_oyp3l"]
 [ext_resource type="QuadMesh" uid="uid://drhs60b2mtxj8" path="res://src/fish/fishy.tres" id="30_7lkx1"]
 [ext_resource type="QuadMesh" uid="uid://di3f4xtql8k71" path="res://src/fish/Puffer.tres" id="31_gj8sj"]
+[ext_resource type="PackedScene" path="res://src/scenes/chomper_plant.tscn" id="32_f5t8a"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
 
@@ -678,7 +679,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 45.5368, 3, 6.95114)
 bubbleType = 1
 
 [node name="Node3D" parent="." instance=ExtResource("27_8b1o7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18943, 0.5, 5.9615)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18943, 5.15076, 5.9615)
 
 [node name="fishy" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8526, 0)
@@ -730,6 +731,18 @@ fishType = ExtResource("30_7lkx1")
 [node name="Node3D13" parent="fishy" instance=ExtResource("28_5k8fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0581, 0.5, -84.1693)
 fishType = ExtResource("30_7lkx1")
+
+[node name="ChomperPlant" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, 34.0413, 0.938531, -13.0143)
+
+[node name="ChomperPlant2" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, 73.389, 0.938531, -82.5769)
+
+[node name="ChomperPlant3" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, -48.8611, 0.938531, 5.9447)
+
+[node name="ChomperPlant4" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, -42.8475, 0.938531, 85.4259)
 
 [connection signal="area_entered" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_entered"]
 [connection signal="area_exited" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_exited"]
