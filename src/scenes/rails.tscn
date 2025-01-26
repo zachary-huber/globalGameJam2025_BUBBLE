@@ -1,11 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://dytu10m1xuolf"]
+[gd_scene load_steps=9 format=3 uid="uid://dytu10m1xuolf"]
 
 [ext_resource type="PackedScene" uid="uid://ds0pdeiqokgyq" path="res://data/models/rails.fbx" id="1_8lulj"]
+[ext_resource type="Texture2D" uid="uid://b26yw8mmntrpp" path="res://data/textures/rails/standardSurface1_Base_color.png" id="2_vr6pg"]
+[ext_resource type="Texture2D" uid="uid://ogfysed6o7vb" path="res://data/textures/rails/standardSurface1_Mixed_AO.png" id="3_mh3lj"]
+[ext_resource type="Texture2D" uid="uid://bfdu6rrd7qwg2" path="res://data/textures/rails/standardSurface1_Metallic.png" id="4_t5iiq"]
+[ext_resource type="Texture2D" uid="uid://c6nls7t5csn1m" path="res://data/textures/rails/standardSurface1_Normal_OpenGL.png" id="5_i41ey"]
+[ext_resource type="Texture2D" uid="uid://std83ua2efvx" path="res://data/textures/rails/standardSurface1_Roughness.png" id="6_b75o1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wt6o"]
+albedo_texture = ExtResource("2_vr6pg")
+metallic = 1.0
+metallic_texture = ExtResource("4_t5iiq")
+roughness_texture = ExtResource("6_b75o1")
+normal_enabled = true
+normal_texture = ExtResource("5_i41ey")
+ao_enabled = true
+ao_texture = ExtResource("3_mh3lj")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf1kp"]
 size = Vector3(107.187, 123.042, 85.8113)
 
 [node name="rails" instance=ExtResource("1_8lulj")]
+
+[node name="pCylinder31" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0wt6o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="pCylinder31" index="0"]
 

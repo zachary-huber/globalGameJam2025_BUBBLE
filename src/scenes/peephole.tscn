@@ -1,5 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpf7bfn13h5rj"]
+[gd_scene load_steps=8 format=3 uid="uid://dileu7rxgenkl"]
 
 [ext_resource type="PackedScene" uid="uid://dpob82pndcliq" path="res://data/models/peephole.fbx" id="1_7ilie"]
+[ext_resource type="Texture2D" uid="uid://mt6u5p8vjjmo" path="res://data/textures/peephole/standardSurface1_Base_color.png" id="2_6cgbu"]
+[ext_resource type="Texture2D" uid="uid://xxbggo3c8pbj" path="res://data/textures/peephole/standardSurface1_Mixed_AO.png" id="3_3dy3r"]
+[ext_resource type="Texture2D" uid="uid://b1vwc62jlfaje" path="res://data/textures/peephole/standardSurface1_Metallic.png" id="4_mtrn2"]
+[ext_resource type="Texture2D" uid="uid://0yq4his33k2w" path="res://data/textures/peephole/standardSurface1_Normal_OpenGL.png" id="5_hv6pi"]
+[ext_resource type="Texture2D" uid="uid://c714sp6h5f64x" path="res://data/textures/peephole/standardSurface1_Roughness.png" id="6_nhybv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cswu5"]
+albedo_texture = ExtResource("2_6cgbu")
+metallic = 1.0
+metallic_texture = ExtResource("4_mtrn2")
+roughness_texture = ExtResource("6_nhybv")
+normal_enabled = true
+normal_texture = ExtResource("5_hv6pi")
+ao_enabled = true
+ao_texture = ExtResource("3_3dy3r")
 
 [node name="peephole_model" instance=ExtResource("1_7ilie")]
+
+[node name="pCylinder4" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cswu5")

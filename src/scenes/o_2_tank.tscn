@@ -1,5 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyokhj73xmjfm"]
+[gd_scene load_steps=14 format=3 uid="uid://qpkp7j4ce5ml"]
 
 [ext_resource type="PackedScene" uid="uid://jo0w3dhuqalt" path="res://data/models/O2tank.fbx" id="1_4kahg"]
+[ext_resource type="Texture2D" uid="uid://blgdfqnmjunk3" path="res://data/textures/02Tank/blinn1_Base_color.png" id="2_u717i"]
+[ext_resource type="Texture2D" uid="uid://crxnp85wxqik5" path="res://data/textures/02Tank/blinn1_Mixed_AO.png" id="3_y4vvw"]
+[ext_resource type="Texture2D" uid="uid://3vngtjac4wti" path="res://data/textures/02Tank/blinn1_Metallic.png" id="4_ovciq"]
+[ext_resource type="Texture2D" uid="uid://i3oo5y6l6qv7" path="res://data/textures/02Tank/blinn1_Normal_OpenGL.png" id="5_wyqpr"]
+[ext_resource type="Texture2D" uid="uid://dqkso0qvh1h54" path="res://data/textures/02Tank/blinn1_Roughness.png" id="6_y0pmv"]
+[ext_resource type="Texture2D" uid="uid://cmph5vgs10q45" path="res://data/textures/02Tank/blinn2_Base_color.png" id="7_6c8cg"]
+[ext_resource type="Texture2D" uid="uid://ctmd3nbjpea5t" path="res://data/textures/02Tank/blinn2_Mixed_AO.png" id="8_f4s81"]
+[ext_resource type="Texture2D" uid="uid://jawt4xhpmta2" path="res://data/textures/02Tank/blinn2_Metallic.png" id="9_5whsd"]
+[ext_resource type="Texture2D" uid="uid://cvj2yphgakj3p" path="res://data/textures/02Tank/blinn2_Normal_OpenGL.png" id="10_ab8m5"]
+[ext_resource type="Texture2D" uid="uid://cnhg56naejkph" path="res://data/textures/02Tank/blinn2_Roughness.png" id="11_iy6ou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h751"]
+albedo_texture = ExtResource("2_u717i")
+metallic = 1.0
+metallic_texture = ExtResource("4_ovciq")
+roughness_texture = ExtResource("6_y0pmv")
+normal_enabled = true
+normal_texture = ExtResource("5_wyqpr")
+ao_enabled = true
+ao_texture = ExtResource("3_y4vvw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs3ve"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.419608)
+albedo_texture = ExtResource("7_6c8cg")
+metallic = 1.0
+metallic_texture = ExtResource("9_5whsd")
+roughness_texture = ExtResource("11_iy6ou")
+normal_enabled = true
+normal_texture = ExtResource("10_ab8m5")
+ao_enabled = true
+ao_texture = ExtResource("8_f4s81")
 
 [node name="O2tank" instance=ExtResource("1_4kahg")]
+
+[node name="pCylinder29" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7h751")
+
+[node name="pCylinder32" parent="pCylinder29" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fs3ve")

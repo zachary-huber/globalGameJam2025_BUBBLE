@@ -1,11 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://rfl1nsg61e3g"]
+[gd_scene load_steps=9 format=3 uid="uid://di142454a3ru4"]
 
 [ext_resource type="PackedScene" uid="uid://b34f84a2ehkk8" path="res://data/models/chair.fbx" id="1_4o1n5"]
+[ext_resource type="Texture2D" uid="uid://myojxeu0qqwg" path="res://data/textures/chair/standardSurface1_Base_color.png" id="2_sn7rb"]
+[ext_resource type="Texture2D" uid="uid://dtdp87a7de4ry" path="res://data/textures/chair/standardSurface1_Mixed_AO.png" id="3_yvqcd"]
+[ext_resource type="Texture2D" uid="uid://cvfab58dtqeos" path="res://data/textures/chair/standardSurface1_Metallic.png" id="4_iy27b"]
+[ext_resource type="Texture2D" uid="uid://7s6rme8p03d4" path="res://data/textures/chair/standardSurface1_Normal_OpenGL.png" id="5_3dlno"]
+[ext_resource type="Texture2D" uid="uid://dyjmeprpxl2pf" path="res://data/textures/chair/standardSurface1_Roughness.png" id="6_to0q4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jbra"]
+albedo_texture = ExtResource("2_sn7rb")
+metallic = 1.0
+metallic_texture = ExtResource("4_iy27b")
+roughness_texture = ExtResource("6_to0q4")
+normal_enabled = true
+normal_texture = ExtResource("5_3dlno")
+ao_enabled = true
+ao_texture = ExtResource("3_yvqcd")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4i2se"]
 points = PackedVector3Array(-29.8825, -0.0553284, -3.8147e-06, -28.219, -0.0553284, 37.4998, -29.8825, 681.069, -3.8147e-06, -28.219, -0.0553284, -37.5087, -28.219, -37.516, -3.8147e-06, -26.919, -27.8763, 27.774, 10.279, -505.835, -3.8147e-06, 11.9517, -505.835, 7.19442, -23.201, -37.516, 37.4998, -23.201, -0.0553284, 42.9445, -23.201, 108.91, 40.5019, -28.219, 108.91, 34.7552, -28.219, 335.748, 26.5305, -28.219, 564.905, 16.9468, -28.219, 681.069, 10.1255, -28.219, 725.729, -3.8147e-06, -28.219, 681.069, -10.1344, -28.219, 564.905, -16.9557, -28.219, 335.748, -26.5394, -28.219, 108.91, -34.7641, -23.201, 108.91, -40.5108, -23.201, -0.0553284, -42.9533, -23.201, -37.516, -37.5087, 11.9517, -505.835, -7.2033, -26.919, -27.8763, -27.7829, 16.7424, -505.835, 9.70802, -9.87445, -0.0553284, 43.957, 16.7424, -37.516, 45.3692, -23.201, 335.748, 32.4815, -23.201, 564.905, 22.5958, -23.201, 681.069, 13.5006, -26.919, 714.137, 5.88876, -23.201, 725.729, -6.51051, -26.919, 714.137, -5.89765, -23.201, 725.729, 6.50162, -23.201, 740.738, -3.8147e-06, -23.201, 681.069, -13.5095, -23.201, 564.905, -22.6047, -23.201, 335.748, -32.4903, -9.87445, -0.0553284, -43.9659, 16.7424, -37.516, -45.3692, 16.7424, -505.835, -9.71691, 21.5239, -505.835, 7.19442, 44.2318, -42.0308, 38.761, 43.3046, -0.0553284, 41.8431, 16.7424, -0.0553284, 43.957, 56.4857, -0.0553284, 35.4925, -18.1831, 681.069, 10.1255, -19.483, 714.137, 5.88876, -18.1831, 725.729, -3.8147e-06, -19.483, 714.137, -5.89765, -18.1831, 681.069, -10.1344, 56.4857, -0.0553284, -35.5013, 43.3046, -0.0553284, -41.852, 16.7424, -0.0553284, -43.9659, 44.2318, -42.0308, -38.7699, 21.5239, -505.835, -7.2033, 56.4857, -37.516, 31.1492, 23.2057, -505.835, -3.8147e-06, 61.3582, -0.0553284, 26.9213, 56.4857, 37.4053, 31.1492, 61.3582, 37.4053, -0.00888443, 60.0947, 27.7656, -21.2013, 56.4857, 37.4053, -31.158, 60.0947, 27.7656, 21.1924, 61.3582, -0.0553284, -26.9302, 56.4857, -37.516, -31.158, 60.0947, -27.8763, -21.2013, 61.3582, -37.516, -0.00888443, 60.0947, -27.8763, 21.1924, 62.9854, -0.0553284, -0.00888443)
 
 [node name="chair" instance=ExtResource("1_4o1n5")]
+
+[node name="pCube3" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6jbra")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="pCube3" index="0"]
 

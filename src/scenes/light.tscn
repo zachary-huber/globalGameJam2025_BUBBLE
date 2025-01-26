@@ -1,0 +1,61 @@
+[gd_scene load_steps=20 format=3 uid="uid://d4gmxnu17xafb"]
+
+[ext_resource type="PackedScene" uid="uid://6gradare6jy5" path="res://data/models/light.fbx" id="1_0c0st"]
+[ext_resource type="Texture2D" uid="uid://cxweaulvvp7e1" path="res://data/textures/light/blinn1_Base_color.png" id="2_5m0t5"]
+[ext_resource type="Texture2D" uid="uid://co6y5558mc2di" path="res://data/textures/light/blinn1_Mixed_AO.png" id="3_swuss"]
+[ext_resource type="Texture2D" uid="uid://cod5hgmo8lb73" path="res://data/textures/light/blinn1_Metallic.png" id="4_wmemh"]
+[ext_resource type="Texture2D" uid="uid://dgshan6qjlram" path="res://data/textures/light/blinn1_Normal_OpenGL.png" id="5_o555t"]
+[ext_resource type="Texture2D" uid="uid://3kjgn80m0ki1" path="res://data/textures/light/blinn1_Roughness.png" id="6_4efn5"]
+[ext_resource type="Texture2D" uid="uid://yw2x4r3jqa0c" path="res://data/textures/light/blinn2_Base_color.png" id="7_7x5xb"]
+[ext_resource type="Texture2D" uid="uid://bu2gm40i1nn7h" path="res://data/textures/light/blinn2_Mixed_AO.png" id="8_i4yqh"]
+[ext_resource type="Texture2D" uid="uid://dvjcd6o5ufbhp" path="res://data/textures/light/blinn2_Metallic.png" id="9_2vb6y"]
+[ext_resource type="Texture2D" uid="uid://bcnyupe1c1snx" path="res://data/textures/light/blinn2_Normal_OpenGL.png" id="10_3yijh"]
+[ext_resource type="Texture2D" uid="uid://dcgr8siqodddg" path="res://data/textures/light/blinn2_Roughness.png" id="11_lvo3d"]
+[ext_resource type="Texture2D" uid="uid://ns2c37ofuob1" path="res://data/textures/light/blinn3_Base_color.png" id="12_3sp6a"]
+[ext_resource type="Texture2D" uid="uid://da4tcbwlsxrbh" path="res://data/textures/light/blinn3_Mixed_AO.png" id="13_8mfd6"]
+[ext_resource type="Texture2D" uid="uid://clnto6dh356qb" path="res://data/textures/light/blinn3_Metallic.png" id="14_hctgk"]
+[ext_resource type="Texture2D" uid="uid://2g0gad4cslq" path="res://data/textures/light/blinn3_Normal_OpenGL.png" id="15_tt5ed"]
+[ext_resource type="Texture2D" uid="uid://dnd8l5373liyb" path="res://data/textures/light/blinn3_Roughness.png" id="16_6fjdf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rkoe"]
+albedo_texture = ExtResource("2_5m0t5")
+metallic = 1.0
+metallic_texture = ExtResource("4_wmemh")
+roughness_texture = ExtResource("6_4efn5")
+normal_enabled = true
+normal_texture = ExtResource("5_o555t")
+ao_enabled = true
+ao_texture = ExtResource("3_swuss")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbjd1"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.658824)
+albedo_texture = ExtResource("7_7x5xb")
+metallic = 1.0
+metallic_texture = ExtResource("9_2vb6y")
+roughness_texture = ExtResource("11_lvo3d")
+normal_enabled = true
+normal_texture = ExtResource("10_3yijh")
+ao_enabled = true
+ao_texture = ExtResource("8_i4yqh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56g4v"]
+albedo_texture = ExtResource("12_3sp6a")
+metallic = 1.0
+metallic_texture = ExtResource("14_hctgk")
+roughness_texture = ExtResource("16_6fjdf")
+normal_enabled = true
+normal_texture = ExtResource("15_tt5ed")
+ao_enabled = true
+ao_texture = ExtResource("13_8mfd6")
+
+[node name="light" instance=ExtResource("1_0c0st")]
+
+[node name="pCylinder33" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2rkoe")
+
+[node name="pCylinder34" parent="pCylinder33" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vbjd1")
+
+[node name="pCylinder33_pCylinder34_pCylinder37" parent="pCylinder33/pCylinder34" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_56g4v")

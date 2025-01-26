@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://u3u7cjh6xasy"]
+
+[ext_resource type="PackedScene" uid="uid://c3kcod7nboebi" path="res://data/models/ControlPanel2.fbx" id="1_ggx25"]
+[ext_resource type="Texture2D" uid="uid://b8rbjfl2mmf78" path="res://data/textures/control2/blinn1_Base_color.png" id="2_76u3b"]
+[ext_resource type="Texture2D" uid="uid://ent3ep88d2aw" path="res://data/textures/control2/blinn1_Mixed_AO.png" id="3_wxkmn"]
+[ext_resource type="Texture2D" uid="uid://d1m5n6074wkrc" path="res://data/textures/control2/blinn1_Metallic.png" id="4_smxov"]
+[ext_resource type="Texture2D" uid="uid://wdoyn3uohjl" path="res://data/textures/control2/blinn1_Normal_OpenGL.png" id="5_rgv4p"]
+[ext_resource type="Texture2D" uid="uid://byelsgda276uy" path="res://data/textures/control2/blinn1_Roughness.png" id="6_5f6ce"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_io6pd"]
+albedo_texture = ExtResource("2_76u3b")
+metallic = 1.0
+metallic_texture = ExtResource("4_smxov")
+roughness_texture = ExtResource("6_5f6ce")
+normal_enabled = true
+normal_texture = ExtResource("5_rgv4p")
+ao_enabled = true
+ao_texture = ExtResource("3_wxkmn")
+
+[node name="ControlPanel2" instance=ExtResource("1_ggx25")]
+
+[node name="pCube7" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_io6pd")

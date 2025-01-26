@@ -1,13 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtv2x1n60xgwo"]
+[gd_scene load_steps=11 format=3 uid="uid://h1wv8ktl2dss"]
 
 [ext_resource type="PackedScene" uid="uid://8id5mwdqd5lb" path="res://data/models/steps.fbx" id="1_eek3q"]
+[ext_resource type="Texture2D" uid="uid://bqb8cepq2ctxp" path="res://data/textures/steps/blinn1_Base_color.png" id="2_vgexb"]
+[ext_resource type="Texture2D" uid="uid://dkh33uabisshj" path="res://data/textures/steps/blinn1_Mixed_AO.png" id="3_bqjfp"]
+[ext_resource type="Texture2D" uid="uid://gvdrkb38qw1l" path="res://data/textures/steps/blinn1_Metallic.png" id="4_vhvhv"]
+[ext_resource type="Texture2D" uid="uid://c2n1uv2r117cf" path="res://data/textures/steps/blinn1_Normal_OpenGL.png" id="5_5if54"]
+[ext_resource type="Texture2D" uid="uid://bswe5s1gn1lbe" path="res://data/textures/steps/blinn1_Roughness.png" id="6_aurkm"]
+[ext_resource type="Texture2D" uid="uid://cbybw0hfs6q87" path="res://data/textures/SubBase/IMG_8597.png" id="7_3icgv"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s14kb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agp5f"]
+albedo_texture = ExtResource("2_vgexb")
+metallic = 1.0
+metallic_texture = ExtResource("4_vhvhv")
+roughness_texture = ExtResource("6_aurkm")
+normal_enabled = true
+normal_texture = ExtResource("5_5if54")
+ao_enabled = true
+ao_texture = ExtResource("3_bqjfp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8gul"]
+transparency = 1
+albedo_texture = ExtResource("7_3icgv")
+uv1_scale = Vector3(2.715, 1.69, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ojpyf"]
 points = PackedVector3Array(76.305, -16.3197, -24.6288, 76.305, -16.3197, 24.6288, 76.305, -13.2554, -24.6288, 92.5008, -16.3197, -24.6288, 76.305, -13.2554, 24.6288, 92.5008, -16.3197, 24.6288, 92.6452, -9.85356, -24.6288, 158.255, -9.64184, -24.6288, 92.6452, -9.85356, 24.6288, 158.255, -9.64184, 24.6288, 108.993, -6.57662, -24.6288, 158.255, -6.57662, -24.6288, 108.993, -6.57662, 24.6288, 158.255, -6.57662, 24.6288)
 
 [node name="steps" instance=ExtResource("1_eek3q")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pCube14" index="0"]
+[node name="polySurface7" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_agp5f")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pCube14/StaticBody3D" index="0"]
-shape = SubResource("ConvexPolygonShape3D_s14kb")
+[node name="polySurface2" parent="polySurface7" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y8gul")
+
+[node name="polySurface4" parent="polySurface7" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y8gul")
+
+[node name="polySurface6" parent="polySurface7" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y8gul")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="polySurface7" index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="polySurface7/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ojpyf")

@@ -1,5 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://1n84tdkiwd45"]
+[gd_scene load_steps=8 format=3 uid="uid://rrodp4v5up3j"]
 
 [ext_resource type="PackedScene" uid="uid://bu11wgmf17mci" path="res://data/models/frame.fbx" id="1_ut10w"]
+[ext_resource type="Texture2D" uid="uid://brlp3yfsagioh" path="res://data/textures/Frame/standardSurface1_Base_color.png" id="2_kfg4p"]
+[ext_resource type="Texture2D" uid="uid://d4nxm1v3uh05y" path="res://data/textures/Frame/standardSurface1_Mixed_AO.png" id="3_byv1v"]
+[ext_resource type="Texture2D" uid="uid://dyvbpm30vajp8" path="res://data/textures/Frame/standardSurface1_Metallic.png" id="4_llar2"]
+[ext_resource type="Texture2D" uid="uid://btyehll36frgf" path="res://data/textures/Frame/standardSurface1_Normal_OpenGL.png" id="5_00ms3"]
+[ext_resource type="Texture2D" uid="uid://ba8wi5v0qjgak" path="res://data/textures/Frame/standardSurface1_Roughness.png" id="6_xsfpo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odxmf"]
+albedo_texture = ExtResource("2_kfg4p")
+metallic = 1.0
+metallic_texture = ExtResource("4_llar2")
+roughness_texture = ExtResource("6_xsfpo")
+normal_enabled = true
+normal_texture = ExtResource("5_00ms3")
+ao_texture = ExtResource("3_byv1v")
 
 [node name="frame" instance=ExtResource("1_ut10w")]
+
+[node name="pCylinder53" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_odxmf")

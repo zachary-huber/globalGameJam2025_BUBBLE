@@ -1,9 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://jw3uoivuv0jw"]
+[gd_scene load_steps=14 format=3 uid="uid://ccmdppjk5lyud"]
 
 [ext_resource type="PackedScene" uid="uid://cyfy3gf7c1ewk" path="res://data/models/ControlPanel.fbx" id="1_4h5xo"]
+[ext_resource type="Texture2D" uid="uid://txja53oykvxg" path="res://data/textures/control1/blinn2_Base_color.png" id="2_5nydr"]
+[ext_resource type="Texture2D" uid="uid://deaml7jxais83" path="res://data/textures/control1/blinn2_Mixed_AO.png" id="3_w7jnk"]
+[ext_resource type="Texture2D" uid="uid://dh0asomthratb" path="res://data/textures/control1/blinn2_Metallic.png" id="4_6rgum"]
+[ext_resource type="Texture2D" uid="uid://fpovevq4pw31" path="res://data/textures/control1/blinn2_Normal_OpenGL.png" id="5_f4i23"]
+[ext_resource type="Texture2D" uid="uid://n4b6y3grtcnu" path="res://data/textures/control1/blinn2_Roughness.png" id="6_adbcu"]
+[ext_resource type="Texture2D" uid="uid://brj0he865mpf8" path="res://data/textures/control1/blinn1_Base_color.png" id="7_x1g3a"]
+[ext_resource type="Texture2D" uid="uid://pf6td0m6h0jg" path="res://data/textures/control1/blinn1_Mixed_AO.png" id="8_ktxlf"]
+[ext_resource type="Texture2D" uid="uid://cymwwq066eln2" path="res://data/textures/control1/blinn1_Metallic.png" id="9_xnrpr"]
+[ext_resource type="Texture2D" uid="uid://b5vfacxwms4ev" path="res://data/textures/control1/blinn1_Normal_OpenGL.png" id="10_i07bb"]
+[ext_resource type="Texture2D" uid="uid://dpoel0iydtuc5" path="res://data/textures/control1/blinn1_Roughness.png" id="11_pyxlc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lc8q1"]
+albedo_texture = ExtResource("2_5nydr")
+metallic = 1.0
+metallic_texture = ExtResource("4_6rgum")
+roughness_texture = ExtResource("6_adbcu")
+normal_enabled = true
+normal_texture = ExtResource("5_f4i23")
+ao_enabled = true
+ao_texture = ExtResource("3_w7jnk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pe0w"]
+albedo_texture = ExtResource("7_x1g3a")
+metallic = 1.0
+metallic_texture = ExtResource("9_xnrpr")
+roughness_texture = ExtResource("11_pyxlc")
+normal_enabled = true
+normal_texture = ExtResource("10_i07bb")
+ao_enabled = true
+ao_texture = ExtResource("8_ktxlf")
 
 [node name="ControlPanel" instance=ExtResource("1_4h5xo")]
 
-[node name="pCube7" parent="." index="3"]
-transform = Transform3D(0.0255148, 0.000885423, 0, -0.014731, 0.0015336, 0, 0, 0, 0.0155957, -0.947981, -0.0905467, 0.123934)
-visible = false
+[node name="pCube16" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lc8q1")
+surface_material_override/1 = SubResource("StandardMaterial3D_7pe0w")
