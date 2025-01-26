@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cofxcpykx5hbd"]
+
+[ext_resource type="Script" path="res://src/scripts/fishies.gd" id="1_lc1yy"]
+[ext_resource type="Texture2D" uid="uid://bit5jib2r1hpa" path="res://data/textures/drawings/fish4.png" id="1_lccjy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yurka"]
+transparency = 4
+albedo_texture = ExtResource("1_lccjy")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_msyqp"]
+material = SubResource("StandardMaterial3D_yurka")
+
+[node name="fishies" type="Node3D"]
+script = ExtResource("1_lc1yy")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+amount = 200
+lifetime = 600.0
+preprocess = 200.0
+speed_scale = 4.0
+randomness = 0.12
+mesh = SubResource("QuadMesh_msyqp")
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 1.0
+angular_velocity_min = -249.38
+angular_velocity_max = 7.25
