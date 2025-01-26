@@ -15,9 +15,11 @@ script = ExtResource("1_5kxye")
 
 [node name="ambienceHum" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_pa5tr")
+volume_db = 0.945
 
 [node name="ambienceWater" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lcuoc")
+volume_db = 2.836
 
 [node name="ambiencePing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_2qvi0")
@@ -28,3 +30,4 @@ stream = ExtResource("4_2qvi0")
 
 [node name="alarmSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_kgegw")
+volume_db = -10.539
