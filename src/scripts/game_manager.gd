@@ -38,6 +38,8 @@ var isPaused:bool = false
 var pauseMenu = null
 var isScaryHappening = false
 
+var timeUntilJumpscare:float = 5.0 # if we look out the peephole this long, scary things happen
+
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
@@ -90,7 +92,7 @@ func _on_timer_timeout() -> void:
 		print("Peep time: ", GameManager.timePlayed - GameManager.timeLookStart)
 		print("timeLookStart: ", GameManager.timeLookStart)
 		print("timePlayed: ", GameManager.timePlayed)
-		if GameManager.timePlayed - GameManager.timeLookStart > 10:
+		if GameManager.timePlayed - GameManager.timeLookStart > timeUntilJumpscare:
 			print("You looked TOO LONG!")
 			$jumpscareCooldown.start()
 			GameManager.doScaryThing()
@@ -111,11 +113,12 @@ func doScaryThing():
 	if !GameManager.isScaryHappening:
 		GameManager.isScaryHappening = true
 		randomize()
-		var r = GameManager.rng.randi_range(0,3)
+		var r = GameManager.rng.randi_range(0,2)
+		AudioManager.alarmSound.play()
 		
 		match r:
 			0: 
-				AudioManager.alarmSound.play()
+				#AudioManager.alarmSound.play()
 				pass # scary sound (alarm)
 			1: 
 				GameManager.jumpscareTexture.visible = true
