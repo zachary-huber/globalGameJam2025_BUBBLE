@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=61 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
@@ -19,11 +19,12 @@
 [ext_resource type="PackedScene" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Script" path="res://src/scripts/extraction_button.gd" id="11_ch8l6"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
-[ext_resource type="AudioStream" uid="uid://djm1047q8sgyv" path="res://data/sounds/OhShitAlarm.mp3" id="12_48hr1"]
 [ext_resource type="AudioStream" uid="uid://b580fa8063gia" path="res://data/sounds/AmbientHums.mp3" id="13_au0ec"]
+[ext_resource type="AudioStream" uid="uid://dvlstikbfpsnl" path="res://data/sounds/OhShitAlarm10sec.mp3" id="13_hf8bv"]
 [ext_resource type="AudioStream" uid="uid://bd1pdxvnujrgu" path="res://data/sounds/AmbientWater.mp3" id="14_dmflv"]
 [ext_resource type="PackedScene" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
 [ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="16_vit8q"]
+[ext_resource type="AudioStream" uid="uid://cq7seh8c40r2h" path="res://data/sounds/moreSounds/security-alarm-63578.mp3" id="17_qpu80"]
 [ext_resource type="Texture2D" uid="uid://bhxbnd6jgqpss" path="res://data/textures/drawings/monster1.png" id="21_eo62x"]
 [ext_resource type="Texture2D" uid="uid://btr3rry3j7xqt" path="res://data/textures/drawings/monster2.png" id="22_mhlmb"]
 [ext_resource type="PackedScene" uid="uid://cm2fpfidj4u22" path="res://src/scenes/mainworld.tscn" id="27_8b1o7"]
@@ -90,7 +91,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_beodj"]
 resource_name = "redLight"
-length = 27.6
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -170,6 +171,187 @@ tracks/0/keys = {
 _data = {
 "02Light": SubResource("Animation_vnnht"),
 "RESET": SubResource("Animation_4d64d")
+}
+
+[sub_resource type="Animation" id="Animation_qooyc"]
+resource_name = "dead"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("waterLeak:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("waterLeak2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("waterLeak3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer3/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer3/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("lighting/RedLight1:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.366667, 0.433333, 0.566667, 0.633333, 0.766667, 0.833333, 0.966667, 1, 1.13333, 1.23333, 1.36667, 1.43333, 1.56667, 1.7, 1.8, 1.93333, 2, 2.13333, 2.2, 2.33333, 2.4, 2.53333, 2.6, 2.73333, 2.8, 2.93333, 3.03333, 3.16667, 3.23333, 3.36667, 3.43333, 3.56667, 3.6, 3.73333, 3.8, 3.93333, 4, 4.13333, 4.23333, 4.36667, 4.43333, 4.56667, 4.63333, 4.76667, 4.83333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("lighting/RedLight2:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.366667, 0.433333, 0.566667, 0.633333, 0.766667, 0.833333, 0.966667, 1, 1.13333, 1.23333, 1.36667, 1.43333, 1.56667, 1.7, 1.8, 1.93333, 2, 2.13333, 2.2, 2.33333, 2.4, 2.53333, 2.6, 2.73333, 2.8, 2.93333, 3.03333, 3.16667, 3.23333, 3.36667, 3.43333, 3.56667, 3.6, 3.73333, 3.8, 3.93333, 4, 4.13333, 4.23333, 4.36667, 4.43333, 4.56667, 4.63333, 4.76667, 4.83333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0]
+}
+
+[sub_resource type="Animation" id="Animation_fewww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("waterLeak:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("waterLeak2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("waterLeak3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer3/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer3/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("lighting/RedLight1:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("lighting/RedLight2:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3i6t6"]
+_data = {
+"RESET": SubResource("Animation_fewww"),
+"dead": SubResource("Animation_qooyc")
 }
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
@@ -383,7 +565,7 @@ libraries = {
 }
 
 [node name="OhShitAlarm" type="AudioStreamPlayer" parent="submarine"]
-stream = ExtResource("12_48hr1")
+stream = ExtResource("13_hf8bv")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="submarine"]
 libraries = {
@@ -419,6 +601,24 @@ volume_db = -29.091
 autoplay = true
 max_distance = 4.0
 parameters/looping = true
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="submarine"]
+libraries = {
+"": SubResource("AnimationLibrary_3i6t6")
+}
+
+[node name="ColorRect" type="ColorRect" parent="submarine/AnimationPlayer3"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="submarine/AnimationPlayer3"]
+stream = ExtResource("17_qpu80")
+volume_db = -5.647
 
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -16.7106, 0.676196)
@@ -518,7 +718,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 0
 
 [node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
-transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 71.7262, 3.71171, 77.5207)
+transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 54.5064, 3.71171, 10.6281)
 script = ExtResource("9_sq83h")
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]

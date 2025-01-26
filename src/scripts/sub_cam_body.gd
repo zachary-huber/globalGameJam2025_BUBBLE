@@ -18,6 +18,8 @@ func _on_collect_area_area_entered(area: Area3D) -> void:
 		GameManager.interactHint.text = "[center]Press [E] to collect the oxygen bubble.[/center]"
 		GameManager.interactNameHint.text = "[center]Bubble [E] to collect.[/center]"
 		GameManager.subInteractTarget = area.owner
+	if area.owner.name==("goldenBubble"):
+		GameManager.endGame()
 
 
 func _on_collect_area_area_exited(area: Area3D) -> void:
