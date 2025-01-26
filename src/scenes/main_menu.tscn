@@ -31,10 +31,13 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[center]Deepest Sea[/center]"
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="startButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Play"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="quitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="button_down" from="VBoxContainer/startButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/quitButton" to="." method="_on_quit_button_button_down"]

@@ -31,7 +31,7 @@ var subCamViewport = null
 
 
 func _init() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func _ready() -> void:
 	rng.seed = hash(seedString)
@@ -69,3 +69,9 @@ func updateSubCam():
 	subCam.rotation.y = currrentRotation
 	
 	print(subCam.velocity)
+
+
+func startGame():
+	$Timer.start()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_tree().change_scene_to_file("res://src/scenes/main_3d.tscn")
