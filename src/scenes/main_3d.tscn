@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=57 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dx1vhctwoj8by" path="res://data/textures/drawings/poster2.png" id="9_nixu6"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
 [ext_resource type="Texture2D" uid="uid://u2levc5mllpc" path="res://data/textures/drawings/howto.png" id="9_y2rur"]
-[ext_resource type="PackedScene" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
+[ext_resource type="PackedScene" uid="uid://cgjaowe12081p" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
 [ext_resource type="PackedScene" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Script" path="res://src/scripts/extraction_button.gd" id="11_ch8l6"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
@@ -38,6 +38,8 @@
 [ext_resource type="PackedScene" uid="uid://x14xscuv6r46" path="res://src/scenes/environment/sea_shell.tscn" id="36_sl5pq"]
 [ext_resource type="PackedScene" uid="uid://c2gtqwk3vgbcl" path="res://src/scenes/environment/sea_grass.tscn" id="37_cjxa0"]
 [ext_resource type="PackedScene" uid="uid://bc6h0nq2xr6il" path="res://src/scenes/environment/rock.tscn" id="38_ply5k"]
+[ext_resource type="PackedScene" uid="uid://d351vtj43oykb" path="res://src/scenes/spray.tscn" id="39_c3mu8"]
+[ext_resource type="PackedScene" uid="uid://c74qy14c0jwya" path="res://src/scenes/goopy_guy.tscn" id="40_74166"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
 
@@ -778,6 +780,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7394, 1.46816, 18.11)
 
 [node name="RegularPlant2" parent="." instance=ExtResource("35_op8mh")]
 transform = Transform3D(2.38162, 0, 0, 0, 3.51759, 0, 0, 0, 4.34485, 46.8452, 0.985771, 25.1926)
+
+[node name="waterLeak" parent="." instance=ExtResource("39_c3mu8")]
+transform = Transform3D(0.258819, 0, 0.965926, -0.638563, 0.750307, 0.171103, -0.724741, -0.661089, 0.194194, -1.78524, -15.9043, 1.86038)
+
+[node name="waterLeak2" parent="." instance=ExtResource("39_c3mu8")]
+transform = Transform3D(0.258819, 0, 0.965926, -0.638563, 0.750307, 0.171103, -0.724741, -0.661089, 0.194194, 0.986897, -15.9043, 1.86038)
+
+[node name="waterLeak3" parent="." instance=ExtResource("39_c3mu8")]
+transform = Transform3D(-0.437577, -0.171102, -0.882752, -0.638563, 0.750307, 0.171103, 0.633059, 0.638563, -0.437577, -1.94963, -15.9043, -1.67986)
+
+[node name="GoopyGuy" parent="." instance=ExtResource("40_74166")]
+transform = Transform3D(15.6558, 0, -43.2157, 0, 45.9641, 0, 43.2157, 0, 15.6558, 3.16111, -18.5801, -1.40177)
 
 [connection signal="area_entered" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_entered"]
 [connection signal="area_exited" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_exited"]

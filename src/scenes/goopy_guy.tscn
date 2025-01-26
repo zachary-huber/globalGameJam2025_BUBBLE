@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1b5b61u0am7h"]
+[gd_scene load_steps=8 format=3 uid="uid://c74qy14c0jwya"]
 
 [ext_resource type="PackedScene" uid="uid://dwtlfgmulum8a" path="res://data/models/GoopyGuy.fbx" id="1_f5lnc"]
 [ext_resource type="Texture2D" uid="uid://d4epjjyuwxual" path="res://data/textures/Goopy/standardSurface1_Base_color.png" id="2_mjphj"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b1te40ljooeb" path="res://data/textures/Goopy/standardSurface1_Normal_OpenGL.png" id="5_ryeok"]
 [ext_resource type="Texture2D" uid="uid://ckwelsl07o3sm" path="res://data/textures/Goopy/standardSurface1_Roughness.png" id="6_rlehe"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovb7i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xkjs"]
 albedo_texture = ExtResource("2_mjphj")
 metallic = 1.0
 metallic_texture = ExtResource("4_sxt1a")
@@ -18,7 +18,27 @@ ao_enabled = true
 ao_texture = ExtResource("3_e3itq")
 
 [node name="GoopyGuy" instance=ExtResource("1_f5lnc")]
-transform = Transform3D(84.1305, 0, 0, 0, 84.1305, 0, 0, 0, 84.1305, 0, -1.16205, 0)
+transform = Transform3D(17.8807, 0, 0, 0, 17.8807, 0, 0, 0, 17.8807, 0, -0.266148, 0)
 
-[node name="pCube10" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ovb7i")
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/position = Vector3(0.00750245, 0.0383477, 0)
+bones/1/rotation = Quaternion(0.0141999, -0.0282871, -0.167515, 0.985361)
+bones/2/rotation = Quaternion(1.2825e-12, 8.1596e-13, -0.485528, 0.874221)
+bones/3/rotation = Quaternion(7.8206e-14, 1.32636e-12, -0.387736, 0.92177)
+bones/4/position = Vector3(0.0144917, -0.0010739, 0.000105976)
+bones/4/rotation = Quaternion(-5.40128e-10, -6.5284e-10, -0.278971, 0.960299)
+bones/5/position = Vector3(0.0242212, -5.67367e-11, -1.0756e-14)
+bones/6/rotation = Quaternion(-7.31558e-09, -1.5973e-09, 0.270487, 0.962724)
+bones/7/position = Vector3(0.00406404, 4.12843e-12, -1.47179e-12)
+bones/7/rotation = Quaternion(2.07534e-11, -7.78516e-09, 0.51927, 0.85461)
+bones/11/rotation = Quaternion(-0.0834566, -0.00990707, 0.980596, -0.17711)
+bones/12/position = Vector3(0.0121877, -0.0012518, -0.000910055)
+bones/14/rotation = Quaternion(-2.65949e-12, -4.62553e-12, 0.959713, -0.280981)
+bones/15/position = Vector3(0.01198, 2.0889e-12, -0.00125438)
+bones/15/rotation = Quaternion(1.28669e-09, 4.97265e-09, -0.0717226, 0.997425)
+
+[node name="pCube10" parent="Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2xkjs")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "GoopyAnimation"
