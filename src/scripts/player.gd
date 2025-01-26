@@ -119,6 +119,9 @@ func _input(event: InputEvent) -> void:
 			
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
+			GameManager.jumpscareTexture.visible = false
+			GameManager.jumpscareTexture2.visible = false
+			
 		elif event.is_action_pressed("interact"):
 			if GameManager.subInteractTarget:
 				if GameManager.subInteractTarget.has_method("bubble"):
