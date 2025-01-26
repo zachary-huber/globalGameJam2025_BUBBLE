@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci36pjoeentug"]
+[gd_scene load_steps=8 format=3 uid="uid://ci36pjoeentug"]
 
 [ext_resource type="Script" path="res://src/scripts/audio_manager.gd" id="1_5kxye"]
 [ext_resource type="AudioStream" uid="uid://b580fa8063gia" path="res://data/sounds/AmbientHums.mp3" id="2_pa5tr"]
 [ext_resource type="AudioStream" uid="uid://bd1pdxvnujrgu" path="res://data/sounds/AmbientWater.mp3" id="3_lcuoc"]
 [ext_resource type="AudioStream" uid="uid://d3dngv1kqjjfe" path="res://data/sounds/SonarPingLoop.mp3" id="4_2qvi0"]
+[ext_resource type="AudioStream" uid="uid://bi5bydfqyxll0" path="res://data/sounds/Walking.mp3" id="5_7a8k7"]
 [ext_resource type="AudioStream" uid="uid://cq7seh8c40r2h" path="res://data/sounds/moreSounds/security-alarm-63578.mp3" id="5_kgegw"]
+[ext_resource type="AudioStream" uid="uid://bymdfj2vg4wq3" path="res://data/sounds/moreSounds/loop-air-bubbles-159283.mp3" id="7_06jq3"]
 
 [node name="audio_manager" type="Node"]
 script = ExtResource("1_5kxye")
@@ -27,7 +29,13 @@ stream = ExtResource("4_2qvi0")
 [node name="oxygenAlarm" type="AudioStreamPlayer" parent="."]
 
 [node name="walkingSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7a8k7")
+volume_db = 12.291
 
 [node name="alarmSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_kgegw")
+volume_db = -10.539
+
+[node name="airBubbles" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_06jq3")
 volume_db = -10.539
