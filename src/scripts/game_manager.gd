@@ -19,6 +19,7 @@ var subInteractTarget = null
 var xCoord = null
 var yCoord = null
 var o2Label = null
+var needle = null
 
 var isAtHelm = false
 var isPeeping = false
@@ -51,7 +52,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_timer_timeout() -> void:
-	timePlayed += 1
+	timePlayed += 0.25
 	
 	print("rotation: ", currrentRotation)
 	print("velocity: ", currentVelocity)
@@ -71,6 +72,8 @@ func _on_timer_timeout() -> void:
 	yCoord.text = "Y:" + str(subCam.position.z).pad_decimals(2)
 	
 	o2Label.text = "O2: " + str(o2) + "%"
+	needle.rotation.y = currrentRotation
+	
 
 func updateSubCam():
 	subCam.velocity = subCam.basis * Vector3.RIGHT * -currentVelocity

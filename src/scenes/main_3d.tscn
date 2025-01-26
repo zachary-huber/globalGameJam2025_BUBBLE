@@ -103,7 +103,7 @@ texture = ExtResource("9_nixu6")
 transform = Transform3D(0.882948, 0.469472, 0, -0.469472, 0.882948, 0, 0, 0, 1, 1.16823, 0.118121, -0.585805)
 
 [node name="needle" parent="submarine/Node3D" instance=ExtResource("10_ypwqh")]
-transform = Transform3D(-2.15868, 0, 0.0753831, 0, 2.16, 0, -0.0753831, 0, -2.15868, 0, 0, 0)
+transform = Transform3D(-2.15868, 0, 0.0753833, 0, 2.16, 0, -0.0753833, 0, -2.15868, 0, 0, 0)
 
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -7.9174, 0.560209)
