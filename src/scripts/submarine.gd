@@ -6,6 +6,7 @@ func _ready() -> void:
 	GameManager.yCoord = $yCoord
 	GameManager.o2Label = $o2Label
 	GameManager.needle = $Node3D/needle
+	GameManager.speedLabel = $speedLabel
 
 func _process(delta: float) -> void:
 	pass

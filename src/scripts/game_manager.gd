@@ -20,6 +20,7 @@ var xCoord = null
 var yCoord = null
 var o2Label = null
 var needle = null
+var speedLabel = null
 
 var isAtHelm = false
 var isPeeping = false
@@ -73,6 +74,7 @@ func _on_timer_timeout() -> void:
 	
 	o2Label.text = "O2: " + str(o2) + "%"
 	needle.rotation.y = currrentRotation
+	speedLabel.text = str(clamp(currentVelocity * 100, 0, 100) + .3).pad_decimals(0)+ "%"
 	
 
 func updateSubCam():

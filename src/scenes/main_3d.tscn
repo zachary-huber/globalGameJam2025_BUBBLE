@@ -105,6 +105,10 @@ transform = Transform3D(0.882948, 0.469472, 0, -0.469472, 0.882948, 0, 0, 0, 1, 
 [node name="needle" parent="submarine/Node3D" instance=ExtResource("10_ypwqh")]
 transform = Transform3D(-2.15868, 0, 0.0753833, 0, 2.16, 0, -0.0753833, 0, -2.15868, 0, 0, 0)
 
+[node name="speedLabel" type="Label3D" parent="submarine"]
+transform = Transform3D(-1.83701e-08, -0.907404, 0.42026, -3.96639e-08, 0.42026, 0.907404, -1, 0, -4.37114e-08, 1.00048, 0.16698, -1.58471)
+text = "100%"
+
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -7.9174, 0.560209)
 
