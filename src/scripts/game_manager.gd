@@ -29,6 +29,8 @@ var subCam = null
 var peepholeTexture = null
 var subCamViewport = null
 
+var isPaused:bool = false
+var pauseMenu = null
 
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
@@ -43,6 +45,14 @@ func _process(delta: float) -> void:
 	if theWheel and theLever:
 		currrentRotation = theWheel.rotation.x
 		currentVelocity = remap(-theLever.position.x, 1.34, 1.72, 0,1) +8.05
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("escape"):
+		isPaused = !isPaused
+		pauseMenu.visible = isPaused
+		
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if isPaused: Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 
 func _on_timer_timeout() -> void:
