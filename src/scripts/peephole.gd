@@ -7,13 +7,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if GameManager.isPeeping:
-		print("Peep time: ", GameManager.timePlayed - GameManager.timeLookStart)
-		print("timeLookStart: ", GameManager.timeLookStart)
-		print("timePlayed: ", GameManager.timePlayed)
-		if GameManager.timePlayed - GameManager.timeLookStart > 10:
-			print("You looked TOO LONG!")
-			GameManager.doScaryThing()
+	pass
 
 func interact():
 	GameManager.timeLookStart = GameManager.timePlayed

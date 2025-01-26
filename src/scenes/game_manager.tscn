@@ -8,4 +8,13 @@ script = ExtResource("1_2lkuv")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 
+[node name="jumpscareDuration" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="jumpscareCooldown" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="jumpscareDuration" to="." method="_on_jumpscare_duration_timeout"]

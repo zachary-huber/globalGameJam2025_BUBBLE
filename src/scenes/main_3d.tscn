@@ -1,29 +1,31 @@
-[gd_scene load_steps=41 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=43 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
-[ext_resource type="PackedScene" uid="uid://02p7baco7srs" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
+[ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
 [ext_resource type="PackedScene" uid="uid://1ygys75xohd7" path="res://src/scenes/lever.tscn" id="3_2aso7"]
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 [ext_resource type="Script" path="res://src/scripts/chair_cam.gd" id="5_pvmt8"]
-[ext_resource type="PackedScene" uid="uid://c8yhv1j31tg8g" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
-[ext_resource type="PackedScene" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
+[ext_resource type="PackedScene" uid="uid://dtb24r831gvtd" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
+[ext_resource type="PackedScene" uid="uid://d1levm7wo2lhf" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
 [ext_resource type="Texture2D" uid="uid://c8tnypobnibjs" path="res://data/textures/drawings/poster1.png" id="8_noxla"]
 [ext_resource type="Script" path="res://src/scripts/main_ui.gd" id="8_ttdf3"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
 [ext_resource type="Texture2D" uid="uid://dx1vhctwoj8by" path="res://data/textures/drawings/poster2.png" id="9_nixu6"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
 [ext_resource type="Texture2D" uid="uid://u2levc5mllpc" path="res://data/textures/drawings/howto.png" id="9_y2rur"]
-[ext_resource type="PackedScene" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
-[ext_resource type="PackedScene" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
+[ext_resource type="PackedScene" uid="uid://ojt4bbo5638d" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
+[ext_resource type="PackedScene" uid="uid://pd8sttnw1xs4" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Script" path="res://src/scripts/extraction_button.gd" id="11_ch8l6"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
 [ext_resource type="AudioStream" uid="uid://djm1047q8sgyv" path="res://data/sounds/OhShitAlarm.mp3" id="12_48hr1"]
 [ext_resource type="AudioStream" uid="uid://b580fa8063gia" path="res://data/sounds/AmbientHums.mp3" id="13_au0ec"]
 [ext_resource type="AudioStream" uid="uid://bd1pdxvnujrgu" path="res://data/sounds/AmbientWater.mp3" id="14_dmflv"]
-[ext_resource type="PackedScene" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
+[ext_resource type="PackedScene" uid="uid://bqk8dp4evnsdn" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
 [ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="16_vit8q"]
+[ext_resource type="Texture2D" uid="uid://bhxbnd6jgqpss" path="res://data/textures/drawings/monster1.png" id="21_eo62x"]
+[ext_resource type="Texture2D" uid="uid://btr3rry3j7xqt" path="res://data/textures/drawings/monster2.png" id="22_mhlmb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
 
@@ -493,6 +495,7 @@ render_target_update_mode = 0
 
 [node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
 transform = Transform3D(0.878066, 0, -0.478539, 0, 1, 0, 0.478539, 0, 0.878066, 6.08145, 3.71171, 8.91633)
+visible = false
 script = ExtResource("9_sq83h")
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
@@ -536,6 +539,40 @@ render_target_update_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/topDownView/SubViewport"]
 transform = Transform3D(-2.0713e-08, -0.880601, 0.473858, -3.84923e-08, 0.473858, 0.880601, -1, 3.55271e-15, -4.37114e-08, 4.183, 10.6637, 13.4352)
+
+[node name="jumpscareTexture" type="TextureRect" parent="mainUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = 115.0
+offset_right = 116.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("21_eo62x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="jumpscareTexture2" type="TextureRect" parent="mainUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = 115.0
+offset_right = 116.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("22_mhlmb")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="peephole" type="TextureRect" parent="mainUI"]
 visible = false

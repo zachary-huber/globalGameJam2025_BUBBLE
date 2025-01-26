@@ -31,6 +31,8 @@ var subCam = null
 
 var peepholeTexture = null
 var subCamViewport = null
+var jumpscareTexture = null
+var jumpscareTexture2 = null
 
 var isPaused:bool = false
 var pauseMenu = null
@@ -63,8 +65,8 @@ func _on_timer_timeout() -> void:
 	else:
 		AudioManager.oxygenAlarm.stop()
 	
-	print("rotation: ", currrentRotation)
-	print("velocity: ", currentVelocity)
+	#print("rotation: ", currrentRotation)
+	#print("velocity: ", currentVelocity)
 	
 	get_tree().root.get_node("main3D/mainUI/VBoxContainer/debugInfo").text  = \
 	"Rotation: " + str(currrentRotation).pad_decimals(2) + '\n' + \
@@ -84,6 +86,14 @@ func _on_timer_timeout() -> void:
 	needle.rotation.y = currrentRotation
 	speedLabel.text = str(clamp(currentVelocity * 100, 0, 100) + .3).pad_decimals(0)+ "%"
 	
+	if GameManager.isPeeping and $jumpscareCooldown.is_stopped():
+		print("Peep time: ", GameManager.timePlayed - GameManager.timeLookStart)
+		print("timeLookStart: ", GameManager.timeLookStart)
+		print("timePlayed: ", GameManager.timePlayed)
+		if GameManager.timePlayed - GameManager.timeLookStart > 10:
+			print("You looked TOO LONG!")
+			$jumpscareCooldown.start()
+			GameManager.doScaryThing()
 
 func updateSubCam():
 	subCam.velocity = subCam.basis * Vector3.RIGHT * -currentVelocity
@@ -101,20 +111,20 @@ func doScaryThing():
 	if !GameManager.isScaryHappening:
 		GameManager.isScaryHappening = true
 		randomize()
-		var r = GameManager.rng.randi_range(0,10)
+		var r = GameManager.rng.randi_range(0,3)
 		
 		match r:
-			0: pass # hull damage
-			1: pass # monster jump scare 1
-			2: pass # monster jump scare 2
-			3: pass # monster jump scare 3
-			4: pass # monster jump scare 4
-			5: pass # play scary sound
-			6: pass # maybe we just need the above cases
-			7: pass
-			8: pass
-			9: pass
-			10: pass
+			0: 
+				AudioManager.alarmSound.play()
+				pass # scary sound (alarm)
+			1: 
+				GameManager.jumpscareTexture.visible = true
+				$jumpscareDuration.start()
+				pass # monster jump scare 1
+			2: 
+				GameManager.jumpscareTexture2.visible = true
+				$jumpscareDuration.start()
+				pass # monster jump scare 2
 			_: 
 				print("This should not happen... but we will re-roll the scary thing")
 				doScaryThing()
@@ -130,3 +140,8 @@ func startGame():
 
 func endGame():
 	print("Found the golden bubble!!! -> Game end!")
+
+
+func _on_jumpscare_duration_timeout() -> void:
+	GameManager.jumpscareTexture.visible = false
+	GameManager.jumpscareTexture2.visible = false

@@ -8,8 +8,7 @@ var current_song
 @onready var ambienceWater = $ambienceWater 
 @onready var ambiencePing = $ambiencePing 
 @onready var oxygenAlarm = $oxygenAlarm 
-@onready var AudioStreamPlayer2 = $AudioStreamPlayer2 
-@onready var AudioStreamPlayer3 = $AudioStreamPlayer3
+@onready var alarmSound = $alarmSound
 
 
 func _ready() -> void:

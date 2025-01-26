@@ -80,22 +80,22 @@ func _input(event: InputEvent) -> void:
 				currentDir = Direction.LEFT
 				rotationDirection = get_rotation_direction(currentDir)
 				GameManager.theWheel.rotation.x -= (rotationDirection * deg_to_rad(10.0))
-				print(rotationDirection)
+				#print(rotationDirection)
 			elif Input.is_action_just_pressed("forward"):
 				currentDir = Direction.FORWARD
 				rotationDirection = get_rotation_direction(currentDir)
 				GameManager.theWheel.rotation.x -= (rotationDirection * deg_to_rad(10.0))
-				print(rotationDirection)
+				#print(rotationDirection)
 			elif Input.is_action_just_pressed("right"):
 				currentDir = Direction.RIGHT
 				rotationDirection = get_rotation_direction(currentDir)
 				GameManager.theWheel.rotation.x -= (rotationDirection * deg_to_rad(10.0))
-				print(rotationDirection)
+				#print(rotationDirection)
 			elif Input.is_action_just_pressed("backward"):
 				currentDir = Direction.BACKWARD
 				rotationDirection = get_rotation_direction(currentDir)
 				GameManager.theWheel.rotation.x -= (rotationDirection * deg_to_rad(10.0))
-				print(rotationDirection)
+				#print(rotationDirection)
 			GameManager.subCam.rotation.y = GameManager.currrentRotation
 			
 			# handle lever movement
