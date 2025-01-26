@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxn6kci3mtwp4"]
+
+[ext_resource type="Script" path="res://fishys.gd" id="1_woqyg"]
+
+[sub_resource type="Curve" id="Curve_3g2tw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.398551, 1), 0.0, 0.0, 0, 0, Vector2(0.92029, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_t0yju"]
+curve = SubResource("Curve_3g2tw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o6shg"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 2.0
+emission_ring_radius = 2.0
+emission_ring_inner_radius = 0.5
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 1.15
+damping_min = 0.2
+damping_max = 0.2
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_t0yju")
+turbulence_noise_strength = 4.6
+turbulence_influence_min = 0.31
+turbulence_influence_max = 0.31
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_woqyg")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 20
+lifetime = 15.0
+process_material = SubResource("ParticleProcessMaterial_o6shg")
+
+[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="."]
+strength = 2.0
+attenuation = 0.00188659
+radius = 5.99848
