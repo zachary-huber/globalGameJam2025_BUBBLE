@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://rrodp4v5up3j" path="res://src/scenes/frame.tscn" id="7_ru2lq"]
 [ext_resource type="PackedScene" uid="uid://dileu7rxgenkl" path="res://src/scenes/peephole.tscn" id="8_6co5i"]
 [ext_resource type="PackedScene" uid="uid://vpyvrvvk0lmy" path="res://src/scenes/floor_pipes.tscn" id="9_2vmrt"]
-[ext_resource type="PackedScene" path="res://src/scenes/light.tscn" id="10_2p347"]
+[ext_resource type="PackedScene" uid="uid://d4gmxnu17xafb" path="res://src/scenes/light.tscn" id="10_2p347"]
 [ext_resource type="PackedScene" uid="uid://u3u7cjh6xasy" path="res://src/scenes/control_panel_2.tscn" id="10_tb3no"]
 [ext_resource type="PackedScene" uid="uid://qpkp7j4ce5ml" path="res://src/scenes/o_2_tank.tscn" id="11_exykp"]
 [ext_resource type="PackedScene" uid="uid://bj5hd4ndgtias" path="res://src/scenes/bed.tscn" id="12_ra8vv"]
