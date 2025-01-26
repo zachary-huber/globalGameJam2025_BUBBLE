@@ -9,6 +9,8 @@ var current_song
 @onready var ambiencePing = $ambiencePing 
 @onready var oxygenAlarm = $oxygenAlarm 
 @onready var alarmSound = $alarmSound
+@onready var walkingSounds = $walkingSounds
+@onready var airBubbles = $airBubbles
 
 
 func _ready() -> void:
