@@ -22,7 +22,6 @@ var o2Label = null
 
 var isAtHelm = false
 var isPeeping = false
-
 var playerCamera = null
 var chairCamera = null
 var subCam = null

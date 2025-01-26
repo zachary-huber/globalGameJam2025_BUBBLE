@@ -104,6 +104,7 @@ grow_vertical = 2
 script = ExtResource("8_ttdf3")
 
 [node name="interactHint" type="RichTextLabel" parent="mainUI"]
+visible = false
 z_index = 1
 y_sort_enabled = true
 layout_mode = 1
@@ -118,6 +119,7 @@ theme = SubResource("Theme_nlvil")
 bbcode_enabled = true
 
 [node name="interactNameHint" type="RichTextLabel" parent="mainUI"]
+visible = false
 z_index = 1
 y_sort_enabled = true
 custom_minimum_size = Vector2(0, 32.76)

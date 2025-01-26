@@ -15,5 +15,5 @@ func interact():
 	GameManager.subCamViewport.visible = true
 	GameManager.peepholeTexture.visible = true
 	
-	GameManager.interactHint.text = ""
-	GameManager.interactNameHint.text = ""
+	#GameManager.interactHint.text = ""
+	#GameManager.interactNameHint.text = ""

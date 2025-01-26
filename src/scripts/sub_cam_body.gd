@@ -21,4 +21,4 @@ func _on_collect_area_area_entered(area: Area3D) -> void:
 
 
 func _on_collect_area_area_exited(area: Area3D) -> void:
-	GameManager.interactHint.text = ""
+	return

@@ -148,7 +148,7 @@ func updateCameraMotion(event) -> void:
 # interaction behavior is handled by the object itself
 func handleObjectInteractions(event):
 	if GameManager.isAtHelm:
-		GameManager.interactHint = "[center]Move mouse up and down to go forward. [WASD] to Steer.[/center]"
+		GameManager.interactHint.text = "[center]Move mouse up and down to go forward. [WASD] to Steer.[/center]"
 		setInteractionHint("[center]Move mouse up and down to go forward. [WASD] to Steer.[/center]", "")
 	else:
 		if interactingWithObj: # don't bother processing if there is no interactable
