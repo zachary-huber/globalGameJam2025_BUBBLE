@@ -7,4 +7,4 @@ script = ExtResource("1_5kxye")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+[node name="sound1" type="AudioStreamPlayer" parent="."]
