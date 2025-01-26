@@ -9,7 +9,7 @@ script = ExtResource("1_2lkuv")
 wait_time = 0.25
 
 [node name="jumpscareDuration" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 10.0
 one_shot = true
 
 [node name="jumpscareCooldown" type="Timer" parent="."]

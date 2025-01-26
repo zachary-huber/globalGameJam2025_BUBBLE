@@ -15,6 +15,7 @@ func _ready() -> void:
 	GameManager.waterLeak2 = $waterLeak2
 	GameManager.waterLeak3 = $waterLeak3
 	GameManager.redLight = $AnimationPlayer
+	GameManager.ohShit = $OhShitAlarm
 	#AudioManager.ambienceHum.play()
 	#AudioManager.ambienceWater.play()
 	#AudioManager.ambiencePing.play()
