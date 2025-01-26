@@ -22,7 +22,7 @@ vertex_color_use_as_albedo = true
 [sub_resource type="SphereMesh" id="SphereMesh_hfngp"]
 material = SubResource("StandardMaterial3D_xo7fk")
 
-[node name="Node3D" type="Node3D"]
+[node name="waterLeak" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 amount = 100
