@@ -401,6 +401,15 @@ autoplay = true
 max_distance = 5.0
 parameters/looping = true
 
+[node name="waterLeak" parent="submarine" instance=ExtResource("39_c3mu8")]
+transform = Transform3D(0.258819, 0, 0.965926, -0.638563, 0.750307, 0.171103, -0.724741, -0.661089, 0.194194, -1.78524, 1.4335, 1.86038)
+
+[node name="waterLeak2" parent="submarine" instance=ExtResource("39_c3mu8")]
+transform = Transform3D(0.258819, 0, 0.965926, -0.638563, 0.750307, 0.171103, -0.724741, -0.661089, 0.194194, 0.986897, 1.4335, 1.86038)
+
+[node name="waterLeak3" parent="submarine" instance=ExtResource("39_c3mu8")]
+transform = Transform3D(-0.437577, -0.171102, -0.882752, -0.638563, 0.750307, 0.171103, 0.633059, 0.638563, -0.437577, -1.94963, 1.4335, -1.67986)
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="submarine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.828165, 0.353746, -1.48016)
 stream = ExtResource("14_dmflv")
@@ -780,15 +789,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7394, 1.46816, 18.11)
 
 [node name="RegularPlant2" parent="." instance=ExtResource("35_op8mh")]
 transform = Transform3D(2.38162, 0, 0, 0, 3.51759, 0, 0, 0, 4.34485, 46.8452, 0.985771, 25.1926)
-
-[node name="waterLeak" parent="." instance=ExtResource("39_c3mu8")]
-transform = Transform3D(0.258819, 0, 0.965926, -0.638563, 0.750307, 0.171103, -0.724741, -0.661089, 0.194194, -1.78524, -15.9043, 1.86038)
-
-[node name="waterLeak2" parent="." instance=ExtResource("39_c3mu8")]
-transform = Transform3D(0.258819, 0, 0.965926, -0.638563, 0.750307, 0.171103, -0.724741, -0.661089, 0.194194, 0.986897, -15.9043, 1.86038)
-
-[node name="waterLeak3" parent="." instance=ExtResource("39_c3mu8")]
-transform = Transform3D(-0.437577, -0.171102, -0.882752, -0.638563, 0.750307, 0.171103, 0.633059, 0.638563, -0.437577, -1.94963, -15.9043, -1.67986)
 
 [node name="GoopyGuy" parent="." instance=ExtResource("40_74166")]
 transform = Transform3D(15.6558, 0, -43.2157, 0, 45.9641, 0, 43.2157, 0, 15.6558, 3.16111, -18.5801, -1.40177)

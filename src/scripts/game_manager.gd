@@ -38,6 +38,12 @@ var isPaused:bool = false
 var pauseMenu = null
 var isScaryHappening = false
 
+var waterLeak = null
+var waterLeak2 = null
+var waterLeak3 = null
+
+var redLight = null
+
 var timeUntilJumpscare:float = 5.0 # if we look out the peephole this long, scary things happen
 
 func _init() -> void:
@@ -115,6 +121,11 @@ func doScaryThing():
 		randomize()
 		var r = GameManager.rng.randi_range(0,2)
 		AudioManager.alarmSound.play()
+		waterLeak.visible = true
+		waterLeak2.visible = true
+		waterLeak3.visible = true
+		redLight.play("redLight")
+		
 		
 		match r:
 			0: 
@@ -148,3 +159,7 @@ func endGame():
 func _on_jumpscare_duration_timeout() -> void:
 	GameManager.jumpscareTexture.visible = false
 	GameManager.jumpscareTexture2.visible = false
+	waterLeak.visible = false
+	waterLeak2.visible = false
+	waterLeak3.visible = false
+	redLight.stop()

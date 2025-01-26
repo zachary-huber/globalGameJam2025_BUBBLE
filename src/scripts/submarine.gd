@@ -11,6 +11,10 @@ func _ready() -> void:
 	
 	GameManager.get_node("Timer").start()
 	
+	GameManager.waterLeak = $waterLeak
+	GameManager.waterLeak2 = $waterLeak2
+	GameManager.waterLeak3 = $waterLeak3
+	GameManager.redLight = $AnimationPlayer
 	#AudioManager.ambienceHum.play()
 	#AudioManager.ambienceWater.play()
 	#AudioManager.ambiencePing.play()
