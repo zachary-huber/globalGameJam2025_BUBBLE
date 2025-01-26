@@ -202,3 +202,6 @@ func get_rotation_direction(current_direction: Direction) -> int:
 	var direction = direction_map.get(last_direction, {}).get(current_direction, 0)
 	last_direction = current_direction
 	return direction
+
+func player():
+	pass

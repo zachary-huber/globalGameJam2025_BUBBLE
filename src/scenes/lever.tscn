@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3wa1t4prpd0l"]
+[gd_scene load_steps=10 format=3 uid="uid://1ygys75xohd7"]
 
 [ext_resource type="PackedScene" uid="uid://5sriinl02lir" path="res://data/models/lever.fbx" id="1_48yh6"]
 [ext_resource type="Script" path="res://src/scripts/lever.gd" id="1_v22ur"]
