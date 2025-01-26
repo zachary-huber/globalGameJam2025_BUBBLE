@@ -17,6 +17,7 @@
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
 background_mode = 1
+background_color = Color(0, 0, 0.0509804, 1)
 fog_enabled = true
 fog_light_color = Color(0, 0.243029, 0.403477, 1)
 
@@ -167,7 +168,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 0
 
 [node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.71171, 13.4352)
+transform = Transform3D(0.878066, 0, -0.478539, 0, 1, 0, 0.478539, 0, 0.878066, 6.08145, 3.71171, 8.91633)
 script = ExtResource("9_sq83h")
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
@@ -227,7 +228,10 @@ texture = ExtResource("11_h6fj8")
 [node name="bubbles" type="Node3D" parent="collectibles"]
 
 [node name="bubble" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -13.3644, 3.75946, 3.40154)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.7929, 3.75946, 3.40154)
+
+[node name="bubble7" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.811679, 3.75946, -11.3936)
 
 [node name="bubble2" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16.5643, 3.75946, -16.3744)
