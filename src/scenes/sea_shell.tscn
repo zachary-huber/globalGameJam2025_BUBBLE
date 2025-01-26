@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://x14xscuv6r46"]
+
+[ext_resource type="PackedScene" uid="uid://6g1nob402341" path="res://data/models/SeaShell.fbx" id="1_caion"]
+[ext_resource type="Texture2D" uid="uid://o0w22eyfqs3j" path="res://data/textures/SeaShell/standardSurface1_Base_color.png" id="2_qjqfb"]
+[ext_resource type="Texture2D" uid="uid://d3fk5hxdm3pum" path="res://data/textures/SeaShell/standardSurface1_Mixed_AO.png" id="3_mfwr3"]
+[ext_resource type="Texture2D" uid="uid://8iyu3wxqpfe0" path="res://data/textures/SeaShell/standardSurface1_Metallic.png" id="4_qtvik"]
+[ext_resource type="Texture2D" uid="uid://bjbu2fxu3nv23" path="res://data/textures/SeaShell/standardSurface1_Normal_OpenGL.png" id="5_fhckt"]
+[ext_resource type="Texture2D" uid="uid://bw0bqgihf3p0t" path="res://data/textures/SeaShell/standardSurface1_Roughness.png" id="6_8qjjt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4esvv"]
+albedo_texture = ExtResource("2_qjqfb")
+metallic = 1.0
+metallic_texture = ExtResource("4_qtvik")
+roughness_texture = ExtResource("6_8qjjt")
+normal_enabled = true
+normal_texture = ExtResource("5_fhckt")
+ao_enabled = true
+ao_texture = ExtResource("3_mfwr3")
+
+[node name="SeaShell" instance=ExtResource("1_caion")]
+
+[node name="pCube2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4esvv")

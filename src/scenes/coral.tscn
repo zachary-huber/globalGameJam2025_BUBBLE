@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5eoow6y22n2b"]
+
+[ext_resource type="PackedScene" uid="uid://byvnt32j2yn4f" path="res://data/models/Coral.fbx" id="1_jlcsi"]
+[ext_resource type="Texture2D" uid="uid://b7pmuvjns5b1i" path="res://data/textures/Corals/standardSurface1_Base_color.png" id="2_wf15q"]
+[ext_resource type="Texture2D" uid="uid://b5fo2uwrmv3re" path="res://data/textures/Corals/standardSurface1_Mixed_AO.png" id="3_fvtmw"]
+[ext_resource type="Texture2D" uid="uid://bqiwakq20budh" path="res://data/textures/Corals/standardSurface1_Metallic.png" id="4_mnbg2"]
+[ext_resource type="Texture2D" uid="uid://whew48xa1wei" path="res://data/textures/Corals/standardSurface1_Normal_OpenGL.png" id="5_j3aui"]
+[ext_resource type="Texture2D" uid="uid://h160s4c4kmrr" path="res://data/textures/Corals/standardSurface1_Roughness.png" id="6_20x0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bx2i"]
+albedo_texture = ExtResource("2_wf15q")
+metallic = 1.0
+metallic_texture = ExtResource("4_mnbg2")
+roughness_texture = ExtResource("6_20x0h")
+normal_enabled = true
+normal_texture = ExtResource("5_j3aui")
+ao_enabled = true
+ao_texture = ExtResource("3_fvtmw")
+
+[node name="Coral" instance=ExtResource("1_jlcsi")]
+
+[node name="pCubeShape1" parent="." index="0"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.00583971, 2.38419e-07, -0.0031898)
+surface_material_override/0 = SubResource("StandardMaterial3D_1bx2i")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc6h0nq2xr6il"]
+
+[ext_resource type="PackedScene" uid="uid://bm7o4sxv42htr" path="res://data/models/Rock.fbx" id="1_bwmof"]
+[ext_resource type="Texture2D" uid="uid://cfacmtpmomf42" path="res://data/textures/Rock/standardSurface1_Base_color.png" id="2_gdpt7"]
+[ext_resource type="Texture2D" uid="uid://dcm8qu331hvqx" path="res://data/textures/Rock/standardSurface1_Mixed_AO.png" id="3_c4mv6"]
+[ext_resource type="Texture2D" uid="uid://5kif1c348yf3" path="res://data/textures/Rock/standardSurface1_Metallic.png" id="4_rmwnn"]
+[ext_resource type="Texture2D" uid="uid://beqyimcukuq3o" path="res://data/textures/Rock/standardSurface1_Normal_OpenGL.png" id="5_eekt1"]
+[ext_resource type="Texture2D" uid="uid://coqicyblmc47f" path="res://data/textures/Rock/standardSurface1_Roughness.png" id="6_ije1w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trru3"]
+albedo_texture = ExtResource("2_gdpt7")
+metallic = 1.0
+metallic_texture = ExtResource("4_rmwnn")
+roughness_texture = ExtResource("6_ije1w")
+normal_enabled = true
+normal_texture = ExtResource("5_eekt1")
+ao_enabled = true
+ao_texture = ExtResource("3_c4mv6")
+
+[node name="Rock" instance=ExtResource("1_bwmof")]
+
+[node name="pCube1" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_trru3")

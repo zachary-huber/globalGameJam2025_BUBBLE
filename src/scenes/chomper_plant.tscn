@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtm78nu13d3fy"]
+
+[ext_resource type="PackedScene" uid="uid://diyn6mwglfj5m" path="res://data/models/ChomperPlant.fbx" id="1_gst6j"]
+[ext_resource type="Texture2D" uid="uid://di2ysn0q4nsm5" path="res://data/textures/Chomper/standardSurface1_Base_color.png" id="2_3ck5k"]
+[ext_resource type="Texture2D" uid="uid://bkqdkt5i88741" path="res://data/textures/Chomper/standardSurface1_Mixed_AO.png" id="3_obcro"]
+[ext_resource type="Texture2D" uid="uid://bi13o54b5cv0r" path="res://data/textures/Chomper/standardSurface1_Metallic.png" id="4_citta"]
+[ext_resource type="Texture2D" uid="uid://b8dx0oqkooiup" path="res://data/textures/Chomper/standardSurface1_Normal_OpenGL.png" id="5_2qf4i"]
+[ext_resource type="Texture2D" uid="uid://v3nbeo8dbo7c" path="res://data/textures/Chomper/standardSurface1_Roughness.png" id="6_y1tyd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8h1b"]
+albedo_texture = ExtResource("2_3ck5k")
+metallic = 1.0
+metallic_texture = ExtResource("4_citta")
+roughness_texture = ExtResource("6_y1tyd")
+normal_enabled = true
+normal_texture = ExtResource("5_2qf4i")
+ao_enabled = true
+ao_texture = ExtResource("3_obcro")
+
+[node name="ChomperPlant" instance=ExtResource("1_gst6j")]
+transform = Transform3D(14.1112, 0, 0, 0, 14.1112, 0, 0, 0, 14.1112, 0, 0, 0)
+
+[node name="pCube3" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j8h1b")

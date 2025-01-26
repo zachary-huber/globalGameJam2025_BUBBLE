@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://donfjfomj3ije"]
+
+[ext_resource type="PackedScene" uid="uid://bei38b7wdb7bs" path="res://data/models/Eyeball.fbx" id="1_ioshu"]
+[ext_resource type="Texture2D" uid="uid://8247q0t6y21p" path="res://data/textures/New folder (3)/lambert2_Base_color.tga" id="2_gtisw"]
+[ext_resource type="Texture2D" uid="uid://wvey5u37c8kg" path="res://data/textures/New folder (3)/lambert2_Mixed_AO.tga" id="3_q7v1y"]
+[ext_resource type="Texture2D" uid="uid://cavw3ldi5p6ky" path="res://data/textures/New folder (3)/lambert2_Metallic.tga" id="4_ga7i3"]
+[ext_resource type="Texture2D" uid="uid://dgbaullc32vn2" path="res://data/textures/New folder (3)/lambert2_Normal_OpenGL.tga" id="5_k7don"]
+[ext_resource type="Texture2D" uid="uid://dyrwq6hg8y2dm" path="res://data/textures/New folder (3)/lambert2_Roughness.tga" id="6_63cii"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cc1j7"]
+albedo_texture = ExtResource("2_gtisw")
+metallic = 1.0
+metallic_texture = ExtResource("4_ga7i3")
+roughness_texture = ExtResource("6_63cii")
+normal_enabled = true
+normal_texture = ExtResource("5_k7don")
+ao_enabled = true
+ao_texture = ExtResource("3_q7v1y")
+
+[node name="Eyeball" instance=ExtResource("1_ioshu")]
+transform = Transform3D(0.661939, 0, 0, 0, 0.661939, 0, 0, 0, 0.661939, 0, 0, 0)
+
+[node name="pCubeShape4" parent="." index="0"]
+transform = Transform3D(0.00379028, 0, 0, 0, 0.00379028, 0, 0, 0, 0.00379028, 0, -5.68434e-14, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_cc1j7")

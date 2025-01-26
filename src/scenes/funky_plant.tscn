@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcnvk6125an68"]
+
+[ext_resource type="PackedScene" uid="uid://c21gewapxuk5e" path="res://data/models/FunkyPlant.fbx" id="1_7mt5x"]
+[ext_resource type="Texture2D" uid="uid://b8u85246wpgph" path="res://data/textures/New folder/standardSurface1_Base_color.png" id="2_inyiu"]
+[ext_resource type="Texture2D" uid="uid://bg14k2ilxangr" path="res://data/textures/New folder/standardSurface1_Mixed_AO.png" id="3_xxss7"]
+[ext_resource type="Texture2D" uid="uid://b5s5ln2y3h01n" path="res://data/textures/New folder/standardSurface1_Metallic.png" id="4_2v6yc"]
+[ext_resource type="Texture2D" uid="uid://etaap60qxpiq" path="res://data/textures/New folder/standardSurface1_Normal_OpenGL.png" id="5_5ryel"]
+[ext_resource type="Texture2D" uid="uid://d16mlmh56xyq5" path="res://data/textures/New folder/standardSurface1_Roughness.png" id="6_cd1bp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1sjr"]
+albedo_texture = ExtResource("2_inyiu")
+metallic = 1.0
+metallic_texture = ExtResource("4_2v6yc")
+roughness_texture = ExtResource("6_cd1bp")
+normal_enabled = true
+normal_texture = ExtResource("5_5ryel")
+ao_enabled = true
+ao_texture = ExtResource("3_xxss7")
+
+[node name="FunkyPlant" instance=ExtResource("1_7mt5x")]
+
+[node name="pCube1" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_k1sjr")

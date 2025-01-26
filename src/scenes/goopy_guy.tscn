@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://1b5b61u0am7h"]
+
+[ext_resource type="PackedScene" uid="uid://dwtlfgmulum8a" path="res://data/models/GoopyGuy.fbx" id="1_f5lnc"]
+[ext_resource type="Texture2D" uid="uid://d4epjjyuwxual" path="res://data/textures/Goopy/standardSurface1_Base_color.png" id="2_mjphj"]
+[ext_resource type="Texture2D" uid="uid://tr72ioprlhn" path="res://data/textures/Goopy/standardSurface1_Mixed_AO.png" id="3_e3itq"]
+[ext_resource type="Texture2D" uid="uid://o2n2eglkjfmf" path="res://data/textures/Goopy/standardSurface1_Metallic.png" id="4_sxt1a"]
+[ext_resource type="Texture2D" uid="uid://b1te40ljooeb" path="res://data/textures/Goopy/standardSurface1_Normal_OpenGL.png" id="5_ryeok"]
+[ext_resource type="Texture2D" uid="uid://ckwelsl07o3sm" path="res://data/textures/Goopy/standardSurface1_Roughness.png" id="6_rlehe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovb7i"]
+albedo_texture = ExtResource("2_mjphj")
+metallic = 1.0
+metallic_texture = ExtResource("4_sxt1a")
+roughness_texture = ExtResource("6_rlehe")
+normal_enabled = true
+normal_texture = ExtResource("5_ryeok")
+ao_enabled = true
+ao_texture = ExtResource("3_e3itq")
+
+[node name="GoopyGuy" instance=ExtResource("1_f5lnc")]
+transform = Transform3D(84.1305, 0, 0, 0, 84.1305, 0, 0, 0, 84.1305, 0, -1.16205, 0)
+
+[node name="pCube10" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ovb7i")

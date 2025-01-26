@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2gtqwk3vgbcl"]
+
+[ext_resource type="PackedScene" uid="uid://bqd6k2jdbxvln" path="res://data/models/SeaGrass.fbx" id="1_vbvgy"]
+[ext_resource type="Texture2D" uid="uid://c7gs76b14h0oh" path="res://data/textures/SeaGrass/standardSurface1_Base_color.png" id="2_l6p60"]
+[ext_resource type="Texture2D" uid="uid://0kb0tcd3w6qh" path="res://data/textures/SeaGrass/standardSurface1_Mixed_AO.png" id="3_exfhg"]
+[ext_resource type="Texture2D" uid="uid://dtuoynrkjcec4" path="res://data/textures/SeaGrass/standardSurface1_Metallic.png" id="4_756i4"]
+[ext_resource type="Texture2D" uid="uid://bnfyrql1kn5q" path="res://data/textures/SeaGrass/standardSurface1_Normal_OpenGL.png" id="5_x7bk2"]
+[ext_resource type="Texture2D" uid="uid://dxmbf8x4jtc00" path="res://data/textures/SeaGrass/standardSurface1_Roughness.png" id="6_f2ymo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnisv"]
+albedo_texture = ExtResource("2_l6p60")
+metallic = 1.0
+metallic_texture = ExtResource("4_756i4")
+roughness_texture = ExtResource("6_f2ymo")
+normal_enabled = true
+normal_texture = ExtResource("5_x7bk2")
+ao_enabled = true
+ao_texture = ExtResource("3_exfhg")
+
+[node name="SeaGrass" instance=ExtResource("1_vbvgy")]
+
+[node name="Skeleton3D" parent="." index="1"]
+bones/1/rotation = Quaternion(0.999881, 0.0154168, 3.4761e-11, 4.10208e-13)
+bones/2/rotation = Quaternion(0.98714, 0.0353207, 0.155899, 0.0014525)
+bones/3/rotation = Quaternion(0.999195, 0.0401287, -9.8601e-11, 2.3095e-13)
+bones/4/rotation = Quaternion(-1.88708e-11, 2.89648e-10, 0.00842498, 0.999965)
+bones/5/rotation = Quaternion(0.999755, 0.0221556, -2.13947e-10, -3.70175e-12)
+
+[node name="pasted__pCube1" parent="Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vnisv")
