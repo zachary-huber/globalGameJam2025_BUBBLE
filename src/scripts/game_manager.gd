@@ -90,10 +90,13 @@ func extractBubble():
 			GameManager.subInteractTarget = null
 
 
-func startGame():
+func startLore():
 	#$Timer.start()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().change_scene_to_file("res://src/scenes/lore.tscn")
+
+func startGame():
+	get_tree().change_scene_to_file("res://src/scenes/main_3d.tscn")
 
 func endGame():
 	print("Found the golden bubble!!! -> Game end!")

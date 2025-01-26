@@ -6,6 +6,8 @@ func _ready() -> void:
 	$AnimationPlayer.play("lore")
 	pass # Replace with function body.
 
+func loreEnd():
+	GameManager.startGame()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
