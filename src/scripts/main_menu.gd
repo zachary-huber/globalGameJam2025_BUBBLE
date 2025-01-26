@@ -18,3 +18,4 @@ func _on_quit_button_button_down() -> void:
 
 func _on_credits_button_button_down() -> void:
 	$credits.visible = !$credits.visible
+	$credits2.visible = !$credits2.visible
