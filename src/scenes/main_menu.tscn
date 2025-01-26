@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgub5o6rb07tn"]
+[gd_scene load_steps=4 format=3 uid="uid://bgub5o6rb07tn"]
 
 [ext_resource type="Script" path="res://src/scripts/main_menu.gd" id="1_m56ck"]
+[ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="2_3e6j6"]
+
+[sub_resource type="Theme" id="Theme_b8dvp"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -33,16 +36,46 @@ text = "[center]Deepest Sea[/center]"
 
 [node name="startButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_3e6j6")
 text = "Play"
 
 [node name="quitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_3e6j6")
 text = "Quit"
 
 [node name="creditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_3e6j6")
 text = "Credits"
+
+[node name="credits" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 511.0
+offset_top = 27.0
+offset_right = 756.0
+offset_bottom = 417.0
+theme = SubResource("Theme_b8dvp")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center]OUR TEAM
+
+Sydney Coleman: 3D Design
+Xander Boutin: 3D Design
+Zac Huber: Programming
+Sydney Schnurr: Music & SFX
+Jade Harnett: Illustration
+Dawson Hogg: Sounds
+
+Licensed stuff
+
+Music: 
+
+Sounds:
+
+"
 
 [connection signal="button_down" from="VBoxContainer/startButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/quitButton" to="." method="_on_quit_button_button_down"]
-[connection signal="button_down" from="VBoxContainer/creditsButton" to="." method="_on_quit_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/creditsButton" to="." method="_on_credits_button_button_down"]

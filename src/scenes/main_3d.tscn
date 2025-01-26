@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=27 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
@@ -15,8 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dx1vhctwoj8by" path="res://data/textures/drawings/poster2.png" id="9_nixu6"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
 [ext_resource type="PackedScene" uid="uid://ojt4bbo5638d" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
+[ext_resource type="PackedScene" uid="uid://pd8sttnw1xs4" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
 [ext_resource type="PackedScene" uid="uid://bqk8dp4evnsdn" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
+[ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="16_vit8q"]
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
 background_mode = 1
@@ -96,6 +98,12 @@ texture = ExtResource("8_noxla")
 [node name="Sprite3D2" type="Sprite3D" parent="submarine"]
 transform = Transform3D(-6.51926e-09, 0, 0.034, 0, 0.034, 0, -0.034, 0, -6.51926e-09, -3.64144, 1.03402, 0.736802)
 texture = ExtResource("9_nixu6")
+
+[node name="Node3D" type="Node3D" parent="submarine"]
+transform = Transform3D(0.882948, 0.469472, 0, -0.469472, 0.882948, 0, 0, 0, 1, 1.16823, 0.118121, -0.585805)
+
+[node name="needle" parent="submarine/Node3D" instance=ExtResource("10_ypwqh")]
+transform = Transform3D(-2.15868, 0, 0.0753831, 0, 2.16, 0, -0.0753831, 0, -2.15868, 0, 0, 0)
 
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -7.9174, 0.560209)
@@ -297,10 +305,12 @@ text = "[center]Paused[/center]"
 
 [node name="resumeButton" type="Button" parent="mainUI/pauseMenu/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("16_vit8q")
 text = "Resume"
 
 [node name="quitButton" type="Button" parent="mainUI/pauseMenu/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("16_vit8q")
 text = "Quit"
 
 [node name="collectibles" type="Node3D" parent="."]

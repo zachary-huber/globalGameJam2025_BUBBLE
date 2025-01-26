@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/scripts/peephole.gd" id="1_ym6gk"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_idefy"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hyvkp"]
 
 [node name="peephole" type="Node3D"]
 script = ExtResource("1_ym6gk")
@@ -12,4 +12,4 @@ script = ExtResource("1_ym6gk")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_idefy")
+shape = SubResource("CapsuleShape3D_hyvkp")

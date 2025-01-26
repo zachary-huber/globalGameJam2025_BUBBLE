@@ -1,5 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b17iipjv763gl"]
+[gd_scene load_steps=3 format=3 uid="uid://pd8sttnw1xs4"]
 
 [ext_resource type="PackedScene" uid="uid://m07ouis07s1q" path="res://data/models/needle.fbx" id="1_l4npm"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5bss"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
 [node name="needle" instance=ExtResource("1_l4npm")]
+
+[node name="pPlane5" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_w5bss")
