@@ -1,4 +1,12 @@
-[gd_scene load_steps=137 format=3 uid="uid://cm2fpfidj4u22"]
+[gd_scene load_steps=144 format=3 uid="uid://cm2fpfidj4u22"]
+
+[ext_resource type="PackedScene" uid="uid://bcnvk6125an68" path="res://src/scenes/environment/funky_plant.tscn" id="1_wprev"]
+[ext_resource type="PackedScene" uid="uid://c2gtqwk3vgbcl" path="res://src/scenes/environment/sea_grass.tscn" id="2_4rqtf"]
+[ext_resource type="PackedScene" uid="uid://bc6h0nq2xr6il" path="res://src/scenes/environment/rock.tscn" id="3_5k303"]
+[ext_resource type="PackedScene" uid="uid://bov7a0tusk3oq" path="res://src/scenes/environment/regular_plant.tscn" id="4_6ywrd"]
+[ext_resource type="PackedScene" uid="uid://c5eoow6y22n2b" path="res://src/scenes/environment/coral.tscn" id="5_hpbkq"]
+[ext_resource type="PackedScene" uid="uid://x14xscuv6r46" path="res://src/scenes/environment/sea_shell.tscn" id="6_0gtu7"]
+[ext_resource type="PackedScene" uid="uid://dtm78nu13d3fy" path="res://src/scenes/environment/chomper_plant.tscn" id="7_66wol"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_co42f"]
 
@@ -1619,3 +1627,132 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s686m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D73/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wshng")
+
+[node name="FunkyPlant" parent="." instance=ExtResource("1_wprev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.2124, -4.30428, -78.0698)
+
+[node name="SeaGrass" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1.85244, 0, 0, 0, 1, -80.2625, -4.30428, -85.279)
+
+[node name="SeaGrass2" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1.85244, 0, 0, 0, 1, -79.8859, -4.30428, -85.5533)
+
+[node name="SeaGrass3" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(0.996884, 0, 0, 0, 2.21695, 0, 0, 0, 0.996884, -80.1777, -4.80412, -84.9265)
+
+[node name="Rock" parent="." instance=ExtResource("3_5k303")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.241, -4.30428, -73.7962)
+
+[node name="Rock2" parent="." instance=ExtResource("3_5k303")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.3427, -4.30428, -44.2188)
+
+[node name="Rock3" parent="." instance=ExtResource("3_5k303")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.3096, -4.30428, -57.1006)
+
+[node name="RegularPlant" parent="." instance=ExtResource("4_6ywrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.7444, -4.30428, -59.3634)
+
+[node name="Coral" parent="." instance=ExtResource("5_hpbkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1476, -4.30428, -32.6093)
+
+[node name="FunkyPlant2" parent="." instance=ExtResource("1_wprev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.4931, -4.30428, 0.426546)
+
+[node name="SeaShell" parent="." instance=ExtResource("6_0gtu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3661, -4.30428, 39.5033)
+
+[node name="SeaShell2" parent="." instance=ExtResource("6_0gtu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7414, -4.30428, 5.93552)
+
+[node name="SeaGrass4" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5946, -4.30428, 10.5584)
+
+[node name="SeaGrass5" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6647, -4.30428, 9.70042)
+
+[node name="FunkyPlant3" parent="." instance=ExtResource("1_wprev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1707, -4.30428, 8.4925)
+
+[node name="ChomperPlant" parent="." instance=ExtResource("7_66wol")]
+transform = Transform3D(14.1112, 0, 0, 0, 14.1112, 0, 0, 0, 14.1112, 29.3652, -4.30428, 5.06764)
+
+[node name="FunkyPlant4" parent="." instance=ExtResource("1_wprev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.09, -4.30428, 47.9294)
+
+[node name="Rock4" parent="." instance=ExtResource("3_5k303")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5101, -4.30428, 47.8404)
+
+[node name="SeaGrass6" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.9676, -4.30428, 71.481)
+
+[node name="RegularPlant2" parent="." instance=ExtResource("4_6ywrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.7975, -4.30428, 73.459)
+
+[node name="SeaShell3" parent="." instance=ExtResource("6_0gtu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.8082, -4.30428, 70.7967)
+
+[node name="ChomperPlant2" parent="." instance=ExtResource("7_66wol")]
+transform = Transform3D(14.1112, 0, 0, 0, 14.1112, 0, 0, 0, 14.1112, 91.336, -4.30428, 45.0033)
+
+[node name="Coral2" parent="." instance=ExtResource("5_hpbkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.1682, -4.30428, 46.7986)
+
+[node name="Rock5" parent="." instance=ExtResource("3_5k303")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.0027, -4.30428, -92.8682)
+
+[node name="SeaShell4" parent="." instance=ExtResource("6_0gtu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.2731, -4.30428, -91.6008)
+
+[node name="SeaGrass7" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.6124, -4.30428, -95.2954)
+
+[node name="SeaGrass8" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5831, -4.30428, -95.0851)
+
+[node name="SeaGrass9" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.079, -4.30428, -94.3228)
+
+[node name="RegularPlant3" parent="." instance=ExtResource("4_6ywrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.1791, -4.30428, -10.174)
+
+[node name="ChomperPlant3" parent="." instance=ExtResource("7_66wol")]
+transform = Transform3D(14.1112, 0, 0, 0, 14.1112, 0, 0, 0, 14.1112, 83.9792, -4.30428, -10.7207)
+
+[node name="Rock6" parent="." instance=ExtResource("3_5k303")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.8712, -4.30428, -14.4467)
+
+[node name="SeaShell5" parent="." instance=ExtResource("6_0gtu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9926, -4.30428, 6.63473)
+
+[node name="SeaShell6" parent="." instance=ExtResource("6_0gtu7")]
+transform = Transform3D(0.339805, 0, 0.940496, 0, 1, 0, -0.940496, 0, 0.339805, -19.7462, -4.30428, 10.012)
+
+[node name="Rock7" parent="." instance=ExtResource("3_5k303")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25918, -4.30428, -2.49698)
+
+[node name="FunkyPlant5" parent="." instance=ExtResource("1_wprev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8631, -4.30428, 8.35135)
+
+[node name="Coral3" parent="." instance=ExtResource("5_hpbkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37164, -4.30428, 20.2175)
+
+[node name="RegularPlant4" parent="." instance=ExtResource("4_6ywrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8461, -4.30428, 97.4561)
+
+[node name="Rock8" parent="." instance=ExtResource("3_5k303")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.1291, -4.30428, 96.7267)
+
+[node name="SeaGrass10" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.6515, -4.30428, 23.7916)
+
+[node name="SeaGrass11" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.4879, -4.30428, 21.3134)
+
+[node name="SeaGrass12" parent="." instance=ExtResource("2_4rqtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.7935, -4.30428, 22.2484)
+
+[node name="SeaShell7" parent="." instance=ExtResource("6_0gtu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.4685, -4.30428, 19.1498)
+
+[node name="ChomperPlant4" parent="." instance=ExtResource("7_66wol")]
+transform = Transform3D(14.1112, 0, 0, 0, 14.1112, 0, 0, 0, 14.1112, 11.6972, -4.30428, 61.4425)
