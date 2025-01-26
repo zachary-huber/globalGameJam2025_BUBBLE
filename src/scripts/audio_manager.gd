@@ -3,21 +3,15 @@ extends Node
 var current_song
 
 func _ready() -> void:
-	if current_song:
-		$mainMusic.play()
+	if current_song: playSong(current_song)
 
 
 func _process(delta: float) -> void:
 	pass
 
-func playSong(songName:String):
-		# Load the audio stream dynamically from the song_name
-	var audio_stream = ResourceLoader.load(songName)  # Assuming the file is in "res://sounds/"
+func playSong(song_file_path):
+	var new_audio_stream = load(song_file_path)
 	
-	if audio_stream and audio_stream is AudioStream:
-		# Set the audio stream to the AudioStreamPlayer3D
-		$mainMusic.stream = audio_stream
-		$mainMusic.play()  # Play the audio immediately
-	else:
-		print("Failed to load audio stream.")
-	
+	if new_audio_stream is AudioStream:
+		$musicPlayer.stream = new_audio_stream
+		$musicPlayer.play()
