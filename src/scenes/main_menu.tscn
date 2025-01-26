@@ -39,5 +39,10 @@ text = "Play"
 layout_mode = 2
 text = "Quit"
 
+[node name="creditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
 [connection signal="button_down" from="VBoxContainer/startButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/quitButton" to="." method="_on_quit_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/creditsButton" to="." method="_on_quit_button_button_down"]
