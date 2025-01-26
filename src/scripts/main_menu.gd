@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready() -> void:
-	pass
+	AudioManager.musicPlayer.play()
 
 
 func _process(delta: float) -> void:

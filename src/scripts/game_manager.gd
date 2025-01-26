@@ -7,7 +7,7 @@ var rng = RandomNumberGenerator.new() # This generates random numbers
 
 var currrentRotation:float
 var currentVelocity:float
-var o2:float
+var o2:float = 85
 var shipHealth:float
 var bubbleCollected:int = 0
 
@@ -54,6 +54,12 @@ func _input(event: InputEvent) -> void:
 
 func _on_timer_timeout() -> void:
 	timePlayed += 0.25
+	o2 -= 0.02
+	
+	if o2 < 25:
+		AudioManager.oxygenAlarm.play()
+	else:
+		AudioManager.oxygenAlarm.stop()
 	
 	print("rotation: ", currrentRotation)
 	print("velocity: ", currentVelocity)
@@ -89,6 +95,25 @@ func extractBubble():
 			GameManager.subInteractTarget.collectBubble()
 			GameManager.subInteractTarget = null
 
+func doScaryThing():
+	randomize()
+	var r = GameManager.rng.randi_range(0,10)
+	
+	match r:
+		0: pass # hull damage
+		1: pass # monster jump scare 1
+		2: pass # monster jump scare 2
+		3: pass # monster jump scare 3
+		4: pass # monster jump scare 4
+		5: GameManager.playSound("")
+		6: pass # maybe we just need the above cases
+		7: pass
+		8: pass
+		9: pass
+		10: pass
+		_: 
+			print("This should not happen... but we will re-roll the scary thing")
+			doScaryThing()
 
 func startLore():
 	#$Timer.start()
