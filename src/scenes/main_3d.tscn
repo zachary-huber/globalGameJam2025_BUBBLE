@@ -2,26 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
-[ext_resource type="PackedScene" uid="uid://02p7baco7srs" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
+[ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
 [ext_resource type="PackedScene" uid="uid://1ygys75xohd7" path="res://src/scenes/lever.tscn" id="3_2aso7"]
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 [ext_resource type="Script" path="res://src/scripts/chair_cam.gd" id="5_pvmt8"]
-[ext_resource type="PackedScene" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
-[ext_resource type="PackedScene" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
+[ext_resource type="PackedScene" uid="uid://dtb24r831gvtd" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
+[ext_resource type="PackedScene" uid="uid://d1levm7wo2lhf" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
 [ext_resource type="Texture2D" uid="uid://c8tnypobnibjs" path="res://data/textures/drawings/poster1.png" id="8_noxla"]
 [ext_resource type="Script" path="res://src/scripts/main_ui.gd" id="8_ttdf3"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
 [ext_resource type="Texture2D" uid="uid://dx1vhctwoj8by" path="res://data/textures/drawings/poster2.png" id="9_nixu6"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
-[ext_resource type="PackedScene" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
-[ext_resource type="PackedScene" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
+[ext_resource type="PackedScene" uid="uid://ojt4bbo5638d" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
+[ext_resource type="PackedScene" uid="uid://pd8sttnw1xs4" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Script" path="res://src/scripts/extraction_button.gd" id="11_ch8l6"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
 [ext_resource type="AudioStream" uid="uid://djm1047q8sgyv" path="res://data/sounds/OhShitAlarm.mp3" id="12_48hr1"]
 [ext_resource type="AudioStream" uid="uid://b580fa8063gia" path="res://data/sounds/AmbientHums.mp3" id="13_au0ec"]
-[ext_resource type="AudioStream" uid="uid://erltyqdrxf3n" path="res://data/sounds/AmbientWater.mp3" id="14_dmflv"]
-[ext_resource type="PackedScene" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
+[ext_resource type="AudioStream" uid="uid://bd1pdxvnujrgu" path="res://data/sounds/AmbientWater.mp3" id="14_dmflv"]
+[ext_resource type="PackedScene" uid="uid://bqk8dp4evnsdn" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
 [ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="16_vit8q"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
@@ -53,7 +53,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [1.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -65,7 +65,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_beodj"]

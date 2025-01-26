@@ -137,6 +137,9 @@ func _input(event: InputEvent) -> void:
 	
 	handleObjectInteractions(event)
 	handlePlayerMovement()
+	
+	if event.is_action_pressed("scaryTest"):
+		GameManager.doScaryThing()
 
 
 func updateCameraMotion(event) -> void:

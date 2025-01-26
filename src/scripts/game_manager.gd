@@ -114,6 +114,7 @@ func doScaryThing():
 		_: 
 			print("This should not happen... but we will re-roll the scary thing")
 			doScaryThing()
+	print("Rolled [r] as: ", r)
 
 func startLore():
 	#$Timer.start()

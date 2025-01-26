@@ -8,9 +8,9 @@ func _ready() -> void:
 	GameManager.needle = $Node3D/needle
 	GameManager.speedLabel = $speedLabel
 	
-	AudioManager.ambienceHum.play()
-	AudioManager.ambienceWater.play()
-	AudioManager.ambiencePing.play()
+	#AudioManager.ambienceHum.play()
+	#AudioManager.ambienceWater.play()
+	#AudioManager.ambiencePing.play()
 
 func _process(delta: float) -> void:
 	pass
