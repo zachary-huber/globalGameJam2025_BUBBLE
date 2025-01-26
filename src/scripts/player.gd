@@ -123,6 +123,7 @@ func _input(event: InputEvent) -> void:
 			if GameManager.subInteractTarget:
 				if GameManager.subInteractTarget.has_method("bubble"):
 					GameManager.subInteractTarget.collectBubble()
+					GameManager.subInteractTarget = null
 	else:  # we are not at the helm or peephole
 		if event is InputEventMouseMotion:
 			updateCameraMotion(event)
