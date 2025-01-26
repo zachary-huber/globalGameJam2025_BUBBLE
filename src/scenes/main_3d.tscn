@@ -29,6 +29,45 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ch6g"]
 size = Vector3(2, 2, 2)
 
+[sub_resource type="Animation" id="Animation_8nfol"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OhShitAlarm:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lighting/RedLight1:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lighting/RedLight2:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_beodj"]
 resource_name = "redLight"
 length = 27.6
@@ -67,45 +106,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_8nfol"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OhShitAlarm:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("lighting/RedLight1:light_energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("lighting/RedLight2:light_energy")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85ipj"]
@@ -226,10 +226,12 @@ text = "o2: 98%"
 
 [node name="Sprite3D" type="Sprite3D" parent="submarine"]
 transform = Transform3D(2.56693e-09, 0, -0.034, 0, 0.034, 0, 0.034, 0, 2.56693e-09, 3.641, 0.957448, 0.810692)
+shaded = true
 texture = ExtResource("8_noxla")
 
 [node name="Sprite3D2" type="Sprite3D" parent="submarine"]
 transform = Transform3D(-6.51926e-09, 0, 0.034, 0, 0.034, 0, -0.034, 0, -6.51926e-09, -3.64144, 1.03402, 0.736802)
+shaded = true
 texture = ExtResource("9_nixu6")
 
 [node name="Node3D" type="Node3D" parent="submarine"]
@@ -240,6 +242,7 @@ transform = Transform3D(-2.15868, 0, 0.0753833, 0, 2.16, 0, -0.0753833, 0, -2.15
 
 [node name="speedLabel" type="Label3D" parent="submarine"]
 transform = Transform3D(-1.83701e-08, -0.907404, 0.42026, -3.96639e-08, 0.42026, 0.907404, -1, 0, -4.37114e-08, 1.00048, 0.16698, -1.58471)
+modulate = Color(0.14902, 1, 0, 1)
 text = "100%"
 
 [node name="lighting" type="Node3D" parent="submarine"]
@@ -247,11 +250,13 @@ text = "100%"
 [node name="RedLight1" type="OmniLight3D" parent="submarine/lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0315, 1.7357, -0.00599293)
 light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="RedLight2" type="OmniLight3D" parent="submarine/lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79913, 1.7357, -0.00599293)
 light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="PeepHole1" type="SpotLight3D" parent="submarine/lighting"]
@@ -271,6 +276,54 @@ light_color = Color(0.18, 0.808667, 1, 1)
 light_energy = 3.0
 shadow_enabled = true
 omni_range = 1.46466
+
+[node name="02Light2" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.968667, 0.298655, -1.0781)
+light_color = Color(0, 0.73, 0.146, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 0.581
+
+[node name="02Light3" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.968667, 0.298655, -0.739058)
+light_color = Color(0, 0.73, 0.146, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 0.581
+
+[node name="02Light4" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12789, 0.298655, -1.46619)
+light_color = Color(0, 0.73, 0.146, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 0.581
+
+[node name="02Light5" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15883, 0.213591, -0.565573)
+light_color = Color(0.73, 0, 0.0121665, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 0.581
+
+[node name="02Light6" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78551, -0.175619, -1.10223)
+light_color = Color(0.73, 0, 0.0121665, 1)
+shadow_enabled = true
+omni_range = 1.5
+omni_attenuation = 0.5
+
+[node name="02Light7" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78551, -0.175619, 1.27458)
+light_color = Color(0.73, 0, 0.0121665, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 1.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92913, 0.919892, 0)
+light_color = Color(0.81, 0.77679, 0.1458, 1)
+light_energy = 0.2
+omni_range = 2.158
 
 [node name="extractionButton" type="Node3D" parent="submarine"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.312389, -0.0571432, -1.14212)

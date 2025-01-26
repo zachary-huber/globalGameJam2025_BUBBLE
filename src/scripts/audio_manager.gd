@@ -32,3 +32,6 @@ func playSound(file_path):
 	if new_audio_stream is AudioStream:
 		$soundPlayer.stream = new_audio_stream
 		$soundPlayer.play()
+
+func stopSong():
+	$musicPlayer.stop()
