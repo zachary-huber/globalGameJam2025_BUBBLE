@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://cm2fpfidj4u22"]
+[gd_scene load_steps=138 format=3 uid="uid://cm2fpfidj4u22"]
 
 [ext_resource type="PackedScene" uid="uid://bcnvk6125an68" path="res://src/scenes/environment/funky_plant.tscn" id="1_wprev"]
 [ext_resource type="PackedScene" uid="uid://c2gtqwk3vgbcl" path="res://src/scenes/environment/sea_grass.tscn" id="2_4rqtf"]
@@ -7,24 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c5eoow6y22n2b" path="res://src/scenes/environment/coral.tscn" id="5_hpbkq"]
 [ext_resource type="PackedScene" uid="uid://x14xscuv6r46" path="res://src/scenes/environment/sea_shell.tscn" id="6_0gtu7"]
 [ext_resource type="PackedScene" uid="uid://dtm78nu13d3fy" path="res://src/scenes/environment/chomper_plant.tscn" id="7_66wol"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_co42f"]
-
-[sub_resource type="Gradient" id="Gradient_rxfjk"]
-offsets = PackedFloat32Array(0, 0.327869, 0.622951, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.0171, 0.0334303, 0.0361632, 1, 0.0366853, 0.0717105, 0.0775578, 1, 0.0865763, 0.153379, 0.164518, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jg7vl"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2cn53"]
-color_ramp = SubResource("Gradient_rxfjk")
-noise = SubResource("FastNoiseLite_jg7vl")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eri77"]
-albedo_texture = SubResource("NoiseTexture2D_2cn53")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ux3ww"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_npmxy"]
 
@@ -417,16 +399,6 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Node3D" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 149.549, 0, 0, 0, 100, 0, -4.30428, 0)
-mesh = SubResource("PlaneMesh_co42f")
-surface_material_override/0 = SubResource("StandardMaterial3D_eri77")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ux3ww")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(26.3872, 0, 0, 0, 14.9704, 0, 0, 0, 35.3074, -66.9995, -2.73276, 68.8985)

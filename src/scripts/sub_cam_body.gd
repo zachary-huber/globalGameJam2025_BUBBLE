@@ -24,3 +24,10 @@ func _on_collect_area_area_entered(area: Area3D) -> void:
 
 func _on_collect_area_area_exited(area: Area3D) -> void:
 	return
+
+
+func _on_collect_area_body_entered(body: Node3D) -> void:
+	if body.owner:
+		print("Collided with: ", body.owner.name)
+		if body.owner.name == "Walls": # handles collisions with walls
+			GameManager.endGame()

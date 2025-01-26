@@ -718,7 +718,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 0
 
 [node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
-transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 54.5064, 3.71171, 10.6281)
+transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 45.4773, 3.68737, 14.124)
 script = ExtResource("9_sq83h")
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
@@ -899,7 +899,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 25.0834, 3.75946, 41.8691)
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 45.5368, 3, 6.95114)
 bubbleType = 1
 
-[node name="Node3D" parent="." instance=ExtResource("27_8b1o7")]
+[node name="Walls" parent="." instance=ExtResource("27_8b1o7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18943, 5.15076, 5.9615)
 
 [node name="fishy" type="Node3D" parent="."]
@@ -997,5 +997,6 @@ transform = Transform3D(15.6558, 0, -43.2157, 0, 45.9641, 0, 43.2157, 0, 15.6558
 
 [connection signal="area_entered" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_entered"]
 [connection signal="area_exited" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_exited"]
+[connection signal="body_entered" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_body_entered"]
 [connection signal="button_down" from="mainUI/pauseMenu/VBoxContainer/resumeButton" to="mainUI" method="_on_resume_button_button_down"]
 [connection signal="button_down" from="mainUI/pauseMenu/VBoxContainer/quitButton" to="mainUI" method="_on_quit_button_button_down"]
