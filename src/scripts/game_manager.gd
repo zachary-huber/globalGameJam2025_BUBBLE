@@ -45,6 +45,8 @@ var waterLeak3 = null
 var redLight = null
 var ohShit = null
 
+var Dead = null
+
 var timeUntilJumpscare:float = 5.0 # if we look out the peephole this long, scary things happen
 
 func _init() -> void:
@@ -154,6 +156,7 @@ func startGame():
 	get_tree().change_scene_to_file("res://src/scenes/main_3d.tscn")
 
 func endGame():
+	Dead.play("dead")
 	print("Found the golden bubble!!! -> Game end!")
 
 
