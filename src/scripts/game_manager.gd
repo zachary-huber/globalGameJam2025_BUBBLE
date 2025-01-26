@@ -14,7 +14,10 @@ var bubbleCollected:int = 0
 var theWheel = null
 var theLever = null
 var interactHint = null
+var interactNameHint = null
 var subInteractTarget = null
+var xCoord = null
+var yCoord = null
 
 var isAtHelm = false
 var isPeeping = false
@@ -28,7 +31,7 @@ var subCamViewport = null
 
 
 func _init() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func _ready() -> void:
 	rng.seed = hash(seedString)
@@ -57,9 +60,21 @@ func _on_timer_timeout() -> void:
 	"Bubbles Found: " + str(bubbleCollected) + "\n"
 	
 	updateSubCam()
+	
+	xCoord.text = "X:" + str(subCam.position.x).pad_decimals(2)
+	yCoord.text = "Y:" + str(subCam.position.z).pad_decimals(2)
 
 func updateSubCam():
 	subCam.velocity = subCam.basis * Vector3.RIGHT * -currentVelocity
 	subCam.rotation.y = currrentRotation
 	
 	print(subCam.velocity)
+
+
+func startGame():
+	$Timer.start()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_tree().change_scene_to_file("res://src/scenes/main_3d.tscn")
+
+func endGame():
+	print("Found the golden bubble!!! -> Game end!")

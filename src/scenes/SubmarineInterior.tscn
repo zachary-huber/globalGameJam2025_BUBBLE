@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://src/scenes/sub_base.tscn" id="1_t0sao"]
 [ext_resource type="PackedScene" path="res://src/scenes/steps.tscn" id="2_vpjjt"]
 [ext_resource type="PackedScene" path="res://src/scenes/rails.tscn" id="3_j2447"]
-[ext_resource type="PackedScene" path="res://src/scenes/control_panel.tscn" id="4_3wxdj"]
+[ext_resource type="PackedScene" uid="uid://jw3uoivuv0jw" path="res://src/scenes/control_panel.tscn" id="4_3wxdj"]
 [ext_resource type="PackedScene" path="res://src/scenes/chair.tscn" id="5_u1lfx"]
 [ext_resource type="PackedScene" path="res://src/scenes/frame.tscn" id="7_ru2lq"]
 [ext_resource type="PackedScene" uid="uid://jo0w3dhuqalt" path="res://data/models/O2tank.fbx" id="8_3tysw"]

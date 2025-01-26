@@ -1,16 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://ephsf1kd5v08"]
+[gd_scene load_steps=8 format=3 uid="uid://ephsf1kd5v08"]
+
+[ext_resource type="Script" path="res://src/scripts/ocean_floor_environment.gd" id="1_d1t1j"]
+
+[sub_resource type="Gradient" id="Gradient_owev2"]
+offsets = PackedFloat32Array(0.171053, 1)
+colors = PackedColorArray(0, 0.233797, 0.357105, 1, 0.823529, 0.584314, 0.337255, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pyi8o"]
+noise_type = 2
+seed = 125
+frequency = 0.0323
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hatqu"]
+color_ramp = SubResource("Gradient_owev2")
+noise = SubResource("FastNoiseLite_pyi8o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntqat"]
+albedo_texture = SubResource("NoiseTexture2D_hatqu")
 
 [sub_resource type="BoxMesh" id="BoxMesh_ohyut"]
-size = Vector3(40, 1, 40)
+size = Vector3(80, 1, 80)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_23fkr"]
 size = Vector3(40, 1, 40)
 
 [node name="oceanFloorEnvironment" type="Node3D"]
+script = ExtResource("1_d1t1j")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_ntqat")
 mesh = SubResource("BoxMesh_ohyut")
 skeleton = NodePath("../..")
 
