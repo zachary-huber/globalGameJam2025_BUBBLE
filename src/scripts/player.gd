@@ -113,6 +113,12 @@ func _input(event: InputEvent) -> void:
 			GameManager.isPeeping = false
 			GameManager.subCamViewport.visible = false
 			GameManager.peepholeTexture.visible = false
+			
+			GameManager.isPaused = false
+			GameManager.pauseMenu.visible = false
+			
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
 		elif event.is_action_pressed("interact"):
 			if GameManager.subInteractTarget and GameManager.subInteractTarget.has_method("bubble"):
 				GameManager.subInteractTarget.collectBubble()
@@ -120,9 +126,15 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			updateCameraMotion(event)
 			checkInteractRay()
+		if event.is_action_pressed("escape"):
+			GameManager.isPaused = !GameManager.isPaused
+			GameManager.pauseMenu.visible = GameManager.isPaused
+			
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			if GameManager.isPaused: Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
-		handleObjectInteractions(event)
-		handlePlayerMovement()
+	handleObjectInteractions(event)
+	handlePlayerMovement()
 
 
 func updateCameraMotion(event) -> void:

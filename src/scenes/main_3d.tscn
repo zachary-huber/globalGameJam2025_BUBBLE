@@ -78,6 +78,10 @@ transform = Transform3D(-2.18557e-08, -0.866025, 0.5, -3.78552e-08, 0.5, 0.86602
 pixel_size = 0.0028
 text = "Y: 32"
 
+[node name="o2Label" type="Label3D" parent="submarine"]
+transform = Transform3D(0.911583, 0, -0.411117, 0, 1, 0, 0.411117, 0, 0.911583, 2.83223, 0.538287, -1.02115)
+text = "o2: 98%"
+
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -7.9174, 0.560209)
 

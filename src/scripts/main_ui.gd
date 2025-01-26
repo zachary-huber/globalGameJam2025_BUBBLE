@@ -19,3 +19,4 @@ func _on_quit_button_button_down() -> void:
 func _on_resume_button_button_down() -> void:
 	GameManager.isPaused = false
 	GameManager.pauseMenu.visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

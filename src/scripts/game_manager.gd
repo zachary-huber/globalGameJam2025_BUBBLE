@@ -18,6 +18,7 @@ var interactNameHint = null
 var subInteractTarget = null
 var xCoord = null
 var yCoord = null
+var o2Label = null
 
 var isAtHelm = false
 var isPeeping = false
@@ -47,12 +48,7 @@ func _process(delta: float) -> void:
 		currentVelocity = remap(-theLever.position.x, 1.34, 1.72, 0,1) +8.05
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("escape"):
-		isPaused = !isPaused
-		pauseMenu.visible = isPaused
-		
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		if isPaused: Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	pass
 
 
 func _on_timer_timeout() -> void:
@@ -67,12 +63,15 @@ func _on_timer_timeout() -> void:
 	"Ship Health: " + str(shipHealth) + '\n' + \
 	"O2: " + str(o2) + '\n' + \
 	"Time: " + str(timePlayed) + '\n' + \
-	"Bubbles Found: " + str(bubbleCollected) + "\n"
+	"Bubbles Found: " + str(bubbleCollected) + "\n" + \
+	"isPeeping: " + str(isPeeping) + "\n"
 	
 	updateSubCam()
 	
 	xCoord.text = "X:" + str(subCam.position.x).pad_decimals(2)
 	yCoord.text = "Y:" + str(subCam.position.z).pad_decimals(2)
+	
+	o2Label.text = "O2: " + str(o2) + "%"
 
 func updateSubCam():
 	subCam.velocity = subCam.basis * Vector3.RIGHT * -currentVelocity
