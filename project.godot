@@ -27,6 +27,7 @@ GameManager="*res://src/scenes/game_manager.tscn"
 
 window/size/viewport_width=768
 window/size/viewport_height=432
+mouse_cursor/custom_image="res://data/textures/cursor_a.png"
 
 [input]
 
