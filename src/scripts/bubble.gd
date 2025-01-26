@@ -6,7 +6,7 @@ enum BUBBLE_TYPE {
 	GOLDEN
 }
 
-var bubbleType = BUBBLE_TYPE.BLUE
+@export var bubbleType:BUBBLE_TYPE = BUBBLE_TYPE.BLUE
 var oxygenValue:float = 5.0 # potentially make this random
 
 func _ready() -> void:
@@ -28,3 +28,6 @@ func collectBubble():
 	
 	GameManager.interactNameHint.text = ""
 	GameManager.interactHint.text = ""
+	
+	if bubbleType == BUBBLE_TYPE.GOLDEN:
+		GameManager.endGame()
