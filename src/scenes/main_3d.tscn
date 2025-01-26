@@ -2,22 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
-[ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
+[ext_resource type="PackedScene" uid="uid://02p7baco7srs" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
-[ext_resource type="PackedScene" uid="uid://1ygys75xohd7" path="res://src/scenes/lever.tscn" id="3_2aso7"]
+[ext_resource type="PackedScene" uid="uid://b3wa1t4prpd0l" path="res://src/scenes/lever.tscn" id="3_2aso7"]
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 [ext_resource type="Script" path="res://src/scripts/chair_cam.gd" id="5_pvmt8"]
-[ext_resource type="PackedScene" uid="uid://dtb24r831gvtd" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
-[ext_resource type="PackedScene" uid="uid://d1levm7wo2lhf" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
+[ext_resource type="PackedScene" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
+[ext_resource type="PackedScene" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
 [ext_resource type="Texture2D" uid="uid://c8tnypobnibjs" path="res://data/textures/drawings/poster1.png" id="8_noxla"]
 [ext_resource type="Script" path="res://src/scripts/main_ui.gd" id="8_ttdf3"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
 [ext_resource type="Texture2D" uid="uid://dx1vhctwoj8by" path="res://data/textures/drawings/poster2.png" id="9_nixu6"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
-[ext_resource type="PackedScene" uid="uid://ojt4bbo5638d" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
-[ext_resource type="PackedScene" uid="uid://pd8sttnw1xs4" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
+[ext_resource type="PackedScene" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
+[ext_resource type="PackedScene" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
-[ext_resource type="PackedScene" uid="uid://bqk8dp4evnsdn" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
+[ext_resource type="PackedScene" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
 [ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="16_vit8q"]
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
@@ -51,6 +51,7 @@ script = ExtResource("2_3vhx3")
 [node name="SpotLight3D" type="SpotLight3D" parent="submarine"]
 transform = Transform3D(0.727246, -1.19225e-08, 0.686377, -0.686377, -3.00025e-08, 0.727246, 1.19225e-08, -1, -3.00025e-08, 10.9222, 8.65963, 0.556496)
 light_energy = 2.297
+shadow_enabled = true
 spot_range = 19.0737
 spot_angle = 20.9804
 
@@ -108,6 +109,31 @@ transform = Transform3D(-2.15868, 0, 0.0753833, 0, 2.16, 0, -0.0753833, 0, -2.15
 [node name="speedLabel" type="Label3D" parent="submarine"]
 transform = Transform3D(-1.83701e-08, -0.907404, 0.42026, -3.96639e-08, 0.42026, 0.907404, -1, 0, -4.37114e-08, 1.00048, 0.16698, -1.58471)
 text = "100%"
+
+[node name="lighting" type="Node3D" parent="submarine"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0315, 1.7357, -0.00599293)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79913, 1.7357, -0.00599293)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01025, 0.604627, -0.00505185)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 2.0827
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37922, 0.604627, -0.00505185)
+shadow_enabled = true
+omni_range = 2.0827
 
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -7.9174, 0.560209)
