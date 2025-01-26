@@ -1,8 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtb24r831gvtd"]
+[gd_scene load_steps=3 format=3 uid="uid://c8yhv1j31tg8g"]
 
 [ext_resource type="Script" path="res://src/scripts/peephole.gd" id="1_ym6gk"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hyvkp"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_glue0"]
+size = Vector3(0.848648, 2.39955, 0.696533)
 
 [node name="peephole" type="Node3D"]
 script = ExtResource("1_ym6gk")
@@ -12,4 +13,5 @@ script = ExtResource("1_ym6gk")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("CapsuleShape3D_hyvkp")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0277481, -0.35276, 0.0469971)
+shape = SubResource("BoxShape3D_glue0")

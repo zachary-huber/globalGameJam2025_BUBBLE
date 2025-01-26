@@ -1,33 +1,37 @@
-[gd_scene load_steps=39 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=41 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
-[ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
+[ext_resource type="PackedScene" uid="uid://02p7baco7srs" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
 [ext_resource type="PackedScene" uid="uid://1ygys75xohd7" path="res://src/scenes/lever.tscn" id="3_2aso7"]
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 [ext_resource type="Script" path="res://src/scripts/chair_cam.gd" id="5_pvmt8"]
-[ext_resource type="PackedScene" uid="uid://dtb24r831gvtd" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
-[ext_resource type="PackedScene" uid="uid://d1levm7wo2lhf" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
+[ext_resource type="PackedScene" uid="uid://c8yhv1j31tg8g" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
+[ext_resource type="PackedScene" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
 [ext_resource type="Texture2D" uid="uid://c8tnypobnibjs" path="res://data/textures/drawings/poster1.png" id="8_noxla"]
 [ext_resource type="Script" path="res://src/scripts/main_ui.gd" id="8_ttdf3"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
 [ext_resource type="Texture2D" uid="uid://dx1vhctwoj8by" path="res://data/textures/drawings/poster2.png" id="9_nixu6"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
-[ext_resource type="PackedScene" uid="uid://ojt4bbo5638d" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
-[ext_resource type="PackedScene" uid="uid://pd8sttnw1xs4" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
+[ext_resource type="Texture2D" uid="uid://u2levc5mllpc" path="res://data/textures/drawings/howto.png" id="9_y2rur"]
+[ext_resource type="PackedScene" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
+[ext_resource type="PackedScene" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Script" path="res://src/scripts/extraction_button.gd" id="11_ch8l6"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
 [ext_resource type="AudioStream" uid="uid://djm1047q8sgyv" path="res://data/sounds/OhShitAlarm.mp3" id="12_48hr1"]
 [ext_resource type="AudioStream" uid="uid://b580fa8063gia" path="res://data/sounds/AmbientHums.mp3" id="13_au0ec"]
 [ext_resource type="AudioStream" uid="uid://bd1pdxvnujrgu" path="res://data/sounds/AmbientWater.mp3" id="14_dmflv"]
-[ext_resource type="PackedScene" uid="uid://bqk8dp4evnsdn" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
+[ext_resource type="PackedScene" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
 [ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="16_vit8q"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocrwb"]
+albedo_color = Color(0.24, 0.24, 0.24, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ch6g"]
-size = Vector3(2, 2, 2)
+size = Vector3(1.71387, 0.986328, 2.97485)
 
 [sub_resource type="Animation" id="Animation_8nfol"]
 length = 0.001
@@ -229,6 +233,11 @@ transform = Transform3D(2.56693e-09, 0, -0.034, 0, 0.034, 0, 0.034, 0, 2.56693e-
 shaded = true
 texture = ExtResource("8_noxla")
 
+[node name="Sprite3D3" type="Sprite3D" parent="submarine"]
+transform = Transform3D(0.0206416, 0, 2.46067e-09, 0, 0.0206416, 0, -2.46067e-09, 0, 0.0206416, 0.338163, 0.957448, 0.00525734)
+shaded = true
+texture = ExtResource("9_y2rur")
+
 [node name="Sprite3D2" type="Sprite3D" parent="submarine"]
 transform = Transform3D(-6.51926e-09, 0, 0.034, 0, 0.034, 0, -0.034, 0, -6.51926e-09, -3.64144, 1.03402, 0.736802)
 shaded = true
@@ -245,18 +254,21 @@ transform = Transform3D(-1.83701e-08, -0.907404, 0.42026, -3.96639e-08, 0.42026,
 modulate = Color(0.14902, 1, 0, 1)
 text = "100%"
 
+[node name="speedLabel2" type="Label3D" parent="submarine"]
+transform = Transform3D(1.30163e-07, 0.0232632, -0.99973, -1.39298e-08, 0.99973, 0.0232632, 1, 1.08979e-08, 1.30452e-07, -0.0738417, 0.37303, -0.462613)
+modulate = Color(0, 0.956479, 0.87446, 1)
+text = "Collect"
+
 [node name="lighting" type="Node3D" parent="submarine"]
 
 [node name="RedLight1" type="OmniLight3D" parent="submarine/lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0315, 1.7357, -0.00599293)
 light_color = Color(1, 0, 0, 1)
-light_energy = 0.0
 shadow_enabled = true
 
 [node name="RedLight2" type="OmniLight3D" parent="submarine/lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79913, 1.7357, -0.00599293)
 light_color = Color(1, 0, 0, 1)
-light_energy = 0.0
 shadow_enabled = true
 
 [node name="PeepHole1" type="SpotLight3D" parent="submarine/lighting"]
@@ -320,21 +332,31 @@ shadow_enabled = true
 omni_range = 1.5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="submarine/lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92913, 0.919892, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19739, 0.919892, 0)
 light_color = Color(0.81, 0.77679, 0.1458, 1)
 light_energy = 0.2
 omni_range = 2.158
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.301139, 0.919892, 0.980733)
+light_color = Color(0.81, 0.77679, 0.1458, 1)
+light_energy = 0.2
+omni_range = 1.145
 
 [node name="extractionButton" type="Node3D" parent="submarine"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.312389, -0.0571432, -1.14212)
 script = ExtResource("11_ch8l6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="submarine/extractionButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.97349, 1.49409, 1.71626, 2.68703)
 mesh = SubResource("BoxMesh_fox43")
+surface_material_override/0 = SubResource("StandardMaterial3D_ocrwb")
 
 [node name="Area3D" type="Area3D" parent="submarine/extractionButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36822, 1.88086, 2.55709)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="submarine/extractionButton/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.143066, -0.112305, 0.0931396)
 shape = SubResource("BoxShape3D_6ch6g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="submarine"]
@@ -370,7 +392,7 @@ max_distance = 4.0
 parameters/looping = true
 
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -7.9174, 0.560209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -8.15876, 0.560209)
 
 [node name="oceanFloorEnvironment" parent="." instance=ExtResource("4_aguwm")]
 
