@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://obgse7pswrs8"]
+[gd_scene load_steps=6 format=3 uid="uid://obgse7pswrs8"]
 
 [ext_resource type="Script" path="res://src/scripts/main_menu.gd" id="1_m56ck"]
 [ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="2_3e6j6"]
 [ext_resource type="Texture2D" uid="uid://cmnyjvab7aa4d" path="res://data/textures/drawings/title.png" id="2_o81yn"]
+[ext_resource type="AudioStream" uid="uid://sqm060ad0hsw" path="res://data/sounds/MenuMusic.mp3" id="4_7q0cd"]
 
 [sub_resource type="Theme" id="Theme_b8dvp"]
 
@@ -111,6 +112,11 @@ Metal creaks - Irhouen
 Water splash - Universfield
 Switch - SoundReality
 Footsteps stairs slow - freesound_community"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7q0cd")
+autoplay = true
+parameters/looping = true
 
 [connection signal="button_down" from="VBoxContainer/startButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/quitButton" to="." method="_on_quit_button_button_down"]
