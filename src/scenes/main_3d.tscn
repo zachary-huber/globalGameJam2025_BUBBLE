@@ -1,31 +1,43 @@
-[gd_scene load_steps=43 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=55 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
-[ext_resource type="PackedScene" uid="uid://8se60n4d7mf5" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
+[ext_resource type="PackedScene" uid="uid://02p7baco7srs" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
 [ext_resource type="PackedScene" uid="uid://1ygys75xohd7" path="res://src/scenes/lever.tscn" id="3_2aso7"]
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 [ext_resource type="Script" path="res://src/scripts/chair_cam.gd" id="5_pvmt8"]
-[ext_resource type="PackedScene" uid="uid://dtb24r831gvtd" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
-[ext_resource type="PackedScene" uid="uid://d1levm7wo2lhf" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
+[ext_resource type="PackedScene" uid="uid://c8yhv1j31tg8g" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
+[ext_resource type="PackedScene" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
 [ext_resource type="Texture2D" uid="uid://c8tnypobnibjs" path="res://data/textures/drawings/poster1.png" id="8_noxla"]
 [ext_resource type="Script" path="res://src/scripts/main_ui.gd" id="8_ttdf3"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
 [ext_resource type="Texture2D" uid="uid://dx1vhctwoj8by" path="res://data/textures/drawings/poster2.png" id="9_nixu6"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
 [ext_resource type="Texture2D" uid="uid://u2levc5mllpc" path="res://data/textures/drawings/howto.png" id="9_y2rur"]
-[ext_resource type="PackedScene" uid="uid://ojt4bbo5638d" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
-[ext_resource type="PackedScene" uid="uid://pd8sttnw1xs4" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
+[ext_resource type="PackedScene" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
+[ext_resource type="PackedScene" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Script" path="res://src/scripts/extraction_button.gd" id="11_ch8l6"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
 [ext_resource type="AudioStream" uid="uid://djm1047q8sgyv" path="res://data/sounds/OhShitAlarm.mp3" id="12_48hr1"]
 [ext_resource type="AudioStream" uid="uid://b580fa8063gia" path="res://data/sounds/AmbientHums.mp3" id="13_au0ec"]
 [ext_resource type="AudioStream" uid="uid://bd1pdxvnujrgu" path="res://data/sounds/AmbientWater.mp3" id="14_dmflv"]
-[ext_resource type="PackedScene" uid="uid://bqk8dp4evnsdn" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
+[ext_resource type="PackedScene" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
 [ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="16_vit8q"]
 [ext_resource type="Texture2D" uid="uid://bhxbnd6jgqpss" path="res://data/textures/drawings/monster1.png" id="21_eo62x"]
 [ext_resource type="Texture2D" uid="uid://btr3rry3j7xqt" path="res://data/textures/drawings/monster2.png" id="22_mhlmb"]
+[ext_resource type="PackedScene" uid="uid://cm2fpfidj4u22" path="res://src/scenes/mainworld.tscn" id="27_8b1o7"]
+[ext_resource type="PackedScene" uid="uid://cxn6kci3mtwp4" path="res://src/fish/SchoolFish.tscn" id="28_5k8fk"]
+[ext_resource type="QuadMesh" uid="uid://bjeotk6opbknb" path="res://src/fish/blob.tres" id="29_oyp3l"]
+[ext_resource type="QuadMesh" uid="uid://drhs60b2mtxj8" path="res://src/fish/fishy.tres" id="30_7lkx1"]
+[ext_resource type="QuadMesh" uid="uid://di3f4xtql8k71" path="res://src/fish/Puffer.tres" id="31_gj8sj"]
+[ext_resource type="PackedScene" uid="uid://dtm78nu13d3fy" path="res://src/scenes/environment/chomper_plant.tscn" id="32_f5t8a"]
+[ext_resource type="PackedScene" uid="uid://c5eoow6y22n2b" path="res://src/scenes/environment/coral.tscn" id="33_4sgbw"]
+[ext_resource type="PackedScene" uid="uid://bcnvk6125an68" path="res://src/scenes/environment/funky_plant.tscn" id="34_nfa2p"]
+[ext_resource type="PackedScene" uid="uid://bov7a0tusk3oq" path="res://src/scenes/environment/regular_plant.tscn" id="35_op8mh"]
+[ext_resource type="PackedScene" uid="uid://x14xscuv6r46" path="res://src/scenes/environment/sea_shell.tscn" id="36_sl5pq"]
+[ext_resource type="PackedScene" uid="uid://c2gtqwk3vgbcl" path="res://src/scenes/environment/sea_grass.tscn" id="37_cjxa0"]
+[ext_resource type="PackedScene" uid="uid://bc6h0nq2xr6il" path="res://src/scenes/environment/rock.tscn" id="38_ply5k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
 
@@ -59,7 +71,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -71,7 +83,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_beodj"]
@@ -183,7 +195,7 @@ gradient = SubResource("Gradient_er25v")
 [node name="main3D" type="Node3D"]
 
 [node name="submarine" parent="." instance=ExtResource("1_58qsi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.74867, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.3378, 0)
 script = ExtResource("2_3vhx3")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="submarine"]
@@ -194,7 +206,7 @@ spot_range = 19.0737
 spot_angle = 20.9804
 
 [node name="Wheel" parent="submarine" instance=ExtResource("2_70dgk")]
-transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, -1.41421, -1.23634e-07, -1.41421, -1.41421, 0, 1.41421, 1.23868, 0.136713, -0.889591)
+transform = Transform3D(-8.74225e-08, 2, 0, -1.99999, -8.74228e-08, 0, 0, 0, 1.99999, 1.23868, 0.136713, -0.889591)
 
 [node name="Lever" parent="submarine" instance=ExtResource("3_2aso7")]
 transform = Transform3D(-2, -3.57628e-07, -3.01992e-07, -3.57628e-07, 2, -2.45533e-07, 3.01992e-07, -2.45533e-07, -2, 1.63126, 0.162541, -1.50087)
@@ -266,11 +278,13 @@ text = "Collect"
 [node name="RedLight1" type="OmniLight3D" parent="submarine/lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0315, 1.7357, -0.00599293)
 light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="RedLight2" type="OmniLight3D" parent="submarine/lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79913, 1.7357, -0.00599293)
 light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="PeepHole1" type="SpotLight3D" parent="submarine/lighting"]
@@ -394,16 +408,13 @@ max_distance = 4.0
 parameters/looping = true
 
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -8.15876, 0.560209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -16.7106, 0.676196)
 
 [node name="oceanFloorEnvironment" parent="." instance=ExtResource("4_aguwm")]
+transform = Transform3D(2.93631, 0, 0, 0, 2.93631, 0, 0, 0, 2.93631, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yl6x8")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.622624, -0.379469, -0.684356, 0, -0.874552, 0.484932, -0.782521, -0.30193, -0.544517, 0, 0, 0)
-shadow_enabled = true
 
 [node name="mainUI" type="Control" parent="."]
 layout_mode = 3
@@ -494,8 +505,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 0
 
 [node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
-transform = Transform3D(0.878066, 0, -0.478539, 0, 1, 0, 0.478539, 0, 0.878066, 6.08145, 3.71171, 8.91633)
-visible = false
+transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 71.7262, 3.71171, 77.5207)
 script = ExtResource("9_sq83h")
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
@@ -640,26 +650,134 @@ text = "Quit"
 [node name="bubbles" type="Node3D" parent="collectibles"]
 
 [node name="bubble" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.7929, 3.75946, 3.40154)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -79.2373, 3.75946, 49.8898)
+
+[node name="bubble6" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 57.2028, 3.75945, 73.7338)
 
 [node name="bubble7" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.811679, 3.75946, -11.3936)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -43.3169, 3.75945, 17.4131)
+
+[node name="bubble8" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -81.9553, 3.75945, -30.9354)
+
+[node name="bubble9" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -19.2384, 3.75945, -62.716)
+
+[node name="bubble10" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 79.1085, 3.75945, -66.93)
+
+[node name="bubble11" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 88.2775, 3.75945, 51.9328)
 
 [node name="bubble2" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16.5643, 3.75946, -16.3744)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -38.6314, 3.75946, 95.2141)
 
 [node name="bubble3" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.3956, 3.75946, 14.5181)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.77564, 3.75946, 17.4622)
 
 [node name="bubble4" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -12.8699, 3.75946, -12.6584)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 22.0506, 3.75946, -8.69746)
 
 [node name="bubble5" parent="collectibles/bubbles" instance=ExtResource("10_mnvh2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.667, 3.75946, 5.76778)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 25.0834, 3.75946, 41.8691)
 
 [node name="goldenBubble" parent="collectibles/bubbles" instance=ExtResource("15_q8tyv")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 23, 3, 27)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 45.5368, 3, 6.95114)
 bubbleType = 1
+
+[node name="Node3D" parent="." instance=ExtResource("27_8b1o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18943, 5.15076, 5.9615)
+
+[node name="fishy" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8526, 0)
+
+[node name="Node3D2" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.2493, 0.499991, 90.6521)
+fishType = ExtResource("29_oyp3l")
+
+[node name="Node3D3" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5916, 1.46815, 58.6046)
+fishType = ExtResource("30_7lkx1")
+
+[node name="Node3D4" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9275, 0.500009, 94.551)
+fishType = ExtResource("31_gj8sj")
+
+[node name="Node3D5" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4569, 1.46815, 42.4856)
+fishType = ExtResource("30_7lkx1")
+
+[node name="Node3D6" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.9392, 0.5, 34.4657)
+fishType = ExtResource("29_oyp3l")
+
+[node name="Node3D7" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.0249, 0.5, -80.1185)
+fishType = ExtResource("31_gj8sj")
+
+[node name="Node3D8" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6577, 1.46815, 24.2855)
+fishType = ExtResource("30_7lkx1")
+
+[node name="Node3D9" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.973, 0.500009, 36.6292)
+fishType = ExtResource("29_oyp3l")
+
+[node name="Node3D10" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.2317, 0.5, -36.6615)
+fishType = ExtResource("31_gj8sj")
+
+[node name="Node3D11" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1919, 1.46815, -24.9225)
+fishType = ExtResource("30_7lkx1")
+
+[node name="Node3D12" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7016, 1.46815, -48.8363)
+fishType = ExtResource("30_7lkx1")
+
+[node name="Node3D13" parent="fishy" instance=ExtResource("28_5k8fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0581, 0.5, -84.1693)
+fishType = ExtResource("30_7lkx1")
+
+[node name="ChomperPlant" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, 34.0413, 0.938531, -13.0143)
+
+[node name="ChomperPlant2" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, 73.389, 0.938531, -82.5769)
+
+[node name="ChomperPlant3" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, -48.8611, 0.938531, 5.9447)
+
+[node name="ChomperPlant4" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, -42.8475, 0.938531, 85.4259)
+
+[node name="ChomperPlant5" parent="." instance=ExtResource("32_f5t8a")]
+transform = Transform3D(38.7142, 0, 2.74117, 0, 28.6127, 0, -4.95529, 0, 21.4159, -25.7745, 1.1123, 29.3403)
+
+[node name="Coral" parent="." instance=ExtResource("33_4sgbw")]
+transform = Transform3D(0.720838, 0, -0.659291, 0, 1.31231, 0, 0.60782, 0, 0.78188, -25.7987, 1.48338, 30.0433)
+
+[node name="FunkyPlant" parent="." instance=ExtResource("34_nfa2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2266, 1.46816, 44.501)
+
+[node name="RegularPlant" parent="." instance=ExtResource("35_op8mh")]
+transform = Transform3D(2.19551, 0, 0, 0, 2.56057, 0, 0, 0, 1.71199, -23.6661, 1.19153, 42.8052)
+
+[node name="SeaShell" parent="." instance=ExtResource("36_sl5pq")]
+transform = Transform3D(1, 0, 0, 0, 0.999712, 0.0240134, 0, -0.0240134, 0.999712, -22.1183, 1.43629, 43.4045)
+
+[node name="SeaGrass" parent="." instance=ExtResource("37_cjxa0")]
+transform = Transform3D(1, 0, 0, 0, 0.483808, 0, 0, 0, 4.99344, 50.5655, 1.40179, 17.7892)
+
+[node name="Rock" parent="." instance=ExtResource("38_ply5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.4512, 1.46816, 18.6244)
+
+[node name="Rock2" parent="." instance=ExtResource("38_ply5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7394, 1.46816, 18.11)
+
+[node name="RegularPlant2" parent="." instance=ExtResource("35_op8mh")]
+transform = Transform3D(2.38162, 0, 0, 0, 3.51759, 0, 0, 0, 4.34485, 46.8452, 0.985771, 25.1926)
 
 [connection signal="area_entered" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_entered"]
 [connection signal="area_exited" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_exited"]
