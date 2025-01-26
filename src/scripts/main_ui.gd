@@ -6,7 +6,8 @@ func _ready() -> void:
 	GameManager.interactHint = $interactHint
 	GameManager.interactNameHint = $interactNameHint
 	GameManager.pauseMenu = $pauseMenu
-
+	GameManager.jumpscareTexture = $jumpscareTexture
+	GameManager.jumpscareTexture2 = $jumpscareTexture2
 
 func _process(delta: float) -> void:
 	pass

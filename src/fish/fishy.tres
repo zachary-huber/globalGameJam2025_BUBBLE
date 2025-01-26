@@ -1,0 +1,11 @@
+[gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://drhs60b2mtxj8"]
+
+[ext_resource type="Texture2D" uid="uid://b1jdpij4h4fl0" path="res://data/textures/drawings/fish1.png" id="1_q25nh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hc6g"]
+transparency = 4
+albedo_texture = ExtResource("1_q25nh")
+billboard_mode = 2
+
+[resource]
+material = SubResource("StandardMaterial3D_7hc6g")

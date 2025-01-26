@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=43 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
@@ -14,17 +14,149 @@
 [ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
 [ext_resource type="Texture2D" uid="uid://dx1vhctwoj8by" path="res://data/textures/drawings/poster2.png" id="9_nixu6"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam_body.gd" id="9_sq83h"]
+[ext_resource type="Texture2D" uid="uid://u2levc5mllpc" path="res://data/textures/drawings/howto.png" id="9_y2rur"]
 [ext_resource type="PackedScene" uid="uid://ojt4bbo5638d" path="res://src/scenes/bubble.tscn" id="10_mnvh2"]
 [ext_resource type="PackedScene" uid="uid://pd8sttnw1xs4" path="res://src/scenes/needle.tscn" id="10_ypwqh"]
 [ext_resource type="Script" path="res://src/scripts/extraction_button.gd" id="11_ch8l6"]
 [ext_resource type="Texture2D" uid="uid://bchbx7gpjjlbo" path="res://data/textures/peephole.png" id="11_h6fj8"]
+[ext_resource type="AudioStream" uid="uid://djm1047q8sgyv" path="res://data/sounds/OhShitAlarm.mp3" id="12_48hr1"]
+[ext_resource type="AudioStream" uid="uid://b580fa8063gia" path="res://data/sounds/AmbientHums.mp3" id="13_au0ec"]
+[ext_resource type="AudioStream" uid="uid://bd1pdxvnujrgu" path="res://data/sounds/AmbientWater.mp3" id="14_dmflv"]
 [ext_resource type="PackedScene" uid="uid://bqk8dp4evnsdn" path="res://src/scenes/golden_bubble.tscn" id="15_q8tyv"]
 [ext_resource type="Theme" uid="uid://bvcjmtdba2hmg" path="res://data/themes/button_theme.tres" id="16_vit8q"]
+[ext_resource type="Texture2D" uid="uid://bhxbnd6jgqpss" path="res://data/textures/drawings/monster1.png" id="21_eo62x"]
+[ext_resource type="Texture2D" uid="uid://btr3rry3j7xqt" path="res://data/textures/drawings/monster2.png" id="22_mhlmb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocrwb"]
+albedo_color = Color(0.24, 0.24, 0.24, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ch6g"]
-size = Vector3(2, 2, 2)
+size = Vector3(1.71387, 0.986328, 2.97485)
+
+[sub_resource type="Animation" id="Animation_8nfol"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OhShitAlarm:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lighting/RedLight1:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lighting/RedLight2:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_beodj"]
+resource_name = "redLight"
+length = 27.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OhShitAlarm:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lighting/RedLight1:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.3, 1.5, 2.63333, 2.83333, 3.93333, 4.13333, 5.16667, 5.36667, 6.46667, 6.66667, 7.7, 7.9, 9, 9.2, 10.2, 10.4, 11.5, 11.7, 12.7667, 12.9667, 14.0667, 14.2667, 15.1, 15.3, 16.4, 16.6, 17.6, 17.8, 18.9, 19.1, 20.1333, 20.3333, 21.4333, 21.6333, 22.6667, 22.8667, 23.9667, 24.1667, 25.1333, 25.3333, 26.4333, 26.6333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lighting/RedLight2:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.3, 1.5, 2.63333, 2.83333, 3.93333, 4.13333, 5.16667, 5.36667, 6.46667, 6.66667, 7.7, 7.9, 9, 9.2, 10.2, 10.4, 11.5, 11.7, 12.7667, 12.9667, 14.0667, 14.2667, 15.1, 15.3, 16.4, 16.6, 17.6, 17.8, 18.9, 19.1, 20.1333, 20.3333, 21.4333, 21.6333, 22.6667, 22.8667, 23.9667, 24.1667, 25.1333, 25.3333, 26.4333, 26.6333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0, 0.0, 3.0, 3.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85ipj"]
+_data = {
+"RESET": SubResource("Animation_8nfol"),
+"redLight": SubResource("Animation_beodj")
+}
+
+[sub_resource type="Animation" id="Animation_vnnht"]
+resource_name = "02Light"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lighting/02Light:light_energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 4.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_4d64d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lighting/02Light:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jsi31"]
+_data = {
+"02Light": SubResource("Animation_vnnht"),
+"RESET": SubResource("Animation_4d64d")
+}
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
 background_mode = 1
@@ -100,10 +232,17 @@ text = "o2: 98%"
 
 [node name="Sprite3D" type="Sprite3D" parent="submarine"]
 transform = Transform3D(2.56693e-09, 0, -0.034, 0, 0.034, 0, 0.034, 0, 2.56693e-09, 3.641, 0.957448, 0.810692)
+shaded = true
 texture = ExtResource("8_noxla")
+
+[node name="Sprite3D3" type="Sprite3D" parent="submarine"]
+transform = Transform3D(0.0206416, 0, 2.46067e-09, 0, 0.0206416, 0, -2.46067e-09, 0, 0.0206416, 0.338163, 0.957448, 0.00525734)
+shaded = true
+texture = ExtResource("9_y2rur")
 
 [node name="Sprite3D2" type="Sprite3D" parent="submarine"]
 transform = Transform3D(-6.51926e-09, 0, 0.034, 0, 0.034, 0, -0.034, 0, -6.51926e-09, -3.64144, 1.03402, 0.736802)
+shaded = true
 texture = ExtResource("9_nixu6")
 
 [node name="Node3D" type="Node3D" parent="submarine"]
@@ -114,7 +253,13 @@ transform = Transform3D(-2.15868, 0, 0.0753833, 0, 2.16, 0, -0.0753833, 0, -2.15
 
 [node name="speedLabel" type="Label3D" parent="submarine"]
 transform = Transform3D(-1.83701e-08, -0.907404, 0.42026, -3.96639e-08, 0.42026, 0.907404, -1, 0, -4.37114e-08, 1.00048, 0.16698, -1.58471)
+modulate = Color(0.14902, 1, 0, 1)
 text = "100%"
+
+[node name="speedLabel2" type="Label3D" parent="submarine"]
+transform = Transform3D(1.30163e-07, 0.0232632, -0.99973, -1.39298e-08, 0.99973, 0.0232632, 1, 1.08979e-08, 1.30452e-07, -0.0738417, 0.37303, -0.462613)
+modulate = Color(0, 0.956479, 0.87446, 1)
+text = "Collect"
 
 [node name="lighting" type="Node3D" parent="submarine"]
 
@@ -146,20 +291,110 @@ light_energy = 3.0
 shadow_enabled = true
 omni_range = 1.46466
 
+[node name="02Light2" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.968667, 0.298655, -1.0781)
+light_color = Color(0, 0.73, 0.146, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 0.581
+
+[node name="02Light3" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.968667, 0.298655, -0.739058)
+light_color = Color(0, 0.73, 0.146, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 0.581
+
+[node name="02Light4" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12789, 0.298655, -1.46619)
+light_color = Color(0, 0.73, 0.146, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 0.581
+
+[node name="02Light5" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15883, 0.213591, -0.565573)
+light_color = Color(0.73, 0, 0.0121665, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 0.581
+
+[node name="02Light6" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78551, -0.175619, -1.10223)
+light_color = Color(0.73, 0, 0.0121665, 1)
+shadow_enabled = true
+omni_range = 1.5
+omni_attenuation = 0.5
+
+[node name="02Light7" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78551, -0.175619, 1.27458)
+light_color = Color(0.73, 0, 0.0121665, 1)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 1.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19739, 0.919892, 0)
+light_color = Color(0.81, 0.77679, 0.1458, 1)
+light_energy = 0.2
+omni_range = 2.158
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="submarine/lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.301139, 0.919892, 0.980733)
+light_color = Color(0.81, 0.77679, 0.1458, 1)
+light_energy = 0.2
+omni_range = 1.145
+
 [node name="extractionButton" type="Node3D" parent="submarine"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.312389, -0.0571432, -1.14212)
 script = ExtResource("11_ch8l6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="submarine/extractionButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.97349, 1.49409, 1.71626, 2.68703)
 mesh = SubResource("BoxMesh_fox43")
+surface_material_override/0 = SubResource("StandardMaterial3D_ocrwb")
 
 [node name="Area3D" type="Area3D" parent="submarine/extractionButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36822, 1.88086, 2.55709)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="submarine/extractionButton/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.143066, -0.112305, 0.0931396)
 shape = SubResource("BoxShape3D_6ch6g")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="submarine"]
+libraries = {
+"": SubResource("AnimationLibrary_85ipj")
+}
+
+[node name="OhShitAlarm" type="AudioStreamPlayer3D" parent="submarine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70528, 0)
+stream = ExtResource("12_48hr1")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="submarine"]
+libraries = {
+"": SubResource("AnimationLibrary_jsi31")
+}
+autoplay = "02Light"
+playback_auto_capture_transition_type = 7
+
+[node name="Hums" type="AudioStreamPlayer3D" parent="submarine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03429, 0.629165, 0.303701)
+stream = ExtResource("13_au0ec")
+volume_db = 6.095
+autoplay = true
+max_distance = 5.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="submarine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.828165, 0.353746, -1.48016)
+stream = ExtResource("14_dmflv")
+volume_db = -29.091
+autoplay = true
+max_distance = 4.0
+parameters/looping = true
+
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -7.9174, 0.560209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -8.15876, 0.560209)
 
 [node name="oceanFloorEnvironment" parent="." instance=ExtResource("4_aguwm")]
 
@@ -260,6 +495,7 @@ render_target_update_mode = 0
 
 [node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
 transform = Transform3D(0.878066, 0, -0.478539, 0, 1, 0, 0.478539, 0, 0.878066, 6.08145, 3.71171, 8.91633)
+visible = false
 script = ExtResource("9_sq83h")
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
@@ -303,6 +539,40 @@ render_target_update_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/topDownView/SubViewport"]
 transform = Transform3D(-2.0713e-08, -0.880601, 0.473858, -3.84923e-08, 0.473858, 0.880601, -1, 3.55271e-15, -4.37114e-08, 4.183, 10.6637, 13.4352)
+
+[node name="jumpscareTexture" type="TextureRect" parent="mainUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = 115.0
+offset_right = 116.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("21_eo62x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="jumpscareTexture2" type="TextureRect" parent="mainUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = 115.0
+offset_right = 116.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("22_mhlmb")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="peephole" type="TextureRect" parent="mainUI"]
 visible = false

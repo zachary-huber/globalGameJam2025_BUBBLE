@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 current = true
 
 [node name="interactCast" type="RayCast3D" parent="cameraPivot"]
-transform = Transform3D(1, 0, 0, 0, -2.18557e-07, -1, 0, 5, -4.37114e-08, 0, 0, -0.579727)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.205433)
 visible = false
 collide_with_areas = true
 collide_with_bodies = false

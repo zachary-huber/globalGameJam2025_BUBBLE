@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready() -> void:
-	pass
+	AudioManager.musicPlayer.play()
 
 
 func _process(delta: float) -> void:
@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_button_down() -> void:
-	GameManager.startGame()
+	GameManager.startLore()
 
 func _on_quit_button_button_down() -> void:
 	get_tree().quit()

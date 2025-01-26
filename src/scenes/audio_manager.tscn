@@ -1,10 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci36pjoeentug"]
+[gd_scene load_steps=6 format=3 uid="uid://ci36pjoeentug"]
 
 [ext_resource type="Script" path="res://src/scripts/audio_manager.gd" id="1_5kxye"]
+[ext_resource type="AudioStream" uid="uid://b580fa8063gia" path="res://data/sounds/AmbientHums.mp3" id="2_pa5tr"]
+[ext_resource type="AudioStream" uid="uid://bd1pdxvnujrgu" path="res://data/sounds/AmbientWater.mp3" id="3_lcuoc"]
+[ext_resource type="AudioStream" uid="uid://d3dngv1kqjjfe" path="res://data/sounds/SonarPingLoop.mp3" id="4_2qvi0"]
+[ext_resource type="AudioStream" uid="uid://cq7seh8c40r2h" path="res://data/sounds/moreSounds/security-alarm-63578.mp3" id="5_kgegw"]
 
 [node name="audio_manager" type="Node"]
 script = ExtResource("1_5kxye")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="sound1" type="AudioStreamPlayer" parent="."]
+[node name="soundPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ambienceHum" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pa5tr")
+
+[node name="ambienceWater" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lcuoc")
+
+[node name="ambiencePing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2qvi0")
+
+[node name="oxygenAlarm" type="AudioStreamPlayer" parent="."]
+
+[node name="walkingSounds" type="AudioStreamPlayer" parent="."]
+
+[node name="alarmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kgegw")

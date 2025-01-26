@@ -7,9 +7,10 @@ var rng = RandomNumberGenerator.new() # This generates random numbers
 
 var currrentRotation:float
 var currentVelocity:float
-var o2:float
-var shipHealth:float
+var o2:float = 85
+var shipHealth:float = 20
 var bubbleCollected:int = 0
+var timeLookStart = null
 
 var theWheel = null
 var theLever = null
@@ -30,9 +31,12 @@ var subCam = null
 
 var peepholeTexture = null
 var subCamViewport = null
+var jumpscareTexture = null
+var jumpscareTexture2 = null
 
 var isPaused:bool = false
 var pauseMenu = null
+var isScaryHappening = false
 
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
@@ -54,16 +58,22 @@ func _input(event: InputEvent) -> void:
 
 func _on_timer_timeout() -> void:
 	timePlayed += 0.25
+	o2 -= 0.02
 	
-	print("rotation: ", currrentRotation)
-	print("velocity: ", currentVelocity)
+	if o2 < 25:
+		AudioManager.oxygenAlarm.play()
+	else:
+		AudioManager.oxygenAlarm.stop()
+	
+	#print("rotation: ", currrentRotation)
+	#print("velocity: ", currentVelocity)
 	
 	get_tree().root.get_node("main3D/mainUI/VBoxContainer/debugInfo").text  = \
 	"Rotation: " + str(currrentRotation).pad_decimals(2) + '\n' + \
 	"Velocity: " + str(currentVelocity).pad_decimals(2) + '\n' + \
-	"Ship Health: " + str(shipHealth) + '\n' + \
-	"O2: " + str(o2) + '\n' + \
-	"Time: " + str(timePlayed) + '\n' + \
+	"Ship Health: " + str(shipHealth).pad_decimals(0) + '\n' + \
+	"O2: " + str(o2).pad_decimals(2) + '\n' + \
+	"Time: " + str(timePlayed).pad_decimals(0) + '\n' + \
 	"Bubbles Found: " + str(bubbleCollected) + "\n" + \
 	"isPeeping: " + str(isPeeping) + "\n"
 	
@@ -76,6 +86,14 @@ func _on_timer_timeout() -> void:
 	needle.rotation.y = currrentRotation
 	speedLabel.text = str(clamp(currentVelocity * 100, 0, 100) + .3).pad_decimals(0)+ "%"
 	
+	if GameManager.isPeeping and $jumpscareCooldown.is_stopped():
+		print("Peep time: ", GameManager.timePlayed - GameManager.timeLookStart)
+		print("timeLookStart: ", GameManager.timeLookStart)
+		print("timePlayed: ", GameManager.timePlayed)
+		if GameManager.timePlayed - GameManager.timeLookStart > 10:
+			print("You looked TOO LONG!")
+			$jumpscareCooldown.start()
+			GameManager.doScaryThing()
 
 func updateSubCam():
 	subCam.velocity = subCam.basis * Vector3.RIGHT * -currentVelocity
@@ -89,11 +107,41 @@ func extractBubble():
 			GameManager.subInteractTarget.collectBubble()
 			GameManager.subInteractTarget = null
 
+func doScaryThing():
+	if !GameManager.isScaryHappening:
+		GameManager.isScaryHappening = true
+		randomize()
+		var r = GameManager.rng.randi_range(0,3)
+		
+		match r:
+			0: 
+				AudioManager.alarmSound.play()
+				pass # scary sound (alarm)
+			1: 
+				GameManager.jumpscareTexture.visible = true
+				$jumpscareDuration.start()
+				pass # monster jump scare 1
+			2: 
+				GameManager.jumpscareTexture2.visible = true
+				$jumpscareDuration.start()
+				pass # monster jump scare 2
+			_: 
+				print("This should not happen... but we will re-roll the scary thing")
+				doScaryThing()
+		print("Rolled [r] as: ", r)
 
-func startGame():
+func startLore():
 	#$Timer.start()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().change_scene_to_file("res://src/scenes/lore.tscn")
 
+func startGame():
+	get_tree().change_scene_to_file("res://src/scenes/main_3d.tscn")
+
 func endGame():
 	print("Found the golden bubble!!! -> Game end!")
+
+
+func _on_jumpscare_duration_timeout() -> void:
+	GameManager.jumpscareTexture.visible = false
+	GameManager.jumpscareTexture2.visible = false
