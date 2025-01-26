@@ -83,6 +83,12 @@ func updateSubCam():
 	
 	print(subCam.velocity)
 
+func extractBubble():
+	if GameManager.subInteractTarget:
+		if GameManager.subInteractTarget.has_method("bubble"):
+			GameManager.subInteractTarget.collectBubble()
+			GameManager.subInteractTarget = null
+
 
 func startGame():
 	$Timer.start()
