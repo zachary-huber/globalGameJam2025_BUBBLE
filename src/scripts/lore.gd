@@ -16,3 +16,8 @@ func _process(delta: float) -> void:
 
 func playMusic():
 	AudioManager.playSong("res://data/sounds/LoreTunesMaybe.mp3")
+
+func _input(event):
+	if event.is_action_pressed("escape"):
+		AudioManager.musicPlayer.stop()
+		GameManager.startGame()

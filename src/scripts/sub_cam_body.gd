@@ -30,4 +30,5 @@ func _on_collect_area_body_entered(body: Node3D) -> void:
 	if body.owner:
 		print("Collided with: ", body.owner.name)
 		if body.owner.name == "Walls": # handles collisions with walls
+			GameManager.questAvoidWalls = "[color=Red]Avoid walls[/color]"
 			GameManager.endGame()

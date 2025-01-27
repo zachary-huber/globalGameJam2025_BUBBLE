@@ -49,6 +49,13 @@ var Dead = null
 
 var timeUntilJumpscare:float = 5.0 # if we look out the peephole this long, scary things happen
 
+var questHint = null
+var questPorthole = "⬜ Look out porthole"
+var questCaptainSeat = "⬜ Sit at captain seat"
+var questAvoidWalls = "⬜ Avoid walls"
+var questGoldenBubble = "⬜ Find the Golden Bubble"
+
+
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
@@ -105,6 +112,14 @@ func _on_timer_timeout() -> void:
 			print("You looked TOO LONG!")
 			$jumpscareCooldown.start()
 			GameManager.doScaryThing()
+	
+	# update quests
+	if isPeeping:
+		questPorthole = "[s]Look out porthole[/s]"
+	if isAtHelm:
+		questCaptainSeat = "[s]Sit at captain seat[/s]"
+	
+	questHint.text = questPorthole + "\n" + questCaptainSeat + "\n" + questAvoidWalls + "\n" + questGoldenBubble
 
 func updateSubCam():
 	subCam.velocity = subCam.basis * Vector3.RIGHT * -currentVelocity
