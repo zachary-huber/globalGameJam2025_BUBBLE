@@ -1,6 +1,7 @@
-[gd_scene load_steps=62 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=64 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
+[ext_resource type="Script" path="res://src/scenes/main_3d.gd" id="1_xgrm4"]
 [ext_resource type="Script" path="res://src/scripts/submarine.gd" id="2_3vhx3"]
 [ext_resource type="PackedScene" uid="uid://02p7baco7srs" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
@@ -42,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://bc6h0nq2xr6il" path="res://src/scenes/environment/rock.tscn" id="38_ply5k"]
 [ext_resource type="PackedScene" uid="uid://d351vtj43oykb" path="res://src/scenes/spray.tscn" id="39_c3mu8"]
 [ext_resource type="PackedScene" uid="uid://c74qy14c0jwya" path="res://src/scenes/goopy_guy.tscn" id="40_74166"]
+[ext_resource type="PackedScene" uid="uid://cx26cybmhbeix" path="res://src/scenes/waddle_bit.tscn" id="44_j8bfb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
 
@@ -124,10 +126,10 @@ tracks/2/path = NodePath("OhShitAlarm:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 9.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85ipj"]
@@ -273,6 +275,20 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("..")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"backHome"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_fewww"]
 length = 0.001
@@ -402,6 +418,7 @@ gradient = SubResource("Gradient_er25v")
 [sub_resource type="Theme" id="Theme_t4x16"]
 
 [node name="main3D" type="Node3D"]
+script = ExtResource("1_xgrm4")
 
 [node name="submarine" parent="." instance=ExtResource("1_58qsi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.3378, 0)
@@ -696,6 +713,7 @@ grow_vertical = 2
 bbcode_enabled = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainUI"]
+visible = false
 layout_mode = 0
 offset_right = 139.0
 offset_bottom = 220.0
@@ -746,7 +764,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 0
 
 [node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
-transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 45.4773, 3.68737, 14.124)
+transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 82.2987, 3.68737, 86.5202)
 script = ExtResource("9_sq83h")
 
 [node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
@@ -1022,6 +1040,9 @@ transform = Transform3D(2.38162, 0, 0, 0, 3.51759, 0, 0, 0, 4.34485, 46.8452, 0.
 
 [node name="GoopyGuy" parent="." instance=ExtResource("40_74166")]
 transform = Transform3D(15.6558, 0, -43.2157, 0, 45.9641, 0, 43.2157, 0, 15.6558, 3.16111, -18.5801, -1.40177)
+
+[node name="WaddleBit" parent="." instance=ExtResource("44_j8bfb")]
+transform = Transform3D(-0.150779, 0, -0.346852, 0, 0.378207, 0, 0.346852, 0, -0.150779, 3.13645, -17.3116, 0.368587)
 
 [connection signal="area_entered" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_entered"]
 [connection signal="area_exited" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_exited"]

@@ -166,5 +166,3 @@ func _on_jumpscare_duration_timeout() -> void:
 	waterLeak.visible = false
 	waterLeak2.visible = false
 	waterLeak3.visible = false
-	ohShit.stop()
-	redLight.stop()
