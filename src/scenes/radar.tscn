@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dl4f3flh23os1"]
+
+[ext_resource type="Script" path="res://src/scripts/radar.gd" id="1_7dg82"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5nq4"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_io0ir"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8msq"]
+albedo_color = Color(0.620123, 0.0857846, 0.160805, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_lk4fd"]
+
+[node name="radar" type="Node3D"]
+script = ExtResource("1_7dg82")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, -200, 0, 1, -8.74228e-06, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_q5nq4")
+mesh = SubResource("SphereMesh_io0ir")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.31134e-08, 1, 0, -0.3, -4.37114e-08, 0, 0, 0, 0.3, 1, 0, 0)
+material_override = SubResource("StandardMaterial3D_n8msq")
+mesh = SubResource("PrismMesh_lk4fd")
+
+[node name="checkCollisionsTimeout" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="checkCollisionsTimeout" to="." method="_on_check_collisions_timeout_timeout"]

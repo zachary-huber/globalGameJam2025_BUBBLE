@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkemg454qtfyk"]
+
+[ext_resource type="Script" path="res://src/scripts/radar_blip.gd" id="1_bsvsq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ryoub"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_c0ul3"]
+
+[node name="radarBlip" type="Node3D"]
+script = ExtResource("1_bsvsq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ryoub")
+mesh = SubResource("SphereMesh_c0ul3")
+
+[node name="lifespanTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="lifespanTimer" to="." method="_on_lifespan_timer_timeout"]
