@@ -3,8 +3,8 @@ extends Interactable
 
 
 func _ready() -> void:
-	interactHintText = "[center]Press [E] to look outside...[/center]"
-
+	#interactHintText = "[center]Press [E] to look outside...[/center]"
+	pass
 
 func _process(delta: float) -> void:
 	pass

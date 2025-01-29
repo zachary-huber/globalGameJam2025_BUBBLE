@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://darto7yxl3lua"
-path.s3tc="res://.godot/imported/bubbles.png-f098307f70ea1798c56453a26b735e7a.s3tc.ctex"
+uid="uid://db82y2bk1hi4i"
+path.s3tc="res://.godot/imported/bubble1.png-1ec7503b94121f03ac4b83e9f34cf102.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://data/textures/drawings/bubbles.png"
-dest_files=["res://.godot/imported/bubbles.png-f098307f70ea1798c56453a26b735e7a.s3tc.ctex"]
+source_file="res://data/textures/drawings/bubble1.png"
+dest_files=["res://.godot/imported/bubble1.png-1ec7503b94121f03ac4b83e9f34cf102.s3tc.ctex"]
 
 [params]
 

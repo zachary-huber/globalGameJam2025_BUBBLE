@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=80 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scenes/main_3d.gd" id="1_xgrm4"]
@@ -29,6 +29,9 @@
 [ext_resource type="AudioStream" uid="uid://dgjesagmon6kb" path="res://data/sounds/CrashSound.mp3" id="18_ehp2d"]
 [ext_resource type="Texture2D" uid="uid://bhxbnd6jgqpss" path="res://data/textures/drawings/monster1.png" id="21_eo62x"]
 [ext_resource type="Texture2D" uid="uid://btr3rry3j7xqt" path="res://data/textures/drawings/monster2.png" id="22_mhlmb"]
+[ext_resource type="Texture2D" uid="uid://db82y2bk1hi4i" path="res://data/textures/drawings/bubble1.png" id="23_3fpif"]
+[ext_resource type="Texture2D" uid="uid://ci7rjeyctypkv" path="res://data/textures/drawings/bubble2.png" id="24_dyox8"]
+[ext_resource type="Texture2D" uid="uid://cmoygbj2ru067" path="res://data/textures/drawings/bubble3.png" id="25_cluey"]
 [ext_resource type="PackedScene" uid="uid://cm2fpfidj4u22" path="res://src/scenes/mainworld.tscn" id="27_8b1o7"]
 [ext_resource type="PackedScene" uid="uid://cxn6kci3mtwp4" path="res://src/fish/SchoolFish.tscn" id="28_5k8fk"]
 [ext_resource type="QuadMesh" uid="uid://bjeotk6opbknb" path="res://src/fish/blob.tres" id="29_oyp3l"]
@@ -46,6 +49,12 @@
 [ext_resource type="PackedScene" uid="uid://c74qy14c0jwya" path="res://src/scenes/goopy_guy.tscn" id="40_74166"]
 [ext_resource type="PackedScene" uid="uid://cx26cybmhbeix" path="res://src/scenes/waddle_bit.tscn" id="44_j8bfb"]
 [ext_resource type="PackedScene" uid="uid://sunbcu4euqbx" path="res://data/models/SpookyHand.fbx" id="46_gq3d7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vjm15"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ghlak"]
+radius = 4.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_fox43"]
 
@@ -347,10 +356,10 @@ tracks/5/path = NodePath("lighting/RedLight1:light_energy")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.366667, 0.433333, 0.566667, 0.633333, 0.766667, 0.833333, 0.966667, 1, 1.13333, 1.23333, 1.36667, 1.43333, 1.56667, 1.7, 1.8, 1.93333, 2, 2.13333, 2.2, 2.33333, 2.4, 2.53333, 2.6, 2.73333, 2.8, 2.93333, 3.03333, 3.16667, 3.23333, 3.36667, 3.43333, 3.56667, 3.6, 3.73333, 3.8, 3.93333, 4, 4.13333, 4.23333, 4.36667, 4.43333, 4.56667, 4.63333, 4.76667, 4.83333, 4.96667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.233333, 0.366667, 0.433333, 0.533333, 0.6, 0.766667, 0.833333, 0.966667, 1.03333, 1.16667, 1.23333, 1.36667, 1.43333, 1.56667, 1.63333, 1.76667, 1.83333, 1.96667, 2.03333, 2.16667, 2.23333, 2.36667, 2.43333, 2.56667, 2.63333, 2.76667, 2.83333, 2.96667, 3.03333, 3.16667, 3.23333, 3.36667, 3.43333, 3.53333, 3.6, 3.76667, 3.83333, 3.96667, 4.03333, 4.16667, 4.23333, 4.36667, 4.43333, 4.56667, 4.63333, 4.76667, 4.83333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0]
+"values": [0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -359,10 +368,10 @@ tracks/6/path = NodePath("lighting/RedLight2:light_energy")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.366667, 0.433333, 0.566667, 0.633333, 0.766667, 0.833333, 0.966667, 1, 1.13333, 1.23333, 1.36667, 1.43333, 1.56667, 1.7, 1.8, 1.93333, 2, 2.13333, 2.2, 2.33333, 2.4, 2.53333, 2.6, 2.73333, 2.8, 2.93333, 3.03333, 3.16667, 3.23333, 3.36667, 3.43333, 3.56667, 3.6, 3.73333, 3.8, 3.93333, 4, 4.13333, 4.23333, 4.36667, 4.43333, 4.56667, 4.63333, 4.76667, 4.83333, 4.96667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.233333, 0.366667, 0.433333, 0.533333, 0.6, 0.766667, 0.833333, 0.966667, 1.03333, 1.16667, 1.23333, 1.36666, 1.43334, 1.56667, 1.63333, 1.76667, 1.83333, 1.96667, 2.03333, 2.16667, 2.23333, 2.36667, 2.43333, 2.56667, 2.63333, 2.76667, 2.83333, 2.96667, 3.03333, 3.16667, 3.23333, 3.36667, 3.43333, 3.53333, 3.6, 3.76667, 3.83333, 3.96667, 4.03333, 4.16667, 4.23333, 4.36667, 4.43333, 4.56667, 4.63333, 4.76667, 4.83333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0]
+"values": [0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 0.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -397,6 +406,61 @@ _data = {
 "dead": SubResource("Animation_qooyc")
 }
 
+[sub_resource type="Curve" id="Curve_hn84l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7n1ol"]
+curve = SubResource("Curve_hn84l")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qvbu0"]
+emission_shape_scale = Vector3(0.48, 0, 0.48)
+emission_shape = 2
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0.2, 0)
+scale_min = 0.01
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_7n1ol")
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6qdy"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("23_3fpif")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_bbd0c"]
+material = SubResource("StandardMaterial3D_h6qdy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfxfc"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("24_dyox8")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_01qr8"]
+material = SubResource("StandardMaterial3D_bfxfc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0nrd"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("25_cluey")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_sj80y"]
+material = SubResource("StandardMaterial3D_p0nrd")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fn76s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vj18"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.701961)
+emission_enabled = true
+emission = Color(0.47, 0.47, 0.47, 1)
+
 [sub_resource type="Environment" id="Environment_yl6x8"]
 background_mode = 1
 background_color = Color(0, 0, 0.0509804, 1)
@@ -404,12 +468,6 @@ fog_enabled = true
 fog_light_color = Color(0, 0.243029, 0.403477, 1)
 
 [sub_resource type="Theme" id="Theme_nlvil"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_vjm15"]
-radius = 2.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ghlak"]
-radius = 4.0
 
 [sub_resource type="Gradient" id="Gradient_er25v"]
 colors = PackedColorArray(0.164706, 0.164706, 0.164706, 0.835294, 0.164706, 0.164706, 0.164706, 0.835294)
@@ -425,6 +483,92 @@ script = ExtResource("1_xgrm4")
 [node name="submarine" parent="." instance=ExtResource("1_58qsi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.3378, 0)
 script = ExtResource("2_3vhx3")
+
+[node name="SubCam" type="Control" parent="submarine"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_y5vig")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="submarine/SubCam"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -216.0
+offset_right = 384.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="submarine/SubCam/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(768, 432)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="subCamBody" type="CharacterBody3D" parent="submarine/SubCam/SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 76.2477, 3.68737, 79.5793)
+script = ExtResource("9_sq83h")
+
+[node name="Camera3D" type="Camera3D" parent="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+shape = SubResource("SphereShape3D_vjm15")
+
+[node name="collectArea" type="Area3D" parent="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea"]
+shape = SubResource("SphereShape3D_ghlak")
+
+[node name="radarScanner" type="RayCast3D" parent="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+transform = Transform3D(-4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 0, 0, 1, 0, 0, 0)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5
+
+[node name="SpotLight3D" type="SpotLight3D" parent="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody"]
+transform = Transform3D(-3.78552e-08, -0.5, 0.866025, -2.18557e-08, 0.866025, 0.5, -1, 0, -4.37114e-08, 0, 1.12812, 0)
+light_energy = 11.424
+spot_range = 30.549
+spot_angle = 18.9483
+
+[node name="peephole" type="TextureRect" parent="submarine/SubCam"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_h6fj8")
+
+[node name="topDownView" type="SubViewportContainer" parent="submarine/SubCam"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -133.0
+offset_top = 114.0
+offset_right = 2.0
+offset_bottom = 249.0
+grow_horizontal = 0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="submarine/SubCam/topDownView"]
+handle_input_locally = false
+size = Vector2i(135, 135)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="submarine/SubCam/topDownView/SubViewport"]
+transform = Transform3D(-2.0713e-08, -0.880601, 0.473858, -3.84923e-08, 0.473858, 0.880601, -1, 3.55271e-15, -4.37114e-08, 4.183, 10.6637, 13.4352)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="submarine"]
 transform = Transform3D(0.727246, -1.19225e-08, 0.686377, -0.686377, -3.00025e-08, 0.727246, 1.19225e-08, -1, -3.00025e-08, 10.9222, 8.65963, 0.556496)
@@ -466,7 +610,7 @@ outline_modulate = Color(0, 0, 0, 0)
 text = "Y: 32"
 
 [node name="o2Label" type="Label3D" parent="submarine"]
-transform = Transform3D(0.911583, 0, -0.411117, 0, 1, 0, 0.411117, 0, 0.911583, 2.83223, 0.538287, -1.02115)
+transform = Transform3D(0.911583, 0, -0.411117, 0, 1, 0, 0.411117, 0, 0.911583, -1.12629, 0.538286, -1.02115)
 visible = false
 text = "o2: 98%"
 
@@ -667,6 +811,29 @@ volume_db = -5.647
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="submarine/AnimationPlayer3"]
 stream = ExtResource("18_ehp2d")
 
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="submarine/AnimationPlayer3"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="submarine"]
+transform = Transform3D(0.726602, 0, 0, 0, 0.726602, 0, 0, 0, 0.726602, -0.884975, -0.0807838, -1.45276)
+amount = 100
+lifetime = 9.23
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qvbu0")
+draw_passes = 3
+draw_pass_1 = SubResource("QuadMesh_bbd0c")
+draw_pass_2 = SubResource("QuadMesh_01qr8")
+draw_pass_3 = SubResource("QuadMesh_sj80y")
+
+[node name="Liquid02" type="MeshInstance3D" parent="submarine/GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130013, 0)
+mesh = SubResource("CylinderMesh_fn76s")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1vj18")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="submarine/GPUParticles3D/Liquid02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01748, 0)
+size = Vector3(2, 0.137939, 2)
+
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -16.7106, 0.676196)
 
@@ -750,82 +917,6 @@ Ship Health:
 O2:
 Time: "
 
-[node name="SubCam" type="Control" parent="mainUI"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("8_y5vig")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="mainUI/SubCam"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -216.0
-offset_right = 384.0
-offset_bottom = 216.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="mainUI/SubCam/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(768, 432)
-size_2d_override_stretch = true
-render_target_update_mode = 0
-
-[node name="subCamBody" type="CharacterBody3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport"]
-transform = Transform3D(-0.878066, 0, 0.478539, 0, 1, 0, -0.478539, 0, -0.878066, 76.2477, 3.68737, 79.5793)
-script = ExtResource("9_sq83h")
-
-[node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
-shape = SubResource("SphereShape3D_vjm15")
-
-[node name="collectArea" type="Area3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea"]
-shape = SubResource("SphereShape3D_ghlak")
-
-[node name="radarScanner" type="RayCast3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
-transform = Transform3D(-4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 0, 0, 1, 0, 0, 0)
-debug_shape_custom_color = Color(1, 0, 0, 1)
-debug_shape_thickness = 5
-
-[node name="SpotLight3D" type="SpotLight3D" parent="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody"]
-transform = Transform3D(-3.78552e-08, -0.5, 0.866025, -2.18557e-08, 0.866025, 0.5, -1, 0, -4.37114e-08, 0, 1.12812, 0)
-light_energy = 11.424
-spot_range = 30.549
-spot_angle = 18.9483
-
-[node name="topDownView" type="SubViewportContainer" parent="mainUI/SubCam"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -133.0
-offset_top = 114.0
-offset_right = 2.0
-offset_bottom = 249.0
-grow_horizontal = 0
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="mainUI/SubCam/topDownView"]
-handle_input_locally = false
-size = Vector2i(135, 135)
-render_target_update_mode = 0
-
-[node name="Camera3D" type="Camera3D" parent="mainUI/SubCam/topDownView/SubViewport"]
-transform = Transform3D(-2.0713e-08, -0.880601, 0.473858, -3.84923e-08, 0.473858, 0.880601, -1, 3.55271e-15, -4.37114e-08, 4.183, 10.6637, 13.4352)
-
 [node name="jumpscareTexture" type="TextureRect" parent="mainUI"]
 visible = false
 layout_mode = 1
@@ -859,16 +950,6 @@ scale = Vector2(0.505, 0.505)
 texture = ExtResource("22_mhlmb")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="peephole" type="TextureRect" parent="mainUI"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_h6fj8")
 
 [node name="pauseMenu" type="Control" parent="mainUI"]
 visible = false
@@ -1074,8 +1155,8 @@ transform = Transform3D(-0.150779, 0, -0.346852, 0, 0.378207, 0, 0.346852, 0, -0
 [node name="SpookyHand" parent="." instance=ExtResource("46_gq3d7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.7268, 4.76837e-07, 85.273)
 
-[connection signal="area_entered" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_entered"]
-[connection signal="area_exited" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_exited"]
-[connection signal="body_entered" from="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="mainUI/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_body_entered"]
+[connection signal="area_entered" from="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_entered"]
+[connection signal="area_exited" from="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_exited"]
+[connection signal="body_entered" from="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_body_entered"]
 [connection signal="button_down" from="mainUI/pauseMenu/VBoxContainer/resumeButton" to="mainUI" method="_on_resume_button_button_down"]
 [connection signal="button_down" from="mainUI/pauseMenu/VBoxContainer/quitButton" to="mainUI" method="_on_quit_button_button_down"]
