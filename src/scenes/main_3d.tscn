@@ -407,14 +407,14 @@ _data = {
 }
 
 [sub_resource type="Curve" id="Curve_hn84l"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.057971, 0.450549), 0.0, 0.0, 0, 0, Vector2(0.297101, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_7n1ol"]
 curve = SubResource("Curve_hn84l")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qvbu0"]
-emission_shape_scale = Vector3(0.48, 0, 0.48)
+emission_shape_scale = Vector3(0.45, 0, 0.45)
 emission_shape = 2
 emission_sphere_radius = 1.0
 gravity = Vector3(0, 0.2, 0)
@@ -456,10 +456,12 @@ material = SubResource("StandardMaterial3D_p0nrd")
 [sub_resource type="CylinderMesh" id="CylinderMesh_fn76s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vj18"]
+render_priority = 1
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.701961)
 emission_enabled = true
-emission = Color(0.47, 0.47, 0.47, 1)
+emission = Color(0.66, 0.66, 0.66, 1)
+disable_receive_shadows = true
 
 [sub_resource type="Environment" id="Environment_yl6x8"]
 background_mode = 1
@@ -674,6 +676,7 @@ spot_angle = 29.1099
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.868873, 0.322985, -1.42737)
 light_color = Color(0.18, 0.808667, 1, 1)
 light_energy = 3.0
+light_cull_mask = 4294967293
 shadow_enabled = true
 omni_range = 1.46466
 
@@ -815,8 +818,8 @@ stream = ExtResource("18_ehp2d")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="submarine"]
 transform = Transform3D(0.726602, 0, 0, 0, 0.726602, 0, 0, 0, 0.726602, -0.884975, -0.0807838, -1.45276)
-amount = 100
-lifetime = 9.23
+amount = 60
+lifetime = 4.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_qvbu0")
 draw_passes = 3
@@ -825,7 +828,8 @@ draw_pass_2 = SubResource("QuadMesh_01qr8")
 draw_pass_3 = SubResource("QuadMesh_sj80y")
 
 [node name="Liquid02" type="MeshInstance3D" parent="submarine/GPUParticles3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130013, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0719814, 0)
+layers = 2
 mesh = SubResource("CylinderMesh_fn76s")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_1vj18")
