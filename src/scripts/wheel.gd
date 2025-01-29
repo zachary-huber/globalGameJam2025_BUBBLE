@@ -1,6 +1,6 @@
 extends Interactable
 
-@export var rotationSpeed:float = 15.0
+@export var rotationSpeed:float = 7.5
 
 func _init() -> void:
 	interactHintText = "[center]Sit at chair to steer.[/center]"
