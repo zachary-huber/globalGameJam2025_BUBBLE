@@ -12,10 +12,10 @@ albedo_color = Color(0, 1, 0, 1)
 script = ExtResource("1_bsvsq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_ryoub")
 mesh = SubResource("SphereMesh_c0ul3")
 
 [node name="lifespanTimer" type="Timer" parent="."]
-wait_time = 2.0
 
 [connection signal="timeout" from="lifespanTimer" to="." method="_on_lifespan_timer_timeout"]

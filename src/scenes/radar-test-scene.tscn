@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://coin25pu6od2r"]
+[gd_scene load_steps=9 format=3 uid="uid://coin25pu6od2r"]
 
 [ext_resource type="PackedScene" uid="uid://dl4f3flh23os1" path="res://src/scenes/radar.tscn" id="1_ojw4e"]
+[ext_resource type="Script" path="res://src/scripts/dev/player.gd" id="2_bxt8x"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gys7q"]
 size = Vector3(80, 1, 80)
@@ -17,18 +18,9 @@ size = Vector3(1, 10, 40)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dh0sc"]
 data = PackedVector3Array(-0.5, 5, 20, 0.5, 5, 20, -0.5, -5, 20, 0.5, 5, 20, 0.5, -5, 20, -0.5, -5, 20, 0.5, 5, -20, -0.5, 5, -20, 0.5, -5, -20, -0.5, 5, -20, -0.5, -5, -20, 0.5, -5, -20, 0.5, 5, 20, 0.5, 5, -20, 0.5, -5, 20, 0.5, 5, -20, 0.5, -5, -20, 0.5, -5, 20, -0.5, 5, -20, -0.5, 5, 20, -0.5, -5, -20, -0.5, 5, 20, -0.5, -5, 20, -0.5, -5, -20, 0.5, 5, 20, -0.5, 5, 20, 0.5, 5, -20, -0.5, 5, 20, -0.5, 5, -20, 0.5, 5, -20, -0.5, -5, 20, 0.5, -5, 20, -0.5, -5, -20, 0.5, -5, 20, 0.5, -5, -20, -0.5, -5, -20)
 
-[sub_resource type="Environment" id="Environment_rrl86"]
-background_mode = 1
-background_color = Color(1, 1, 1, 1)
-background_energy_multiplier = 0.83
-ssao_enabled = true
-ssil_enabled = true
-sdfgi_enabled = true
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dqqjx"]
 
 [node name="radar-test-scene" type="Node3D"]
-
-[node name="radar" parent="." instance=ExtResource("1_ojw4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6783, 1.29084, 14.3924)
 
 [node name="env" type="Node3D" parent="."]
 
@@ -280,9 +272,19 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.910395, 0, 0.41374, 0, 1, 0, -0.41374, 0, 0.910395, -28.5704, 0, 13.7817)
 shape = SubResource("ConcavePolygonShape3D_dh0sc")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_rrl86")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 56.815, 0)
 cull_mask = 1048063
+current = true
+
+[node name="player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63135, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="player"]
+script = ExtResource("2_bxt8x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_dqqjx")
+
+[node name="radar" parent="player/CharacterBody3D" instance=ExtResource("1_ojw4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250037, 0)

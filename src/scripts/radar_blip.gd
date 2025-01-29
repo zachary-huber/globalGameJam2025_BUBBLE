@@ -1,15 +1,20 @@
 extends Node3D
 
-@export var lifespanSeconds = 1.0
+@export var lifespanSeconds = 3.0
 
 func _ready():
 	$lifespanTimer.wait_time = lifespanSeconds
-	$lifespanTimer.start()
+	#$lifespanTimer.start()
 
 
 func _process(delta):
 	pass
 
 
+func appear():
+	visible = true
+	$lifespanTimer.start()
+
 func _on_lifespan_timer_timeout():
-	self.call_deferred("queue_free")
+	visible = false
+	#self.call_deferred("queue_free")
