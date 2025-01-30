@@ -196,8 +196,8 @@ func handlePlayerMovement():
 		
 func checkInteractRay():
 	# check if player raycast is colliding with stuff
-	if $cameraPivot/interactCast.is_colliding():
-		interactingWithObj = $cameraPivot/interactCast.get_collider()
+	if $cameraPivot/Camera3D/interactCast.is_colliding():
+		interactingWithObj = $cameraPivot/Camera3D/interactCast.get_collider()
 		print("Can interact with: ", interactingWithObj.name)
 		# do some updating here to allow interaction and UI updating
 	else:

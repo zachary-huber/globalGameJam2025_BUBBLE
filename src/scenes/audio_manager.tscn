@@ -32,7 +32,6 @@ stream = ExtResource("4_2qvi0")
 stream = ExtResource("5_7a8k7")
 volume_db = 3.748
 pitch_scale = 1.86
-stream_paused = true
 
 [node name="alarmSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_kgegw")
