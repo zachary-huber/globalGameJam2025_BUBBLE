@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=81 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scenes/main_3d.gd" id="1_xgrm4"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 [ext_resource type="Script" path="res://src/scripts/chair_cam.gd" id="5_pvmt8"]
 [ext_resource type="PackedScene" uid="uid://c8yhv1j31tg8g" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
-[ext_resource type="PackedScene" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
+[ext_resource type="PackedScene" uid="uid://csdeqhu8o1ot4" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
 [ext_resource type="Texture2D" uid="uid://c8tnypobnibjs" path="res://data/textures/drawings/poster1.png" id="8_noxla"]
 [ext_resource type="Script" path="res://src/scripts/main_ui.gd" id="8_ttdf3"]
 [ext_resource type="Script" path="res://src/scripts/sub_cam.gd" id="8_y5vig"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://db82y2bk1hi4i" path="res://data/textures/drawings/bubble1.png" id="23_3fpif"]
 [ext_resource type="Texture2D" uid="uid://ci7rjeyctypkv" path="res://data/textures/drawings/bubble2.png" id="24_dyox8"]
 [ext_resource type="Texture2D" uid="uid://cmoygbj2ru067" path="res://data/textures/drawings/bubble3.png" id="25_cluey"]
+[ext_resource type="Script" path="res://src/scenes/liquid_02.gd" id="26_jg02d"]
 [ext_resource type="PackedScene" uid="uid://cm2fpfidj4u22" path="res://src/scenes/mainworld.tscn" id="27_8b1o7"]
 [ext_resource type="PackedScene" uid="uid://cxn6kci3mtwp4" path="res://src/fish/SchoolFish.tscn" id="28_5k8fk"]
 [ext_resource type="QuadMesh" uid="uid://bjeotk6opbknb" path="res://src/fish/blob.tres" id="29_oyp3l"]
@@ -828,11 +829,12 @@ draw_pass_2 = SubResource("QuadMesh_01qr8")
 draw_pass_3 = SubResource("QuadMesh_sj80y")
 
 [node name="Liquid02" type="MeshInstance3D" parent="submarine/GPUParticles3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0719814, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02791, 0)
 layers = 2
 mesh = SubResource("CylinderMesh_fn76s")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_1vj18")
+script = ExtResource("26_jg02d")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="submarine/GPUParticles3D/Liquid02"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01748, 0)

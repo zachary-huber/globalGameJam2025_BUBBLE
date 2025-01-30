@@ -15,6 +15,7 @@ var input_dir
 var direction
 
 @onready var playerCameraPivot = $cameraPivot
+@onready var camera = $cameraPivot/Camera3D
 
 var interactingWithObj
 
@@ -147,8 +148,8 @@ func _input(event: InputEvent) -> void:
 func updateCameraMotion(event) -> void:
 	mouse_motion = event.relative
 	playerCameraPivot.rotation.y -= mouse_motion.x * camera_sensitivity
-	playerCameraPivot.rotation.x -= mouse_motion.y * camera_sensitivity
-	playerCameraPivot.rotation.x = clamp(playerCameraPivot.rotation.x, deg_to_rad(-camera_look_angle_max), deg_to_rad(camera_look_angle_max))
+	camera.rotation.x -= mouse_motion.y * camera_sensitivity
+	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-camera_look_angle_max), deg_to_rad(camera_look_angle_max))
 
 
 # if the player is looking at something interactable and they press "interact" then they activate the interactable
