@@ -28,3 +28,6 @@ bones/5/rotation = Quaternion(0.999755, 0.0221556, -2.13947e-10, -3.70175e-12)
 
 [node name="pasted__pCube1" parent="Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_vnisv")
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "GrassWave"

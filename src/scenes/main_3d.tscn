@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://cvw72ka1vhtnm"]
+[gd_scene load_steps=72 format=3 uid="uid://cvw72ka1vhtnm"]
 
 [ext_resource type="PackedScene" uid="uid://1rhcf0vibc1b" path="res://src/scenes/submarine.tscn" id="1_58qsi"]
 [ext_resource type="Script" path="res://src/scenes/main_3d.gd" id="1_xgrm4"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://02p7baco7srs" path="res://src/scenes/wheel.tscn" id="2_70dgk"]
 [ext_resource type="PackedScene" uid="uid://bf1afayqt8pcj" path="res://src/scenes/player.tscn" id="2_ix2h5"]
 [ext_resource type="PackedScene" uid="uid://1ygys75xohd7" path="res://src/scenes/lever.tscn" id="3_2aso7"]
-[ext_resource type="PackedScene" uid="uid://ephsf1kd5v08" path="res://src/scenes/ocean_floor_environment.tscn" id="4_aguwm"]
 [ext_resource type="Script" path="res://src/scripts/chair_cam.gd" id="5_pvmt8"]
 [ext_resource type="PackedScene" uid="uid://c8yhv1j31tg8g" path="res://src/scenes/peephole_interactor.tscn" id="6_5fje6"]
 [ext_resource type="PackedScene" uid="uid://csdeqhu8o1ot4" path="res://src/scenes/captain_chair.tscn" id="6_ntipw"]
@@ -39,17 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://m67uguqaydps" path="res://data/textures/crosshair.png" id="29_tsvkg"]
 [ext_resource type="QuadMesh" uid="uid://drhs60b2mtxj8" path="res://src/fish/fishy.tres" id="30_7lkx1"]
 [ext_resource type="QuadMesh" uid="uid://di3f4xtql8k71" path="res://src/fish/Puffer.tres" id="31_gj8sj"]
-[ext_resource type="PackedScene" uid="uid://dtm78nu13d3fy" path="res://src/scenes/environment/chomper_plant.tscn" id="32_f5t8a"]
-[ext_resource type="PackedScene" uid="uid://c5eoow6y22n2b" path="res://src/scenes/environment/coral.tscn" id="33_4sgbw"]
-[ext_resource type="PackedScene" uid="uid://bcnvk6125an68" path="res://src/scenes/environment/funky_plant.tscn" id="34_nfa2p"]
-[ext_resource type="PackedScene" uid="uid://bov7a0tusk3oq" path="res://src/scenes/environment/regular_plant.tscn" id="35_op8mh"]
-[ext_resource type="PackedScene" uid="uid://x14xscuv6r46" path="res://src/scenes/environment/sea_shell.tscn" id="36_sl5pq"]
-[ext_resource type="PackedScene" uid="uid://c2gtqwk3vgbcl" path="res://src/scenes/environment/sea_grass.tscn" id="37_cjxa0"]
-[ext_resource type="PackedScene" uid="uid://bc6h0nq2xr6il" path="res://src/scenes/environment/rock.tscn" id="38_ply5k"]
 [ext_resource type="PackedScene" uid="uid://d351vtj43oykb" path="res://src/scenes/spray.tscn" id="39_c3mu8"]
 [ext_resource type="PackedScene" uid="uid://c74qy14c0jwya" path="res://src/scenes/goopy_guy.tscn" id="40_74166"]
 [ext_resource type="PackedScene" uid="uid://cx26cybmhbeix" path="res://src/scenes/waddle_bit.tscn" id="44_j8bfb"]
-[ext_resource type="PackedScene" uid="uid://sunbcu4euqbx" path="res://data/models/SpookyHand.fbx" id="46_gq3d7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vjm15"]
 radius = 2.0
@@ -843,9 +834,6 @@ size = Vector3(2, 0.137939, 2)
 [node name="player" parent="." instance=ExtResource("2_ix2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07518, -16.7106, 0.676196)
 
-[node name="oceanFloorEnvironment" parent="." instance=ExtResource("4_aguwm")]
-transform = Transform3D(2.93631, 0, 0, 0, 2.93631, 0, 0, 0, 2.93631, 0, 0, 0)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yl6x8")
 
@@ -1113,53 +1101,11 @@ fishType = ExtResource("30_7lkx1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0581, 0.5, -84.1693)
 fishType = ExtResource("30_7lkx1")
 
-[node name="ChomperPlant" parent="." instance=ExtResource("32_f5t8a")]
-transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, 34.0413, 0.938531, -13.0143)
-
-[node name="ChomperPlant2" parent="." instance=ExtResource("32_f5t8a")]
-transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, 73.389, 0.938531, -82.5769)
-
-[node name="ChomperPlant3" parent="." instance=ExtResource("32_f5t8a")]
-transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, -48.8611, 0.938531, 5.9447)
-
-[node name="ChomperPlant4" parent="." instance=ExtResource("32_f5t8a")]
-transform = Transform3D(43.6452, 0, 53.6748, 0, 69.1802, 0, -53.6748, 0, 43.6452, -42.8475, 0.938531, 85.4259)
-
-[node name="ChomperPlant5" parent="." instance=ExtResource("32_f5t8a")]
-transform = Transform3D(38.7142, 0, 2.74117, 0, 28.6127, 0, -4.95529, 0, 21.4159, -25.7745, 1.1123, 29.3403)
-
-[node name="Coral" parent="." instance=ExtResource("33_4sgbw")]
-transform = Transform3D(0.720838, 0, -0.659291, 0, 1.31231, 0, 0.60782, 0, 0.78188, -25.7987, 1.48338, 30.0433)
-
-[node name="FunkyPlant" parent="." instance=ExtResource("34_nfa2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2266, 1.46816, 44.501)
-
-[node name="RegularPlant" parent="." instance=ExtResource("35_op8mh")]
-transform = Transform3D(2.19551, 0, 0, 0, 2.56057, 0, 0, 0, 1.71199, -23.6661, 1.19153, 42.8052)
-
-[node name="SeaShell" parent="." instance=ExtResource("36_sl5pq")]
-transform = Transform3D(1, 0, 0, 0, 0.999712, 0.0240134, 0, -0.0240134, 0.999712, -22.1183, 1.43629, 43.4045)
-
-[node name="SeaGrass" parent="." instance=ExtResource("37_cjxa0")]
-transform = Transform3D(1, 0, 0, 0, 0.483808, 0, 0, 0, 4.99344, 50.5655, 1.40179, 17.7892)
-
-[node name="Rock" parent="." instance=ExtResource("38_ply5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.4512, 1.46816, 18.6244)
-
-[node name="Rock2" parent="." instance=ExtResource("38_ply5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7394, 1.46816, 18.11)
-
-[node name="RegularPlant2" parent="." instance=ExtResource("35_op8mh")]
-transform = Transform3D(2.38162, 0, 0, 0, 3.51759, 0, 0, 0, 4.34485, 46.8452, 0.985771, 25.1926)
-
 [node name="GoopyGuy" parent="." instance=ExtResource("40_74166")]
 transform = Transform3D(15.6558, 0, -43.2157, 0, 45.9641, 0, 43.2157, 0, 15.6558, 3.16111, -18.5801, -1.40177)
 
 [node name="WaddleBit" parent="." instance=ExtResource("44_j8bfb")]
 transform = Transform3D(-0.150779, 0, -0.346852, 0, 0.378207, 0, 0.346852, 0, -0.150779, 3.13645, -17.3116, 0.368587)
-
-[node name="SpookyHand" parent="." instance=ExtResource("46_gq3d7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.7268, 4.76837e-07, 85.273)
 
 [connection signal="area_entered" from="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_entered"]
 [connection signal="area_exited" from="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody/collectArea" to="submarine/SubCam/SubViewportContainer/SubViewport/subCamBody" method="_on_collect_area_area_exited"]

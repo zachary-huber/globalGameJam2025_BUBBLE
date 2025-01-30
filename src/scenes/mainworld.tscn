@@ -1,4 +1,13 @@
-[gd_scene load_steps=131 format=3 uid="uid://cm2fpfidj4u22"]
+[gd_scene load_steps=141 format=3 uid="uid://cm2fpfidj4u22"]
+
+[ext_resource type="PackedScene" uid="uid://bov7a0tusk3oq" path="res://src/scenes/environment/regular_plant.tscn" id="1_4njl4"]
+[ext_resource type="Texture2D" uid="uid://dxlfxhdg1svhq" path="res://data/textures/Sand/initialShadingGroup_Base_color.png" id="1_m41s0"]
+[ext_resource type="PackedScene" uid="uid://bc6h0nq2xr6il" path="res://src/scenes/environment/rock.tscn" id="2_kqx57"]
+[ext_resource type="Texture2D" uid="uid://cw0dqwfpprqp8" path="res://data/textures/Sand/initialShadingGroup_Mixed_AO.png" id="2_o342l"]
+[ext_resource type="PackedScene" uid="uid://c2gtqwk3vgbcl" path="res://src/scenes/environment/sea_grass.tscn" id="3_dqs5x"]
+[ext_resource type="Texture2D" uid="uid://mynkb3yux6i1" path="res://data/textures/Sand/initialShadingGroup_Metallic.png" id="3_tvp2j"]
+[ext_resource type="Texture2D" uid="uid://btl3op48em65k" path="res://data/textures/Sand/initialShadingGroup_Normal_OpenGL.png" id="4_sdomh"]
+[ext_resource type="Texture2D" uid="uid://b5fxqlvq363eh" path="res://data/textures/Sand/initialShadingGroup_Roughness.png" id="5_6syl6"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_npmxy"]
 
@@ -389,6 +398,19 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wshng"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_03oc3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fb7gh"]
+albedo_texture = ExtResource("1_m41s0")
+metallic = 1.0
+metallic_texture = ExtResource("3_tvp2j")
+roughness_texture = ExtResource("5_6syl6")
+normal_enabled = true
+normal_texture = ExtResource("4_sdomh")
+ao_enabled = true
+ao_texture = ExtResource("2_o342l")
+uv1_scale = Vector3(15, 15, 15)
 
 [node name="Node3D" type="Node3D"]
 
@@ -1591,3 +1613,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s686m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D73/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wshng")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, -8.74228e-06, 200, 0, -200, -8.74228e-06, 0, -3.62314, 0)
+mesh = SubResource("QuadMesh_03oc3")
+surface_material_override/0 = SubResource("StandardMaterial3D_fb7gh")
+
+[node name="RegularPlant" parent="." instance=ExtResource("1_4njl4")]
+transform = Transform3D(4.58221, 0, 0, 0, 4.58221, 0, 0, 0, 4.58221, 41.204, -3.62314, 69.1173)
+
+[node name="Rock" parent="." instance=ExtResource("2_kqx57")]
+transform = Transform3D(3.03181, 0, 0, 0, 3.03181, 0, 0, 0, 3.03181, 59.3214, -3.62314, 85.223)
+
+[node name="SeaGrass" parent="." instance=ExtResource("3_dqs5x")]
+transform = Transform3D(3.05085, 0, 0, 0, 3.05085, 0, 0, 0, 3.05085, 59.9915, -3.62314, 72.6121)
